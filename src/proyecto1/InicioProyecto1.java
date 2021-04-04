@@ -196,7 +196,7 @@ public class InicioProyecto1 extends javax.swing.JFrame {
         Jugador.jugador1.setNombre(ReceptorNombrejTextField1.getText());
         Jugador.jugador1.setNick(ReceptorNickjTextField2.getText());
         this.setVisible(false);        
-        CrearAnimales.LlamadoCrearAnimales();
+        CrearAnimalesPlantas.LlamadoCrearAnimales();
 
     }//GEN-LAST:event_IniciarJuegojButton1ActionPerformed
 

@@ -6,8 +6,8 @@ import estructuraAnimales.*;
  */
 public class Gallina extends Animales implements Omnivoros{
 
-    public Gallina(String tipoAnimal) {
-        super(tipoAnimal);
+    public Gallina() {
+        super("Gallina");
     }
     @Override
     public void ProduccionDestace() {

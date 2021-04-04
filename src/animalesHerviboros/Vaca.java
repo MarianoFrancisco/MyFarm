@@ -6,8 +6,8 @@ import estructuraAnimales.*;
  */
 public class Vaca extends Animales implements Herviboros{
 
-    public Vaca(String tipoAnimal) {
-        super(tipoAnimal);
+    public Vaca() {
+        super("Vaca");
     }
 
     @Override
