@@ -7,7 +7,7 @@ import estructuraPlantas.*;
 public class Manzano extends Plantas implements PlantasFrutas{
 
     public Manzano() {
-        super("Manzano");
+        super("Manzano",20,3,5,15);
     }
 
     @Override

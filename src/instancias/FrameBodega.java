@@ -8,7 +8,9 @@ package instancias;
 import java.awt.Graphics;
 import java.awt.Image;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import jugador.Jugador;
 
 /**
  *
@@ -40,6 +42,10 @@ public class FrameBodega extends javax.swing.JFrame{
         RegresarGranjajButton1 = new javax.swing.JButton();
         FinalizarJuegojButton1 = new javax.swing.JButton();
         LogojLabel1 = new javax.swing.JLabel();
+        AlimentosjLabel2 = new javax.swing.JLabel();
+        FondojLabel1 = new javax.swing.JLabel();
+        ProductosjLabel3 = new javax.swing.JLabel();
+        FondojLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Bodega");
@@ -62,10 +68,31 @@ public class FrameBodega extends javax.swing.JFrame{
         FinalizarJuegojButton1.setFont(new java.awt.Font("Engravers MT", 1, 12)); // NOI18N
         FinalizarJuegojButton1.setForeground(new java.awt.Color(0, 0, 0));
         FinalizarJuegojButton1.setText("Finalizar Juego");
+        FinalizarJuegojButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FinalizarJuegojButton1ActionPerformed(evt);
+            }
+        });
         jPanel1.add(FinalizarJuegojButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 601, -1, -1));
 
         LogojLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/Logo.PNG"))); // NOI18N
         jPanel1.add(LogojLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1224, 601, -1, -1));
+
+        AlimentosjLabel2.setFont(new java.awt.Font("Engravers MT", 1, 18)); // NOI18N
+        AlimentosjLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        AlimentosjLabel2.setText("Alimentos");
+        jPanel1.add(AlimentosjLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 40, -1, -1));
+
+        FondojLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/FondoBodega.jpg"))); // NOI18N
+        jPanel1.add(FondojLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, -1, -1));
+
+        ProductosjLabel3.setFont(new java.awt.Font("Engravers MT", 1, 18)); // NOI18N
+        ProductosjLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        ProductosjLabel3.setText("Productos");
+        jPanel1.add(ProductosjLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 40, -1, -1));
+
+        FondojLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/FondoBodega.jpg"))); // NOI18N
+        jPanel1.add(FondojLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 30, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -86,6 +113,11 @@ public class FrameBodega extends javax.swing.JFrame{
         this.dispose();
         FrameGranja.visible();    
     }//GEN-LAST:event_RegresarGranjajButton1ActionPerformed
+
+    private void FinalizarJuegojButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FinalizarJuegojButton1ActionPerformed
+        JOptionPane.showMessageDialog(FrameBodega.this, "Fin del juego, vuelve pronto "+Jugador.jugador1.getNick());
+        System.exit(0);
+    }//GEN-LAST:event_FinalizarJuegojButton1ActionPerformed
     class FondoInicio extends JPanel{
         private Image imagen;
         @Override
@@ -97,8 +129,12 @@ public class FrameBodega extends javax.swing.JFrame{
         }
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel AlimentosjLabel2;
     private javax.swing.JButton FinalizarJuegojButton1;
+    private javax.swing.JLabel FondojLabel1;
+    private javax.swing.JLabel FondojLabel2;
     private javax.swing.JLabel LogojLabel1;
+    private javax.swing.JLabel ProductosjLabel3;
     private javax.swing.JButton RegresarGranjajButton1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables

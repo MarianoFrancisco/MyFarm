@@ -15,14 +15,14 @@ import javax.swing.JPanel;
  *
  * @author Mariano
  */
-public class FrameCrearAnimales extends javax.swing.JFrame {
+public class FrameCrearAnimalesPlantas extends javax.swing.JFrame {
 
     /**
-     * Creates new form FrameCrearAnimales
+     * Creates new form FrameCrearAnimalesPlantas
      */
     public Tiempo tiempo = new Tiempo();
     FondoInicio fondoInicio = new FondoInicio();
-    public FrameCrearAnimales() {
+    public FrameCrearAnimalesPlantas() {
         this.setContentPane(fondoInicio);
         initComponents();
         LlamarTiempo.tiempo();
@@ -136,10 +136,6 @@ public class FrameCrearAnimales extends javax.swing.JFrame {
                 }
             }
     }
-    public class llamarTiempo {
-        
-    }
-    
         
     }
     class FondoInicio extends JPanel{

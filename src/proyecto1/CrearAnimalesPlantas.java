@@ -17,7 +17,7 @@ public class CrearAnimalesPlantas {
     public static void LlamadoCrearAnimales(){
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FrameCrearAnimales().setVisible(true);
+                new FrameCrearAnimalesPlantas().setVisible(true);
             }
         });
     }
@@ -27,10 +27,10 @@ public class CrearAnimalesPlantas {
     public static void iniciarAnimalesOmnivoros(){
         gallina[0] = new Gallina();
     }
-    public static void iniciarPlantasFrutas(){
-        manzano[0]= new Manzano();
-    }
     public static void iniciarPlantasGranos(){
         maiz[0]= new Maiz();
     }
+    public static void iniciarPlantasFrutas(){
+        manzano[0]= new Manzano();
+    }  
 }

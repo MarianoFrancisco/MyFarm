@@ -7,7 +7,7 @@ import estructuraPlantas.*;
 public class Maiz extends Plantas implements PlantasGranos{
 
     public Maiz() {
-        super("Maiz");
+        super("Maiz",10,5,10,8);
     }
 
     @Override
