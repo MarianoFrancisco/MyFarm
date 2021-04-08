@@ -17,15 +17,16 @@ public class CrearAnimalesPlantas {
     static Maiz maiz;
     static Frijol frijol;
     static Arroz arroz;
-    static Manzano manzano;
+    static Manzano manzano;//frijol,arroz,naranjo,banano.  , oveja, llama, cerdo, pavo.
     static Naranjo naranjo;
     static Banano banano;
     static Vaca vaca;
     static Oveja oveja;
     static Llama llama;
     static Gallina gallina;
-    static Cerdo cerdo;
+    public static Cerdo cerdo;
     static Pavo pavo;
+    static CrearAnimalesPlantas crearAnimalesPlantas;
     public static void LlamadoCrearAnimales(){
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -65,7 +66,7 @@ public class CrearAnimalesPlantas {
         plantas[0]= maiz;
         plantas[1]= null;
         plantas[2]= null;
-        plantas[3]= arroz;
+        plantas[3]= manzano;
         plantas[4]= null;
         plantas[5]= null;
     }
