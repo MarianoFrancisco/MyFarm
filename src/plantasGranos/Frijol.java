@@ -1,13 +1,15 @@
 package plantasGranos;
+
 import estructuraPlantas.*;
+
 /**
  *
  * @author Mariano
  */
-public class Maiz extends Plantas implements PlantasGranos{
+public class Frijol extends Plantas implements PlantasGranos{
 
-    public Maiz() {
-        super("Maiz",10,5,10,8);
+    public Frijol() {
+        super("Frijol", 4, 8, 5, 8);
     }
 
     @Override

@@ -4,10 +4,10 @@ import estructuraPlantas.*;
  *
  * @author Mariano
  */
-public class Maiz extends Plantas implements PlantasGranos{
+public class Arroz extends Plantas implements PlantasGranos{
 
-    public Maiz() {
-        super("Maiz",10,5,10,8);
+    public Arroz() {
+        super("Arroz", 5, 8, 10, 6);
     }
 
     @Override

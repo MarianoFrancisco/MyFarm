@@ -1,6 +1,8 @@
 package proyecto1;
 import animalesHerviboros.*;
 import animalesOmnivoros.*;
+import estructuraAnimales.*;
+import estructuraPlantas.*;
 import plantasFrutas.*;
 import plantasGranos.*;
 
@@ -10,15 +12,20 @@ import plantasGranos.*;
  */
 public class CrearAnimalesPlantas {
     //Llamamos nuevos animales
-    static Maiz maiz[]= new Maiz[5];
-    static Manzano manzano[]= new Manzano[5];
-    static Vaca vaca[]= new Vaca[5];
-    static Oveja oveja[]= new Oveja[5];
-    static Llama llama[]= new Llama[5];
-    static Cabra cabra[]= new Cabra[5];
-    static Gallina gallina[]= new Gallina[5];
-    static Cerdo cerdo[]= new Cerdo[5];
-    static Pavo pavo[]= new Pavo[5];
+    static Plantas plantas[]= new Plantas[6];
+    static Animales animales[]= new Animales[6];
+    static Maiz maiz;
+    static Frijol frijol;
+    static Arroz arroz;
+    static Manzano manzano;
+    static Naranjo naranjo;
+    static Banano banano;
+    static Vaca vaca;
+    static Oveja oveja;
+    static Llama llama;
+    static Gallina gallina;
+    static Cerdo cerdo;
+    static Pavo pavo;
     public static void LlamadoCrearAnimales(){
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -27,15 +34,39 @@ public class CrearAnimalesPlantas {
         });
     }
     public static void iniciarAnimalesHerviboros(){
-        vaca[0] = new Vaca();
+        vaca = new Vaca();
+        oveja= new Oveja();
+        llama= new Llama();
     }
     public static void iniciarAnimalesOmnivoros(){
-        gallina[0] = new Gallina();
+        gallina = new Gallina();
+        cerdo= new Cerdo();
+        pavo= new Pavo();
     }
     public static void iniciarPlantasGranos(){
-        maiz[0]= new Maiz();
+        maiz= new Maiz();
+        frijol= new Frijol();
+        arroz= new Arroz();
     }
     public static void iniciarPlantasFrutas(){
-        manzano[0]= new Manzano();
-    }  
+        manzano= new Manzano();
+        naranjo= new Naranjo();
+        banano= new Banano();
+    }
+    public static void animalesCreados(){
+        animales[0]= gallina;
+        animales[1]= null;
+        animales[2]= null;
+        animales[3]= vaca;
+        animales[4]= null;
+        animales[5]= null;
+    }
+    public static void plantasCreadas(){
+        plantas[0]= maiz;
+        plantas[1]= null;
+        plantas[2]= null;
+        plantas[3]= arroz;
+        plantas[4]= null;
+        plantas[5]= null;
+    }
 }

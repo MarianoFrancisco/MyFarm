@@ -322,18 +322,20 @@ public class FrameGranja extends javax.swing.JFrame{
         ParcelaAlimento2jLabel6.setText("de alimento");
         GranjajPanel1.add(ParcelaAlimento2jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 120, -1, -1));
 
+        jPanel1.setOpaque(false);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 860, Short.MAX_VALUE)
+            .addGap(0, 880, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 450, Short.MAX_VALUE)
         );
 
-        GranjajPanel1.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 120, 860, 450));
+        GranjajPanel1.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 120, 880, 450));
 
         ComerAnimalesjToggleButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/ComerAnimales.PNG"))); // NOI18N
         ComerAnimalesjToggleButton1.addActionListener(new java.awt.event.ActionListener() {

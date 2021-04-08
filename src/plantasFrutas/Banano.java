@@ -4,10 +4,10 @@ import estructuraPlantas.*;
  *
  * @author Mariano
  */
-public class Manzano extends Plantas implements PlantasFrutas{
+public class Banano extends Plantas implements PlantasFrutas{
 
-    public Manzano() {
-        super("Manzano",20,3,5,15);
+    public Banano() {
+        super("Banano", 10, 5, 10, 8);
     }
 
     @Override

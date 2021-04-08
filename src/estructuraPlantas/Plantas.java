@@ -18,7 +18,6 @@ public abstract class Plantas {
         this.precioVentaProducto=precioVentaProducto;
     }
     public abstract void siembra();
-    public abstract void cosecha();
 
     public String getTipoPlanta() {
         return this.tipoPlanta;
