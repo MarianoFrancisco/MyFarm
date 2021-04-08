@@ -7,15 +7,11 @@ package instancias;
 
 import java.awt.Graphics;
 import java.awt.Image;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
-import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import jugador.Jugador;
-import suelos.*;
-import static suelos.CreacionSueloInicial.sueloElegir;
+
 /**
  *
  * @author Mariano
@@ -28,12 +24,8 @@ public class FrameGranja extends javax.swing.JFrame{
     
     public Vida vida = new Vida();
     FondoInicio fondoInicioGranja = new FondoInicio();
-    int filas=5;
-    int columnas=5;
-    int condicionM=5;
-    int condicionN=5;
-    JButton[][] suelo;
-    static FrameGranja FrameGranja;
+
+    public static FrameGranja FrameGranja;
     public static void iniciarGranja(){
         FrameGranja=new FrameGranja();
     }
@@ -44,41 +36,12 @@ public class FrameGranja extends javax.swing.JFrame{
     public FrameGranja(){
         this.setContentPane(fondoInicioGranja);
         initComponents();
-        inicializarSuelos();
-        inicializarAcciones();
+        InicializarSuelos.llamarInicializarSuelos();
+        InicializarSuelos.inicializarSuelos.inicializarSuelos();
+        InicializarSuelos.inicializarSuelos.inicializarAcciones();
         vida.start();
         barraVida();
         this.setLocationRelativeTo(null);
-    }
-    public void inicializarSuelos(){
-        int x=100;
-        int y=300;
-        suelo = new JButton[filas][columnas];
-        for (int i = 0; i < filas; i++) {
-            for (int j = 0; j < columnas; j++) {
-                suelo[i][j] = new JButton();
-                suelo[i][j].setBounds(y, x, 70, 50);
-                jPanel1.add(suelo[i][j]);
-                CreacionSueloInicial.crearCreacionSueloInicial();
-                CreacionSueloInicial.sueloCreador.crearSuelos();
-                CreacionSueloInicial.sueloCreador.llamadoCrearSueloInicial();
-                if(CreacionSueloInicial.sueloInicial[3].getPorcentaje()==0.35){
-                    sueloElegir[i][j] = new SueloAgua();
-                    suelo[i][j].setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/Agua.PNG")));
-                }
-                else if(CreacionSueloInicial.sueloInicial[3].getPorcentaje()==0.25){
-                    suelo[i][j].setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/Desierto.PNG")));
-                    sueloElegir[i][j] = new SueloDesierto();
-                }
-                else{
-                    suelo[i][j].setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/Grama.PNG")));
-                    sueloElegir[i][j] = new SueloGrama();
-                }   
-                x+=50;
-            }
-            y+=70;
-            x=100;
-        }
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -133,8 +96,8 @@ public class FrameGranja extends javax.swing.JFrame{
         LlamadoNickjLabel1 = new javax.swing.JLabel();
         OrojLabel2 = new javax.swing.JLabel();
         OrojLabel6 = new javax.swing.JLabel();
-        VidajLabel3 = new javax.swing.JLabel();
         LogojLabel7 = new javax.swing.JLabel();
+        VidajLabel3 = new javax.swing.JLabel();
         VidajLabel8 = new javax.swing.JLabel();
         VidajProgressBar1 = new javax.swing.JProgressBar();
         jButton1 = new javax.swing.JButton();
@@ -397,13 +360,13 @@ public class FrameGranja extends javax.swing.JFrame{
         OrojLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/Oro.PNG"))); // NOI18N
         GranjajPanel1.add(OrojLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 10, 50, 40));
 
+        LogojLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/Logo.PNG"))); // NOI18N
+        GranjajPanel1.add(LogojLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(1220, 600, 50, 40));
+
         VidajLabel3.setFont(new java.awt.Font("Engravers MT", 1, 36)); // NOI18N
         VidajLabel3.setForeground(new java.awt.Color(0, 0, 0));
         VidajLabel3.setText(""+Jugador.jugador1.getVida());
         GranjajPanel1.add(VidajLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 10, -1, -1));
-
-        LogojLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/Logo.PNG"))); // NOI18N
-        GranjajPanel1.add(LogojLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(1220, 600, 50, 40));
 
         VidajLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/Vida.PNG"))); // NOI18N
         GranjajPanel1.add(VidajLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 10, 40, 40));
@@ -451,68 +414,7 @@ public class FrameGranja extends javax.swing.JFrame{
     public void barraVida(){
         VidajProgressBar1.setValue(Jugador.jugador1.getVida());
     }
-    public void inicializarAcciones(){
-        for (int m = 0; m < condicionM; m++) {
-            for (int n = 0; n < condicionN; n++) {
-                int k=m;
-                int l=n;
-                suelo[m][n].addActionListener(new ActionListener() {
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        if (SiembrajToggleButton3.isSelected()) {
-                            if(sueloElegir[k][l].getPorcentaje()==0.35){
-                                JOptionPane.showMessageDialog(FrameGranja.this, "No puedes sembrar en agua");;
-                            }
-                            else if(sueloElegir[k][l].getPorcentaje()==0.25){
-                                JOptionPane.showMessageDialog(FrameGranja.this, "No podemos hacer nada en el desierto");
-                            }
-                            else{
-                                if (PescarjToggleButton4.isSelected()){
-                                    JOptionPane.showMessageDialog(FrameGranja.this, "Quita la opcion pesca para poder sembrar");
-                                }
-                                else{
-                                    if(Jugador.jugador1.getMonedas()>=50){
-                                        suelo[k][l].setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/AccionSembrar.PNG")));
-                                        Jugador.jugador1.setMonedas(Jugador.jugador1.getMonedas()-50);
-                                        OrojLabel2.setText(""+Jugador.jugador1.getMonedas());  
-                                    }
-                                    else{
-                                        JOptionPane.showMessageDialog(FrameGranja.this, "Necesitas mas dinero para poder sembrar");
-                                    }
-                                }
-                            }
-                        }
-                        if (PescarjToggleButton4.isSelected()) {
-                            if(sueloElegir[k][l].getPorcentaje()==0.35){
-                                if (SiembrajToggleButton3.isSelected()){
-                                    JOptionPane.showMessageDialog(FrameGranja.this, "Quita la opcion sembrar para poder pescar");
-                                }
-                                else{
-                                    if(Jugador.jugador1.getMonedas()>=100){
-                                        suelo[k][l].setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/AccionPescar.PNG")));
-                                        Jugador.jugador1.setMonedas(Jugador.jugador1.getMonedas()-100);
-                                        OrojLabel2.setText(""+Jugador.jugador1.getMonedas());
-                                    }
-                                    else{
-                                        JOptionPane.showMessageDialog(FrameGranja.this, "Necesitas mas dinero para poder pescar");
-                                    }
-                                }
-                                
-                            }
-                            else if(sueloElegir[k][l].getPorcentaje()==0.25){
-                                JOptionPane.showMessageDialog(FrameGranja.this, "No podemos hacer nada en el desierto");
-                            }
-                            else{
-                                JOptionPane.showMessageDialog(FrameGranja.this, "No puedes pescar en grama");;
-                            }
-                        }
-                    }
-                }); 
-            }
-        }
         
-    }
-    
     private void LimpiarTerrenoCasillajToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LimpiarTerrenoCasillajToggleButton2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_LimpiarTerrenoCasillajToggleButton2ActionPerformed
@@ -612,8 +514,7 @@ public class FrameGranja extends javax.swing.JFrame{
 
     private void BodegajButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BodegajButton2ActionPerformed
         this.setVisible(false);
-        LlamadoInstancias.bodega();
-        
+        LlamadoInstancias.bodega();    
     }//GEN-LAST:event_BodegajButton2ActionPerformed
 
     private void ComerAnimalesjToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComerAnimalesjToggleButton1ActionPerformed
@@ -629,83 +530,56 @@ public class FrameGranja extends javax.swing.JFrame{
         JOptionPane.showMessageDialog(FrameGranja.this, "Fin del juego, vuelve pronto "+Jugador.jugador1.getNick());
         System.exit(0);
     }//GEN-LAST:event_jButton1ActionPerformed
-    public class Vida extends Thread{
-    
-    @Override
-    public void run() {
-        Jugador.jugador1.setVida(100);
-        try {
-            Vida.sleep(30000);
-        } catch (InterruptedException e) {
-            System.out.println("Error en el hilo vida carga "+e);
-        }
-        JOptionPane.showMessageDialog(FrameGranja.this, "Alimentate "+Jugador.jugador1.getNick());
-        for (int i = 0; i < 100; i++) {
-            Jugador.jugador1.setVida(Jugador.jugador1.getVida()-1);
-            VidajProgressBar1.setValue(Jugador.jugador1.getVida());
-            VidajLabel3.setText(""+Jugador.jugador1.getVida());
-            try{
-                Vida.sleep(500);
-            }catch(InterruptedException e){
-                System.out.println("Error en el hilo vida "+e);
-                
-            }
-        }
-        if(Jugador.jugador1.getVida()==0){
-            JOptionPane.showMessageDialog(FrameGranja.this, "Fin del juego, vuelve pronto "+Jugador.jugador1.getNick());
-            System.exit(0);
-        }
-    }
-    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel AccionesjLabel3;
     private javax.swing.JLabel AnimalParcelajLabel4;
-    private javax.swing.JButton BodegajButton2;
+    public static javax.swing.JButton BodegajButton2;
     private javax.swing.JLabel BodegajLabel2;
-    private javax.swing.JToggleButton ComerAnimalesjToggleButton1;
-    private javax.swing.JButton ComerjButton2;
+    public static javax.swing.JToggleButton ComerAnimalesjToggleButton1;
+    public static javax.swing.JButton ComerjButton2;
     private javax.swing.JLabel CrearParcelajLabel4;
     private javax.swing.JLabel DarComerAnimalesjLabel2;
-    private javax.swing.JPanel GranjajPanel1;
-    private javax.swing.JToggleButton LimpiarTerrenoCasillajToggleButton2;
-    private javax.swing.JToggleButton LimpiarTerrenojToggleButton2;
+    public static javax.swing.JPanel GranjajPanel1;
+    public static javax.swing.JToggleButton LimpiarTerrenoCasillajToggleButton2;
+    public static javax.swing.JToggleButton LimpiarTerrenojToggleButton2;
     private javax.swing.JLabel LimpiarTodasParcelasjLabel2;
-    private javax.swing.JButton LimpiarTodojButton1;
+    public static javax.swing.JButton LimpiarTodojButton1;
     private javax.swing.JLabel LimpiarUnaParcelajLabel2;
     private javax.swing.JLabel LimpiezajLabel2;
     private javax.swing.JLabel LlamadoNickjLabel1;
     private javax.swing.JLabel LogojLabel7;
     private javax.swing.JLabel MenujLabel4;
-    private javax.swing.JButton MercadojButton3;
+    public static javax.swing.JButton MercadojButton3;
     private javax.swing.JLabel NoDestacejLabel2;
-    private javax.swing.JLabel OrojLabel2;
+    public static javax.swing.JLabel OrojLabel2;
     private javax.swing.JLabel OrojLabel6;
     private javax.swing.JLabel ParcelaAlimento2jLabel6;
     private javax.swing.JLabel ParcelaAlimentojLabel5;
-    private javax.swing.JToggleButton ParcelaDestacejToggleButton1;
+    public static javax.swing.JToggleButton ParcelaDestacejToggleButton1;
     private javax.swing.JLabel ParcelaMateriaPrima2jLabel4;
     private javax.swing.JLabel ParcelaMateriaPrimajLabel4;
-    private javax.swing.JToggleButton ParcelaSinDestacejToggleButton1;
-    private javax.swing.JToggleButton ParcelasjToggleButton5;
+    public static javax.swing.JToggleButton ParcelaSinDestacejToggleButton1;
+    public static javax.swing.JToggleButton ParcelasjToggleButton5;
     private javax.swing.JLabel PescarjLabel3;
-    private javax.swing.JToggleButton PescarjToggleButton4;
+    public static javax.swing.JToggleButton PescarjToggleButton4;
     private javax.swing.JLabel PorParcelajLabel2;
-    private javax.swing.JToggleButton ProcesarParcelaAlimentojToggleButton4;
-    private javax.swing.JToggleButton ProcesarParcelaMateriajToggleButton5;
-    private javax.swing.JToggleButton ProcesarParcelajToggleButton3;
+    public static javax.swing.JToggleButton ProcesarParcelaAlimentojToggleButton4;
+    public static javax.swing.JToggleButton ProcesarParcelaMateriajToggleButton5;
+    public static javax.swing.JToggleButton ProcesarParcelajToggleButton3;
     private javax.swing.JLabel ProcesarjLabel1;
-    private javax.swing.JButton ReportesjButton4;
+    public static javax.swing.JButton ReportesjButton4;
     private javax.swing.JLabel ReportesjLabel1;
     private javax.swing.JLabel SembrarjLabel2;
-    private javax.swing.JToggleButton SiembrajToggleButton3;
-    private javax.swing.JLabel VidajLabel3;
+    public static javax.swing.JToggleButton SiembrajToggleButton3;
+    public static javax.swing.JLabel VidajLabel3;
     private javax.swing.JLabel VidajLabel8;
-    private javax.swing.JProgressBar VidajProgressBar1;
+    public static javax.swing.JProgressBar VidajProgressBar1;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JPanel jPanel1;
+    public static javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

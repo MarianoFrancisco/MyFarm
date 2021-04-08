@@ -1,5 +1,5 @@
 package suelos;
-
+import instancias.*;
 /**
  *
  * @author Mariano
