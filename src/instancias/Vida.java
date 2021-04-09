@@ -5,6 +5,8 @@
  */
 package instancias;
 import static instancias.FrameGranja.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import jugador.*;
 /**
@@ -16,9 +18,9 @@ public class Vida extends Thread{
     public void run() {
         Jugador.jugador1.setVida(100);
         try {
-            Vida.sleep(3000);
-        } catch (InterruptedException e) {
-            System.out.println("Error en el hilo vida carga "+e);
+            Vida.sleep(30000);
+        } catch (InterruptedException ex) {
+            System.out.println("Excepcion en "+ex);
         }
         JOptionPane.showMessageDialog(null, "Alimentate "+Jugador.jugador1.getNick());
         for (int i = 0; i < 100; i++) {
@@ -33,6 +35,7 @@ public class Vida extends Thread{
                 
             }
         }
+        
         if(Jugador.jugador1.getVida()==0){
             JOptionPane.showMessageDialog(null, "Fin del juego, vuelve pronto "+Jugador.jugador1.getNick());
             System.exit(0);

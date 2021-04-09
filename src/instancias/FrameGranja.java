@@ -511,7 +511,7 @@ public class FrameGranja extends javax.swing.JFrame{
     }//GEN-LAST:event_ParcelasjToggleButton5ActionPerformed
 
     private void ComerjButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComerjButton2ActionPerformed
-
+        
     }//GEN-LAST:event_ComerjButton2ActionPerformed
 
     private void BodegajButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BodegajButton2ActionPerformed

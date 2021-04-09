@@ -38,6 +38,7 @@ public class FrameCrearAnimalesPlantas extends javax.swing.JFrame {
         CrearAnimalesPlantas.iniciarPlantasFrutas();
         CrearAnimalesPlantas.iniciarPlantasGranos();
         CrearAnimalesPlantas.animalesCreados();
+        CrearAnimalesPlantas.plantasCreadas();
     }
     /**
      * This method is called from within the constructor to initialize the form.

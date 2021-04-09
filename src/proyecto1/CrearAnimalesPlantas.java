@@ -12,21 +12,22 @@ import plantasGranos.*;
  */
 public class CrearAnimalesPlantas {
     //Llamamos nuevos animales
-    static Plantas plantas[]= new Plantas[6];
-    static Animales animales[]= new Animales[6];
-    static Maiz maiz;
-    static Frijol frijol;
-    static Arroz arroz;
-    static Manzano manzano;//frijol,arroz,naranjo,banano.  , oveja, llama, cerdo, pavo.
-    static Naranjo naranjo;
-    static Banano banano;
-    static Vaca vaca;
-    static Oveja oveja;
-    static Llama llama;
-    static Gallina gallina;
+    public static Plantas plantas[]= new Plantas[6];
+    public static Animales animales[]= new Animales[6];
+    public static PlantaVacia plantaVacia = new PlantaVacia();
+    public static Maiz maiz;
+    public static Frijol frijol;
+    public static Arroz arroz;
+    public static Manzano manzano;//frijol,arroz,naranjo,banano.  , oveja, llama, cerdo, pavo.
+    public static Naranjo naranjo;
+    public static Banano banano;
+    public static Vaca vaca;
+    public static Oveja oveja;
+    public static Llama llama;
+    public static Gallina gallina;
     public static Cerdo cerdo;
-    static Pavo pavo;
-    static CrearAnimalesPlantas crearAnimalesPlantas;
+    public static Pavo pavo;
+    public static CrearAnimalesPlantas crearAnimalesPlantas;
     public static void LlamadoCrearAnimales(){
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -64,10 +65,10 @@ public class CrearAnimalesPlantas {
     }
     public static void plantasCreadas(){
         plantas[0]= maiz;
-        plantas[1]= null;
-        plantas[2]= null;
+        plantas[1]= plantaVacia;
+        plantas[2]= plantaVacia;
         plantas[3]= manzano;
-        plantas[4]= null;
-        plantas[5]= null;
+        plantas[4]= plantaVacia;
+        plantas[5]= plantaVacia;
     }
 }

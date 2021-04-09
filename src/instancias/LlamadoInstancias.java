@@ -39,5 +39,19 @@ public class LlamadoInstancias {
             }
         });
     }
+    public static void vender(){  
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new FrameVender().setVisible(true);
+            }
+        });
+    }
+    public static void comprar(){
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new FrameComprar().setVisible(true);
+            }
+        });
+    }
     
 }
