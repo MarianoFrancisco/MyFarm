@@ -1,5 +1,5 @@
 package instancias;
-import datosMercado.criasSemillasVisibles;
+import manejadorDatos.CriasSemillasVisibles;
 import java.awt.Graphics;
 import java.awt.Image;
 import javax.swing.ImageIcon;
@@ -20,7 +20,7 @@ public class FrameComprar extends javax.swing.JFrame {
     public FrameComprar() {
         this.setContentPane(fondoComprar);
         initComponents();
-        criasSemillasVisibles.visibilidadCompra();
+        CriasSemillasVisibles.visibilidadCompra();
         this.setLocationRelativeTo(null);
         
     }

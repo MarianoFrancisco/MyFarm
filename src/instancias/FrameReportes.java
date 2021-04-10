@@ -12,6 +12,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import jugador.*;
 import proyecto1.*;
+import manejadorDatos.*;
 /**
  *
  * @author Mariano
@@ -82,7 +83,7 @@ public class FrameReportes extends javax.swing.JFrame {
 
         CeldasCompradasjLabel1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         CeldasCompradasjLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        CeldasCompradasjLabel1.setText("Cantidad de celdas de terreno compradas: ");
+        CeldasCompradasjLabel1.setText("Cantidad de celdas de terreno compradas: "+EstablecerReportes.establecerReportes.getCeldasCompradas());
         jPanel1.add(CeldasCompradasjLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 330, -1, -1));
 
         ReportePlantasjLabel2.setFont(new java.awt.Font("Engravers MT", 1, 18)); // NOI18N
@@ -110,27 +111,27 @@ public class FrameReportes extends javax.swing.JFrame {
 
         OroGeneradojLabel3.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         OroGeneradojLabel3.setForeground(new java.awt.Color(0, 0, 0));
-        OroGeneradojLabel3.setText("Oro generado por la granja: ");
+        OroGeneradojLabel3.setText("Oro generado por la granja: "+EstablecerReportes.establecerReportes.getOroGenerado());
         jPanel1.add(OroGeneradojLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 180, -1, -1));
 
         AlimentoGeneradojLabel4.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         AlimentoGeneradojLabel4.setForeground(new java.awt.Color(0, 0, 0));
-        AlimentoGeneradojLabel4.setText("Alimento generado por la granja: ");
+        AlimentoGeneradojLabel4.setText("Alimento generado por la granja: "+EstablecerReportes.establecerReportes.getAlimentoGenerado());
         jPanel1.add(AlimentoGeneradojLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 230, -1, -1));
 
         AlimentoConsumidojLabel5.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         AlimentoConsumidojLabel5.setForeground(new java.awt.Color(0, 0, 0));
-        AlimentoConsumidojLabel5.setText("Alimento consumido por el granjero: ");
+        AlimentoConsumidojLabel5.setText("Alimento consumido por el granjero: "+EstablecerReportes.establecerReportes.getAlimentoConsumido());
         jPanel1.add(AlimentoConsumidojLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 280, -1, -1));
 
         CriasCompradasjLabel3.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         CriasCompradasjLabel3.setForeground(new java.awt.Color(0, 0, 0));
-        CriasCompradasjLabel3.setText("Cantidad de crias compradas: ");
+        CriasCompradasjLabel3.setText("Cantidad de crias compradas: "+EstablecerReportes.establecerReportes.getCriasCompradas());
         jPanel1.add(CriasCompradasjLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 70, -1, -1));
 
         UnidadesDestazadasjLabel3.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         UnidadesDestazadasjLabel3.setForeground(new java.awt.Color(0, 0, 0));
-        UnidadesDestazadasjLabel3.setText("Cantidad de unidades destazadas: ");
+        UnidadesDestazadasjLabel3.setText("Cantidad de unidades destazadas: "+EstablecerReportes.establecerReportes.getUnidadesDestazadas());
         jPanel1.add(UnidadesDestazadasjLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 120, -1, -1));
 
         ColumnaReportejLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/ColumnaReporte.jpg"))); // NOI18N
@@ -138,12 +139,12 @@ public class FrameReportes extends javax.swing.JFrame {
 
         SemllasAdquiridasjLabel4.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         SemllasAdquiridasjLabel4.setForeground(new java.awt.Color(0, 0, 0));
-        SemllasAdquiridasjLabel4.setText("Cantidad de crias compradas: ");
+        SemllasAdquiridasjLabel4.setText("Cantidad de semillas compradas: "+EstablecerReportes.establecerReportes.getSemillasCompradas());
         jPanel1.add(SemllasAdquiridasjLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 80, -1, -1));
 
         CeldasSembradasjLabel4.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         CeldasSembradasjLabel4.setForeground(new java.awt.Color(0, 0, 0));
-        CeldasSembradasjLabel4.setText("Cantidad de celdas de terreno sembradas: ");
+        CeldasSembradasjLabel4.setText("Cantidad de celdas de terreno sembradas: "+EstablecerReportes.establecerReportes.getCeldasSembradas());
         jPanel1.add(CeldasSembradasjLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 130, -1, -1));
 
         ColumnaReportejLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/ColumnaReporte.jpg"))); // NOI18N

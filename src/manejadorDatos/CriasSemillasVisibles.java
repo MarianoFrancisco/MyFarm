@@ -1,11 +1,11 @@
-package datosMercado;
+package manejadorDatos;
 import static proyecto1.CrearAnimalesPlantas.*;
 import static instancias.FrameComprar.*;
 /**
  *
  * @author Mariano
  */
-public class criasSemillasVisibles {
+public class CriasSemillasVisibles {
     public static void visibilidadCompra(){
         if(plantas[1].getPrecioCompraSemilla()!=4){
             FrijoljButton2.setVisible(false);
