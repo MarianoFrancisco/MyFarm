@@ -7,7 +7,7 @@ import estructuraAnimales.*;
 public class Pavo extends Animales implements Omnivoros{
 
     public Pavo() {
-        super("Pavo");
+        super("Pavo",100,7,0,0,18);
     }
 
     @Override

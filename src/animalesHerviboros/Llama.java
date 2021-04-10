@@ -6,8 +6,8 @@ import estructuraAnimales.*;
  */
 public class Llama extends Animales implements Herviboros{
 
-    public Llama() {
-        super("Llama");
+    public Llama() {//genera lana
+        super("Llama",60,4,5,10,6);
     }
 
     @Override

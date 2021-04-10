@@ -12,7 +12,7 @@ import estructuraAnimales.*;
 public class Cerdo extends Animales implements Omnivoros{
 
     public Cerdo() {
-        super("Cerdo");
+        super("Cerdo",50,10,0,0,8);
     }
 
     @Override

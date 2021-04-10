@@ -24,6 +24,21 @@ public class CriasSemillasVisibles {
             BananojButton4.setVisible(false);
             BananojLabel6.setVisible(false);
         }
-        
+        if(animales[1].getPrecioCompra()!=50){
+            CerdojButton4.setVisible(false);
+            CerdojLabel4.setVisible(false);
+        }
+        if(animales[2].getPrecioCompra()!=100){
+            PavojButton5.setVisible(false);
+            PavojLabel7.setVisible(false);
+        }
+        if(animales[4].getPrecioCompra()!=70){
+            OvejajButton3.setVisible(false);
+            OvejajLabel3.setVisible(false);
+        }
+        if(animales[5].getPrecioCompra()!=60){
+            LlamajButton2.setVisible(false);
+            LlamajLabel2.setVisible(false);
+        }
     }
 }

@@ -7,8 +7,8 @@ import estructuraAnimales.*;
  */
 public class Oveja extends Animales implements Herviboros{
 
-    public Oveja() {
-        super("Oveja");
+    public Oveja() {//genera lana tambien
+        super("Oveja",70,6,4,15,5);
     }
 
     @Override

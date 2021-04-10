@@ -15,6 +15,7 @@ public class CrearAnimalesPlantas {
     public static Plantas plantas[]= new Plantas[6];
     public static Animales animales[]= new Animales[6];
     public static PlantaVacia plantaVacia = new PlantaVacia();
+    public static AnimalVacio animalVacio = new AnimalVacio();
     public static Maiz maiz;
     public static Frijol frijol;
     public static Arroz arroz;
@@ -36,7 +37,7 @@ public class CrearAnimalesPlantas {
         });
     }
     public static void iniciarAnimalesHerviboros(){
-        vaca = new Vaca();
+        vaca = new Vaca(10,3);//añadimos cantidad leche y precio
         oveja= new Oveja();
         llama= new Llama();
     }
@@ -57,11 +58,11 @@ public class CrearAnimalesPlantas {
     }
     public static void animalesCreados(){
         animales[0]= gallina;
-        animales[1]= null;
-        animales[2]= null;
+        animales[1]= animalVacio;
+        animales[2]= animalVacio;
         animales[3]= vaca;
-        animales[4]= null;
-        animales[5]= null;
+        animales[4]= animalVacio;
+        animales[5]= animalVacio;
     }
     public static void plantasCreadas(){
         plantas[0]= maiz;
