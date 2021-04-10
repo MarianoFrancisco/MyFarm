@@ -16,11 +16,11 @@ public class CriasSemillasVisibles {
             ArrozjButton1.setVisible(false);
             ArrozjLabel1.setVisible(false);
         }
-        if(plantas[4].getPrecioCompraSemilla()!=5){
+        if(plantas[4].getPrecioCompraSemilla()!=15){
             NaranjojButton3.setVisible(false);
             NaranjojLabel3.setVisible(false);
         }
-        if(plantas[5].getPrecioCompraSemilla()!=5){
+        if(plantas[5].getPrecioCompraSemilla()!=10){
             BananojButton4.setVisible(false);
             BananojLabel6.setVisible(false);
         }

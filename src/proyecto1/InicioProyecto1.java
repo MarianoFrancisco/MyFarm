@@ -20,7 +20,7 @@ public class InicioProyecto1 extends javax.swing.JFrame {
     public InicioProyecto1() {
         this.setContentPane(fondoInicio);
         initComponents();
-        
+        EstablecerReportes.creadorDatosReportes();
         this.setLocationRelativeTo(null);
     }
 

@@ -33,6 +33,6 @@ public class LlamarTiempo {
         this.llamarSegundos = llamarSegundos;
     }
     public static void tiempo(){
-         llamarTiempo = new LlamarTiempo(5,3);
+         llamarTiempo = new LlamarTiempo(0,0);
     }
 }

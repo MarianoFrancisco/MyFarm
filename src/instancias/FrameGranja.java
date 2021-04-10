@@ -5,12 +5,14 @@
  */
 package instancias;
 
+import proyecto1.Tiempo;
 import java.awt.Graphics;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import jugador.Jugador;
+import proyecto1.LlamarTiempo;
 
 /**
  *
@@ -23,6 +25,7 @@ public class FrameGranja extends javax.swing.JFrame{
      */
     
     public Vida vida = new Vida();
+    public Tiempo tiempo = new Tiempo();
     FondoInicio fondoInicioGranja = new FondoInicio();
 
     public static FrameGranja FrameGranja;
@@ -39,6 +42,8 @@ public class FrameGranja extends javax.swing.JFrame{
         InicializarSuelos.llamarInicializarSuelos();
         InicializarSuelos.inicializarSuelos.inicializarSuelos();
         InicializarSuelos.inicializarSuelos.inicializarAcciones();
+        LlamarTiempo.tiempo();
+        tiempo.start();
         vida.start();
         barraVida();
         this.setLocationRelativeTo(null);

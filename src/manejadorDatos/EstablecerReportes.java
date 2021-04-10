@@ -92,4 +92,10 @@ public class EstablecerReportes {
     public static void creadorDatosReportes(){
         establecerReportes=new EstablecerReportes(0,0,0,0,0,0,0,0);
     }
+    public static void sumarSemilla(){
+        establecerReportes.setSemillasCompradas(establecerReportes.getSemillasCompradas()+1);
+    }
+    public static void sumarCrias(){
+        establecerReportes.setCriasCompradas(establecerReportes.getCriasCompradas()+1);
+    }
 }

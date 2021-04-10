@@ -6,7 +6,8 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import jugador.*;
-import static proyecto1.CrearAnimalesPlantas.*;
+import manejadorDatos.EstablecerReportes;
+import static manejadorDatos.EstablecerReportes.*;
 /**
  *
  * @author Mariano
@@ -425,56 +426,141 @@ public class FrameComprar extends javax.swing.JFrame {
     }//GEN-LAST:event_FinalizarJuegojButton2ActionPerformed
 
     private void NaranjojButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NaranjojButton3ActionPerformed
-        
+        if(Jugador.jugador1.getMonedas()>=15){
+            Jugador.jugador1.setMonedas(Jugador.jugador1.getMonedas()-15);
+            JOptionPane.showMessageDialog(FrameComprar.this, "Adquiriste una semilla de naranjo "+Jugador.jugador1.getNick() + " te quedan "+Jugador.jugador1.getMonedas()+" monedas");
+            EstablecerReportes.sumarSemilla();
+        }
+        else{
+            JOptionPane.showMessageDialog(FrameComprar.this, "No tienes suficiente dinero "+Jugador.jugador1.getNick());
+        }
     }//GEN-LAST:event_NaranjojButton3ActionPerformed
 
     private void MaizjButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MaizjButton2ActionPerformed
-        
+        if(Jugador.jugador1.getMonedas()>=10){
+            Jugador.jugador1.setMonedas(Jugador.jugador1.getMonedas()-10);
+            JOptionPane.showMessageDialog(FrameComprar.this, "Adquiriste una semilla de maiz "+Jugador.jugador1.getNick() + " te quedan "+Jugador.jugador1.getMonedas()+" monedas");
+            EstablecerReportes.sumarSemilla();
+        }
+        else{
+            JOptionPane.showMessageDialog(FrameComprar.this, "No tienes suficiente dinero "+Jugador.jugador1.getNick());
+        }
     }//GEN-LAST:event_MaizjButton2ActionPerformed
 
     private void ArrozjButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ArrozjButton1ActionPerformed
-        
+        if(Jugador.jugador1.getMonedas()>=5){
+            Jugador.jugador1.setMonedas(Jugador.jugador1.getMonedas()-5);
+            JOptionPane.showMessageDialog(FrameComprar.this, "Adquiriste una semilla de arroz "+Jugador.jugador1.getNick() + " te quedan "+Jugador.jugador1.getMonedas()+" monedas");
+            EstablecerReportes.sumarSemilla();
+        }
+        else{
+            JOptionPane.showMessageDialog(FrameComprar.this, "No tienes suficiente dinero "+Jugador.jugador1.getNick());
+        }
     }//GEN-LAST:event_ArrozjButton1ActionPerformed
 
     private void FrijoljButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FrijoljButton2ActionPerformed
-        
+        if(Jugador.jugador1.getMonedas()>=4){
+            Jugador.jugador1.setMonedas(Jugador.jugador1.getMonedas()-4);
+            JOptionPane.showMessageDialog(FrameComprar.this, "Adquiriste una semilla de frijol "+Jugador.jugador1.getNick() + " te quedan "+Jugador.jugador1.getMonedas()+" monedas");
+            EstablecerReportes.sumarSemilla();
+        }
+        else{
+            JOptionPane.showMessageDialog(FrameComprar.this, "No tienes suficiente dinero "+Jugador.jugador1.getNick());
+        }
     }//GEN-LAST:event_FrijoljButton2ActionPerformed
 
     private void CerdojButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CerdojButton4ActionPerformed
-        
+        if(Jugador.jugador1.getMonedas()>=50){
+            Jugador.jugador1.setMonedas(Jugador.jugador1.getMonedas()-50);
+            JOptionPane.showMessageDialog(FrameComprar.this, "Adquiriste una cria de Cerdo "+Jugador.jugador1.getNick() + " te quedan "+Jugador.jugador1.getMonedas()+" monedas");
+            EstablecerReportes.sumarCrias();
+        }
+        else{
+            JOptionPane.showMessageDialog(FrameComprar.this, "No tienes suficiente dinero "+Jugador.jugador1.getNick());
+        }
     }//GEN-LAST:event_CerdojButton4ActionPerformed
 
     private void VacajButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VacajButton3ActionPerformed
-        
+        if(Jugador.jugador1.getMonedas()>=220){
+            Jugador.jugador1.setMonedas(Jugador.jugador1.getMonedas()-220);
+            JOptionPane.showMessageDialog(FrameComprar.this, "Adquiriste una cria de Vaca "+Jugador.jugador1.getNick() + " te quedan "+Jugador.jugador1.getMonedas()+" monedas");
+            EstablecerReportes.sumarCrias();
+        }
+        else{
+            JOptionPane.showMessageDialog(FrameComprar.this, "No tienes suficiente dinero "+Jugador.jugador1.getNick());
+        }
     }//GEN-LAST:event_VacajButton3ActionPerformed
 
     private void LlamajButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LlamajButton2ActionPerformed
-        
+        if(Jugador.jugador1.getMonedas()>=60){
+            Jugador.jugador1.setMonedas(Jugador.jugador1.getMonedas()-60);
+            JOptionPane.showMessageDialog(FrameComprar.this, "Adquiriste una cria de Llama "+Jugador.jugador1.getNick() + " te quedan "+Jugador.jugador1.getMonedas()+" monedas");
+            EstablecerReportes.sumarCrias();
+        }
+        else{
+            JOptionPane.showMessageDialog(FrameComprar.this, "No tienes suficiente dinero "+Jugador.jugador1.getNick());
+        }
     }//GEN-LAST:event_LlamajButton2ActionPerformed
 
     private void OvejajButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OvejajButton3ActionPerformed
-        
+        if(Jugador.jugador1.getMonedas()>=70){
+            Jugador.jugador1.setMonedas(Jugador.jugador1.getMonedas()-70);
+            JOptionPane.showMessageDialog(FrameComprar.this, "Adquiriste una cria de Oveja "+Jugador.jugador1.getNick() + " te quedan "+Jugador.jugador1.getMonedas()+" monedas");
+            EstablecerReportes.sumarCrias();
+        }
+        else{
+            JOptionPane.showMessageDialog(FrameComprar.this, "No tienes suficiente dinero "+Jugador.jugador1.getNick());
+        }
     }//GEN-LAST:event_OvejajButton3ActionPerformed
 
     private void GallinajButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GallinajButton4ActionPerformed
-        // TODO add your handling code here:
+        if(Jugador.jugador1.getMonedas()>=45){
+            Jugador.jugador1.setMonedas(Jugador.jugador1.getMonedas()-45);
+            JOptionPane.showMessageDialog(FrameComprar.this, "Adquiriste una cria de Gallina "+Jugador.jugador1.getNick() + " te quedan "+Jugador.jugador1.getMonedas()+" monedas");
+            EstablecerReportes.sumarCrias();
+        }
+        else{
+            JOptionPane.showMessageDialog(FrameComprar.this, "No tienes suficiente dinero "+Jugador.jugador1.getNick());
+        }
     }//GEN-LAST:event_GallinajButton4ActionPerformed
 
     private void PavojButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PavojButton5ActionPerformed
-        // TODO add your handling code here:
+        if(Jugador.jugador1.getMonedas()>=100){
+            Jugador.jugador1.setMonedas(Jugador.jugador1.getMonedas()-100);
+            JOptionPane.showMessageDialog(FrameComprar.this, "Adquiriste una cria de Pavo "+Jugador.jugador1.getNick() + " te quedan "+Jugador.jugador1.getMonedas()+" monedas");
+            EstablecerReportes.sumarCrias();
+        }
+        else{
+            JOptionPane.showMessageDialog(FrameComprar.this, "No tienes suficiente dinero "+Jugador.jugador1.getNick());
+        }
     }//GEN-LAST:event_PavojButton5ActionPerformed
 
     private void ManzanojButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ManzanojButton3ActionPerformed
-        // TODO add your handling code here:
+        if(Jugador.jugador1.getMonedas()>=20){
+            Jugador.jugador1.setMonedas(Jugador.jugador1.getMonedas()-20);
+            JOptionPane.showMessageDialog(FrameComprar.this, "Adquiriste una semilla de manzano "+Jugador.jugador1.getNick() + " te quedan "+Jugador.jugador1.getMonedas()+" monedas");
+            EstablecerReportes.sumarSemilla();
+        }
+        else{
+            JOptionPane.showMessageDialog(FrameComprar.this, "No tienes suficiente dinero "+Jugador.jugador1.getNick());
+        }
     }//GEN-LAST:event_ManzanojButton3ActionPerformed
 
     private void BananojButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BananojButton4ActionPerformed
-        // TODO add your handling code here:
+        if(Jugador.jugador1.getMonedas()>=10){
+            Jugador.jugador1.setMonedas(Jugador.jugador1.getMonedas()-10);
+            JOptionPane.showMessageDialog(FrameComprar.this, "Adquiriste una semilla de banano "+Jugador.jugador1.getNick() + " te quedan "+Jugador.jugador1.getMonedas()+" monedas");
+            EstablecerReportes.sumarSemilla();
+        }
+        else{
+            JOptionPane.showMessageDialog(FrameComprar.this, "No tienes suficiente dinero "+Jugador.jugador1.getNick());
+        }
     }//GEN-LAST:event_BananojButton4ActionPerformed
 
     private void BarcojButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BarcojButton2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_BarcojButton2ActionPerformed
+    
     class FondoInicio extends JPanel{
         private Image imagen;
         @Override

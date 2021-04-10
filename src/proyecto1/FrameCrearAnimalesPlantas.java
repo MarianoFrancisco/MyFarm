@@ -22,13 +22,11 @@ public class FrameCrearAnimalesPlantas extends javax.swing.JFrame {
     /**
      * Creates new form FrameCrearAnimalesPlantas
      */
-    public Tiempo tiempo = new Tiempo();
+    
     FondoInicio fondoInicio = new FondoInicio();
     public FrameCrearAnimalesPlantas() {
         this.setContentPane(fondoInicio);
         initComponents();
-        LlamarTiempo.tiempo();
-        tiempo.start();
         Crear();
         this.setLocationRelativeTo(null);
     }
@@ -289,27 +287,7 @@ public class FrameCrearAnimalesPlantas extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    int minutos=0;
-    int segundos=0;
-    public class Tiempo extends Thread{
-    @Override
-    
-    public void run() {
-        
-            for (minutos = 0;  minutos< 60; minutos++) {
-                for (segundos = 0; segundos < 60; segundos++) {
-                    LlamarTiempo.llamarTiempo.setLlamarMinutos(minutos);
-                    LlamarTiempo.llamarTiempo.setLlamarSegundos(segundos);
-                    try{
-                    Thread.sleep(1000);
-                    }catch(InterruptedException e){
-                        System.out.println("Error en inicio tiempo "+ e);
-                    }
-                }
-            }
-    }
-        
-    }
+
     class FondoInicio extends JPanel{
         private Image imagen;
         @Override

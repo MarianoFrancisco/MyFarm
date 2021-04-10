@@ -5,8 +5,6 @@
  */
 package instancias;
 import static instancias.FrameGranja.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import jugador.*;
 /**
@@ -26,7 +24,7 @@ public class Vida extends Thread{
         for (int i = 0; i < 100; i++) {
             Jugador.jugador1.setVida(Jugador.jugador1.getVida()-1);
             
-            FrameGranja.VidajProgressBar1.setValue(Jugador.jugador1.getVida());
+            VidajProgressBar1.setValue(Jugador.jugador1.getVida());
             VidajLabel3.setText(""+Jugador.jugador1.getVida());
             try{
                 Vida.sleep(500);
