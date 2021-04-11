@@ -11,6 +11,10 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import manejadorDatos.AlmacenamientoUsuarioAnimales;
+import manejadorDatos.AlmacenamientoUsuarioComidas;
+import manejadorDatos.AlmacenamientoUsuarioFertilizante;
+import manejadorDatos.AlmacenamientoUsuarioPlantas;
 import static proyecto1.CrearAnimalesPlantas.*;
 
 /**
@@ -30,14 +34,7 @@ public class FrameCrearAnimalesPlantas extends javax.swing.JFrame {
         Crear();
         this.setLocationRelativeTo(null);
     }
-    public void Crear(){
-        CrearAnimalesPlantas.iniciarAnimalesHerviboros();
-        CrearAnimalesPlantas.iniciarAnimalesOmnivoros();
-        CrearAnimalesPlantas.iniciarPlantasFrutas();
-        CrearAnimalesPlantas.iniciarPlantasGranos();
-        CrearAnimalesPlantas.animalesCreados();
-        CrearAnimalesPlantas.plantasCreadas();
-    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -287,7 +284,18 @@ public class FrameCrearAnimalesPlantas extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-
+    public void Crear(){
+        CrearAnimalesPlantas.iniciarAnimalesHerviboros();
+        CrearAnimalesPlantas.iniciarAnimalesOmnivoros();
+        CrearAnimalesPlantas.iniciarPlantasFrutas();
+        CrearAnimalesPlantas.iniciarPlantasGranos();
+        CrearAnimalesPlantas.animalesCreados();
+        CrearAnimalesPlantas.plantasCreadas();
+        AlmacenamientoUsuarioAnimales.crearUsuarioAnimales();
+        AlmacenamientoUsuarioComidas.crearUsuarioComidas();
+        AlmacenamientoUsuarioFertilizante.crearUsuarioFertlizante();
+        AlmacenamientoUsuarioPlantas.crearUsuarioPlantas();
+    }
     class FondoInicio extends JPanel{
         private Image imagen;
         @Override

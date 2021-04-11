@@ -13,8 +13,11 @@ public class EstablecerReportes {
     private int unidadesDestazadas;
     private int semillasCompradas;
     private int celdasSembradas;
+    private int fertilizantesComprados;
+    private int comidaHerviborosComprada;
+    private int comidaOmnivorosComprada;
     public static EstablecerReportes establecerReportes;
-    public EstablecerReportes(int oroGenerado,int alimentoGenerado,int alimentoConsumido,int celdasCompradas,int criasCompradas,int unidadesDestazadas,int semillasCompradas,int celdasSembradas){
+    public EstablecerReportes(int oroGenerado,int alimentoGenerado,int alimentoConsumido,int celdasCompradas,int criasCompradas,int unidadesDestazadas,int semillasCompradas,int celdasSembradas,int fertilizantesComprados,int comidaHerviborosComprada,int comidaOmnivorosComprada){
         this.oroGenerado=oroGenerado;
         this.alimentoGenerado=alimentoGenerado;
         this.alimentoConsumido=alimentoConsumido;
@@ -23,6 +26,9 @@ public class EstablecerReportes {
         this.unidadesDestazadas=unidadesDestazadas;
         this.semillasCompradas=semillasCompradas;
         this.celdasSembradas=celdasSembradas;
+        this.fertilizantesComprados=fertilizantesComprados;
+        this.comidaHerviborosComprada=comidaHerviborosComprada;
+        this.comidaOmnivorosComprada=comidaOmnivorosComprada;
     }
 
     public int getOroGenerado() {
@@ -88,14 +94,47 @@ public class EstablecerReportes {
     public void setCeldasSembradas(int celdasSembradas) {
         this.celdasSembradas = celdasSembradas;
     }
+
+    public int getFertilizantesComprados() {
+        return this.fertilizantesComprados;
+    }
+
+    public void setFertilizantesComprados(int fertilizantesComprados) {
+        this.fertilizantesComprados = fertilizantesComprados;
+    }
+
+    public int getComidaHerviborosComprada() {
+        return this.comidaHerviborosComprada;
+    }
+
+    public void setComidaHerviborosComprada(int comidaHerviborosComprada) {
+        this.comidaHerviborosComprada = comidaHerviborosComprada;
+    }
+
+    public int getComidaOmnivorosComprada() {
+        return this.comidaOmnivorosComprada;
+    }
+
+    public void setComidaOmnivorosComprada(int comidaOmnivorosComprada) {
+        this.comidaOmnivorosComprada = comidaOmnivorosComprada;
+    }
     
     public static void creadorDatosReportes(){
-        establecerReportes=new EstablecerReportes(0,0,0,0,0,0,0,0);
+        establecerReportes=new EstablecerReportes(0,0,0,0,0,0,0,0,0,0,0);
     }
     public static void sumarSemilla(){
         establecerReportes.setSemillasCompradas(establecerReportes.getSemillasCompradas()+1);
     }
     public static void sumarCrias(){
         establecerReportes.setCriasCompradas(establecerReportes.getCriasCompradas()+1);
+    }
+    public static void sumarFertlizanteComprado(){
+        establecerReportes.setFertilizantesComprados(establecerReportes.getFertilizantesComprados()+1);
+    }
+    public static void sumarComidaHerviboroComprada(){
+        establecerReportes.setComidaHerviborosComprada(establecerReportes.getComidaHerviborosComprada()+1);
+    }
+    public static void sumarComidaOmnivoroComprada(){
+        establecerReportes.setComidaOmnivorosComprada(establecerReportes.getComidaOmnivorosComprada()+1);
     }
 }

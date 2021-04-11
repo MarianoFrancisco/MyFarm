@@ -7,12 +7,13 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import jugador.Jugador;
+import manejadorDatos.AlmacenamientoUsuarioPlantas;
 import suelos.CreacionSueloInicial;
 import static suelos.CreacionSueloInicial.sueloElegir;
 import suelos.SueloAgua;
 import suelos.SueloDesierto;
 import suelos.SueloGrama;
-
+import static manejadorDatos.AlmacenamientoUsuarioPlantas.almacenamientoUsuarioPlantas;
 /**
  *
  * @author Mariano
@@ -74,13 +75,16 @@ public class InicializarSuelos {
                                     JOptionPane.showMessageDialog(null, "Quita la opcion pesca para poder sembrar");
                                 }
                                 else{
-                                    if(Jugador.jugador1.getMonedas()>=50){
+                                    if(almacenamientoUsuarioPlantas.getTotalSemillas()>0){
+                                        AlmacenamientoUsuarioPlantas.restarTotal();
+                                        LlamadoInstancias.sembrarSeleccion(); 
                                         suelo[k][l].setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/AccionSembrar.PNG")));
-                                        Jugador.jugador1.setMonedas(Jugador.jugador1.getMonedas()-50);
-                                        OrojLabel2.setText(""+Jugador.jugador1.getMonedas());  
+                                        
+                                        OrojLabel2.setText(""+Jugador.jugador1.getMonedas());
+                                        
                                     }
                                     else{
-                                        JOptionPane.showMessageDialog(null, "Necesitas mas dinero para poder sembrar");
+                                        JOptionPane.showMessageDialog(null, "Necesitas primero comprar semillas");
                                     }
                                 }
                             }
@@ -91,13 +95,13 @@ public class InicializarSuelos {
                                     JOptionPane.showMessageDialog(null, "Quita la opcion sembrar para poder pescar");
                                 }
                                 else{
-                                    if(Jugador.jugador1.getMonedas()>=100){
+                                    if(Jugador.jugador1.getBarco()>0){
+                                        Jugador.jugador1.setBarco(Jugador.jugador1.getBarco()-1);
                                         suelo[k][l].setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/AccionPescar.PNG")));
-                                        Jugador.jugador1.setMonedas(Jugador.jugador1.getMonedas()-100);
                                         OrojLabel2.setText(""+Jugador.jugador1.getMonedas());
                                     }
                                     else{
-                                        JOptionPane.showMessageDialog(null, "Necesitas mas dinero para poder pescar");
+                                        JOptionPane.showMessageDialog(null, "Necesitas primero comprar un barco");
                                     }
                                 }
                                 

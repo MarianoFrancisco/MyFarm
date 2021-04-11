@@ -6,8 +6,9 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import jugador.*;
+import manejadorDatos.*;
+import static manejadorDatos.AlmacenamientoUsuarioAnimales.almacenamientoUsuarioAnimales;
 import manejadorDatos.EstablecerReportes;
-import static manejadorDatos.EstablecerReportes.*;
 /**
  *
  * @author Mariano
@@ -79,7 +80,6 @@ public class FrameComprar extends javax.swing.JFrame {
         LlamajLabel2 = new javax.swing.JLabel();
         OvejajLabel3 = new javax.swing.JLabel();
         OvejajButton3 = new javax.swing.JButton();
-        FondojLabel2 = new javax.swing.JLabel();
         GallinajButton4 = new javax.swing.JButton();
         PavojButton5 = new javax.swing.JButton();
         VacajLabel6 = new javax.swing.JLabel();
@@ -88,9 +88,32 @@ public class FrameComprar extends javax.swing.JFrame {
         ManzanojLabel5 = new javax.swing.JLabel();
         BananojButton4 = new javax.swing.JButton();
         BananojLabel6 = new javax.swing.JLabel();
-        FondojLabel3 = new javax.swing.JLabel();
         ComprarBarcojLabel5 = new javax.swing.JLabel();
         BarcojButton2 = new javax.swing.JButton();
+        CerdojLabel5 = new javax.swing.JLabel();
+        PavojLabel8 = new javax.swing.JLabel();
+        PollojLabel6 = new javax.swing.JLabel();
+        VacajLabel7 = new javax.swing.JLabel();
+        LlamajLabel3 = new javax.swing.JLabel();
+        OvejajLabel4 = new javax.swing.JLabel();
+        NaranjojLabel4 = new javax.swing.JLabel();
+        BananojLabel7 = new javax.swing.JLabel();
+        ManzanojLabel6 = new javax.swing.JLabel();
+        MaizjLabel5 = new javax.swing.JLabel();
+        FrijoljLabel3 = new javax.swing.JLabel();
+        ArrozjLabel2 = new javax.swing.JLabel();
+        FondojLabel3 = new javax.swing.JLabel();
+        ComidaHerviborosjLabel16 = new javax.swing.JLabel();
+        ComidaHerviborosjLabel17 = new javax.swing.JLabel();
+        ComidaHerviborosjLabel18 = new javax.swing.JLabel();
+        ComidaOmnivorosjLabel8 = new javax.swing.JLabel();
+        ComidaOmnivorojLabel10 = new javax.swing.JLabel();
+        ComidaOmnivorojLabel11 = new javax.swing.JLabel();
+        CloruroPotasicojLabel13 = new javax.swing.JLabel();
+        SulfatoFerrosojLabel12 = new javax.swing.JLabel();
+        UreajLabel11 = new javax.swing.JLabel();
+        FondojLabel2 = new javax.swing.JLabel();
+        PrecioBarco = new javax.swing.JLabel();
         FondojLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -99,13 +122,28 @@ public class FrameComprar extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         FertilizantejButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/Urea.PNG"))); // NOI18N
-        jPanel1.add(FertilizantejButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 420, 50, 70));
+        FertilizantejButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FertilizantejButton5ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(FertilizantejButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 410, 50, 50));
 
         FertilizantejButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/SulfatoFerroso.PNG"))); // NOI18N
-        jPanel1.add(FertilizantejButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 410, 50, 80));
+        FertilizantejButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FertilizantejButton4ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(FertilizantejButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 410, 50, 50));
 
         FertilizantejButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/CloruroDePotasio.PNG"))); // NOI18N
-        jPanel1.add(FertilizantejButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 420, 50, 70));
+        FertilizantejButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FertilizantejButton3ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(FertilizantejButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 410, 50, 50));
 
         CloruroPotasicojLabel12.setFont(new java.awt.Font("Ebrima", 1, 12)); // NOI18N
         CloruroPotasicojLabel12.setForeground(new java.awt.Color(0, 0, 0));
@@ -128,10 +166,20 @@ public class FrameComprar extends javax.swing.JFrame {
         jPanel1.add(FertilizantesjLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 360, -1, -1));
 
         AlimentoOmnivorojButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/OmnivorosConcentrado.PNG"))); // NOI18N
-        jPanel1.add(AlimentoOmnivorojButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 300, 40, 50));
+        AlimentoOmnivorojButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AlimentoOmnivorojButtonActionPerformed(evt);
+            }
+        });
+        jPanel1.add(AlimentoOmnivorojButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 290, 40, 40));
 
         AlimentoOmnivorojButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/OmnivorosBambu.PNG"))); // NOI18N
-        jPanel1.add(AlimentoOmnivorojButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 300, 50, 50));
+        AlimentoOmnivorojButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AlimentoOmnivorojButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(AlimentoOmnivorojButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 290, 50, 40));
 
         ComidaOmnivorojLabel9.setFont(new java.awt.Font("Ebrima", 1, 12)); // NOI18N
         ComidaOmnivorojLabel9.setForeground(new java.awt.Color(0, 0, 0));
@@ -154,7 +202,12 @@ public class FrameComprar extends javax.swing.JFrame {
         jPanel1.add(ComidaOmnivorosjLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 250, -1, -1));
 
         AlimentoHerviborojButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/HerviboroHongo.PNG"))); // NOI18N
-        jPanel1.add(AlimentoHerviborojButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 180, 60, 60));
+        AlimentoHerviborojButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AlimentoHerviborojButton7ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(AlimentoHerviborojButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 180, 60, 50));
 
         AlimentoHerviborojButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/HerviboroHierba.PNG"))); // NOI18N
         AlimentoHerviborojButton8.addActionListener(new java.awt.event.ActionListener() {
@@ -162,15 +215,20 @@ public class FrameComprar extends javax.swing.JFrame {
                 AlimentoHerviborojButton8ActionPerformed(evt);
             }
         });
-        jPanel1.add(AlimentoHerviborojButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 190, 60, 40));
+        jPanel1.add(AlimentoHerviborojButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 180, 60, 50));
 
         AlimentoHerviborojButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/HerviboroHoja.PNG"))); // NOI18N
-        jPanel1.add(AlimentoHerviborojButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 190, 50, 50));
+        AlimentoHerviborojButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AlimentoHerviborojButton6ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(AlimentoHerviborojButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 180, 50, 50));
 
         ComidaHerviborosjLabel15.setFont(new java.awt.Font("Ebrima", 1, 12)); // NOI18N
         ComidaHerviborosjLabel15.setForeground(new java.awt.Color(0, 0, 0));
         ComidaHerviborosjLabel15.setText("Hierba");
-        jPanel1.add(ComidaHerviborosjLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 170, -1, -1));
+        jPanel1.add(ComidaHerviborosjLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 160, -1, -1));
 
         ComidaHerviborosjLabel14.setFont(new java.awt.Font("Ebrima", 1, 12)); // NOI18N
         ComidaHerviborosjLabel14.setForeground(new java.awt.Color(0, 0, 0));
@@ -185,7 +243,7 @@ public class FrameComprar extends javax.swing.JFrame {
         ComidaHerviborosjLabel13.setFont(new java.awt.Font("Ebrima", 1, 12)); // NOI18N
         ComidaHerviborosjLabel13.setForeground(new java.awt.Color(0, 0, 0));
         ComidaHerviborosjLabel13.setText("Hoja");
-        jPanel1.add(ComidaHerviborosjLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 170, -1, 20));
+        jPanel1.add(ComidaHerviborosjLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 160, -1, 20));
 
         ComprarAnimalesjLabel3.setFont(new java.awt.Font("Engravers MT", 1, 18)); // NOI18N
         ComprarAnimalesjLabel3.setForeground(new java.awt.Color(0, 0, 0));
@@ -223,7 +281,12 @@ public class FrameComprar extends javax.swing.JFrame {
         jPanel1.add(ComidaAnimalesjLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 110, -1, -1));
 
         AlimentoOmnivorojButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/OmnivorosCarnes.PNG"))); // NOI18N
-        jPanel1.add(AlimentoOmnivorojButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 290, 70, 60));
+        AlimentoOmnivorojButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AlimentoOmnivorojButton3ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(AlimentoOmnivorojButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 290, 70, 40));
 
         NaranjojButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/Naranjo.PNG"))); // NOI18N
         NaranjojButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -231,7 +294,7 @@ public class FrameComprar extends javax.swing.JFrame {
                 NaranjojButton3ActionPerformed(evt);
             }
         });
-        jPanel1.add(NaranjojButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 410, 70, 60));
+        jPanel1.add(NaranjojButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 390, 70, 60));
 
         MaizjButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/Maiz.PNG"))); // NOI18N
         MaizjButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -239,15 +302,15 @@ public class FrameComprar extends javax.swing.JFrame {
                 MaizjButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(MaizjButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 410, 70, 60));
+        jPanel1.add(MaizjButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 390, 70, 60));
 
         MaizjLabel4.setForeground(new java.awt.Color(0, 0, 0));
         MaizjLabel4.setText("Maiz");
-        jPanel1.add(MaizjLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 380, -1, -1));
+        jPanel1.add(MaizjLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 360, -1, -1));
 
         NaranjojLabel3.setForeground(new java.awt.Color(0, 0, 0));
         NaranjojLabel3.setText("Naranjo");
-        jPanel1.add(NaranjojLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 380, -1, -1));
+        jPanel1.add(NaranjojLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 360, -1, -1));
 
         ArrozjButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/Arroz.PNG"))); // NOI18N
         ArrozjButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -255,7 +318,7 @@ public class FrameComprar extends javax.swing.JFrame {
                 ArrozjButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(ArrozjButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 410, 70, 60));
+        jPanel1.add(ArrozjButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 390, 70, 60));
 
         FrijoljButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/Frijol.PNG"))); // NOI18N
         FrijoljButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -263,15 +326,15 @@ public class FrameComprar extends javax.swing.JFrame {
                 FrijoljButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(FrijoljButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 410, 50, 60));
+        jPanel1.add(FrijoljButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 390, 50, 60));
 
         ArrozjLabel1.setForeground(new java.awt.Color(0, 0, 0));
         ArrozjLabel1.setText("Arroz");
-        jPanel1.add(ArrozjLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 380, -1, -1));
+        jPanel1.add(ArrozjLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 360, -1, -1));
 
         FrijoljLabel2.setForeground(new java.awt.Color(0, 0, 0));
         FrijoljLabel2.setText("Frijol");
-        jPanel1.add(FrijoljLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 380, -1, -1));
+        jPanel1.add(FrijoljLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 360, -1, -1));
 
         ComprarAnimalesjLabel4.setFont(new java.awt.Font("Engravers MT", 1, 18)); // NOI18N
         ComprarAnimalesjLabel4.setForeground(new java.awt.Color(0, 0, 0));
@@ -295,12 +358,12 @@ public class FrameComprar extends javax.swing.JFrame {
         jPanel1.add(VacajButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 190, 70, 70));
 
         PollojLabel5.setForeground(new java.awt.Color(0, 0, 0));
-        PollojLabel5.setText("Gallina");
-        jPanel1.add(PollojLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 160, -1, -1));
+        PollojLabel5.setText("45");
+        jPanel1.add(PollojLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 270, -1, -1));
 
         CerdojLabel4.setForeground(new java.awt.Color(0, 0, 0));
-        CerdojLabel4.setText("Cerdo");
-        jPanel1.add(CerdojLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 160, -1, -1));
+        CerdojLabel4.setText("50");
+        jPanel1.add(CerdojLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 270, -1, -1));
 
         LlamajButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/Llama.PNG"))); // NOI18N
         LlamajButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -311,12 +374,12 @@ public class FrameComprar extends javax.swing.JFrame {
         jPanel1.add(LlamajButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 190, 70, 74));
 
         LlamajLabel2.setForeground(new java.awt.Color(0, 0, 0));
-        LlamajLabel2.setText("Llama");
-        jPanel1.add(LlamajLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 160, -1, -1));
+        LlamajLabel2.setText("60");
+        jPanel1.add(LlamajLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 270, -1, -1));
 
         OvejajLabel3.setForeground(new java.awt.Color(0, 0, 0));
-        OvejajLabel3.setText("Oveja");
-        jPanel1.add(OvejajLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 160, -1, -1));
+        OvejajLabel3.setText("70");
+        jPanel1.add(OvejajLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 270, -1, -1));
 
         OvejajButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/Oveja.PNG"))); // NOI18N
         OvejajButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -325,9 +388,6 @@ public class FrameComprar extends javax.swing.JFrame {
             }
         });
         jPanel1.add(OvejajButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 190, 70, 74));
-
-        FondojLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/FondoMercado.jpg"))); // NOI18N
-        jPanel1.add(FondojLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 90, 510, -1));
 
         GallinajButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/Gallina.PNG"))); // NOI18N
         GallinajButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -346,12 +406,12 @@ public class FrameComprar extends javax.swing.JFrame {
         jPanel1.add(PavojButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 190, 70, 70));
 
         VacajLabel6.setForeground(new java.awt.Color(0, 0, 0));
-        VacajLabel6.setText("Vaca");
-        jPanel1.add(VacajLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 160, -1, -1));
+        VacajLabel6.setText("220");
+        jPanel1.add(VacajLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 270, -1, -1));
 
         PavojLabel7.setForeground(new java.awt.Color(0, 0, 0));
-        PavojLabel7.setText("Pavo");
-        jPanel1.add(PavojLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 160, -1, -1));
+        PavojLabel7.setText("100");
+        jPanel1.add(PavojLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 270, -1, -1));
 
         ManzanojButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/Manzano.PNG"))); // NOI18N
         ManzanojButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -359,11 +419,11 @@ public class FrameComprar extends javax.swing.JFrame {
                 ManzanojButton3ActionPerformed(evt);
             }
         });
-        jPanel1.add(ManzanojButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 410, 70, 60));
+        jPanel1.add(ManzanojButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 390, 70, 60));
 
         ManzanojLabel5.setForeground(new java.awt.Color(0, 0, 0));
         ManzanojLabel5.setText("Manzano");
-        jPanel1.add(ManzanojLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 380, -1, -1));
+        jPanel1.add(ManzanojLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 360, -1, -1));
 
         BananojButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/Banano.PNG"))); // NOI18N
         BananojButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -371,14 +431,11 @@ public class FrameComprar extends javax.swing.JFrame {
                 BananojButton4ActionPerformed(evt);
             }
         });
-        jPanel1.add(BananojButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 410, 70, 60));
+        jPanel1.add(BananojButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 390, 70, 60));
 
         BananojLabel6.setForeground(new java.awt.Color(0, 0, 0));
         BananojLabel6.setText("Banano");
-        jPanel1.add(BananojLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 380, -1, -1));
-
-        FondojLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/FondoMercado.jpg"))); // NOI18N
-        jPanel1.add(FondojLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, 540, -1));
+        jPanel1.add(BananojLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 360, -1, -1));
 
         ComprarBarcojLabel5.setFont(new java.awt.Font("Engravers MT", 1, 18)); // NOI18N
         ComprarBarcojLabel5.setForeground(new java.awt.Color(0, 0, 0));
@@ -392,6 +449,109 @@ public class FrameComprar extends javax.swing.JFrame {
             }
         });
         jPanel1.add(BarcojButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 550, 70, 60));
+
+        CerdojLabel5.setForeground(new java.awt.Color(0, 0, 0));
+        CerdojLabel5.setText("Cerdo");
+        jPanel1.add(CerdojLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, -1, -1));
+
+        PavojLabel8.setForeground(new java.awt.Color(0, 0, 0));
+        PavojLabel8.setText("Pavo");
+        jPanel1.add(PavojLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 160, -1, -1));
+
+        PollojLabel6.setForeground(new java.awt.Color(0, 0, 0));
+        PollojLabel6.setText("Gallina");
+        jPanel1.add(PollojLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 160, -1, -1));
+
+        VacajLabel7.setForeground(new java.awt.Color(0, 0, 0));
+        VacajLabel7.setText("Vaca");
+        jPanel1.add(VacajLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 160, -1, 20));
+
+        LlamajLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        LlamajLabel3.setText("Llama");
+        jPanel1.add(LlamajLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 160, -1, -1));
+
+        OvejajLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        OvejajLabel4.setText("Oveja");
+        jPanel1.add(OvejajLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 160, -1, -1));
+
+        NaranjojLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        NaranjojLabel4.setText("15");
+        jPanel1.add(NaranjojLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 460, -1, -1));
+
+        BananojLabel7.setForeground(new java.awt.Color(0, 0, 0));
+        BananojLabel7.setText("10");
+        jPanel1.add(BananojLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 460, -1, -1));
+
+        ManzanojLabel6.setForeground(new java.awt.Color(0, 0, 0));
+        ManzanojLabel6.setText("20");
+        jPanel1.add(ManzanojLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 460, -1, -1));
+
+        MaizjLabel5.setForeground(new java.awt.Color(0, 0, 0));
+        MaizjLabel5.setText("10");
+        jPanel1.add(MaizjLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 460, -1, -1));
+
+        FrijoljLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        FrijoljLabel3.setText("4");
+        jPanel1.add(FrijoljLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 460, -1, -1));
+
+        ArrozjLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        ArrozjLabel2.setText("5");
+        jPanel1.add(ArrozjLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 460, -1, -1));
+
+        FondojLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/FondoMercado.jpg"))); // NOI18N
+        jPanel1.add(FondojLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, 540, -1));
+
+        ComidaHerviborosjLabel16.setFont(new java.awt.Font("Ebrima", 1, 12)); // NOI18N
+        ComidaHerviborosjLabel16.setForeground(new java.awt.Color(0, 0, 0));
+        ComidaHerviborosjLabel16.setText("1");
+        jPanel1.add(ComidaHerviborosjLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 230, -1, 20));
+
+        ComidaHerviborosjLabel17.setFont(new java.awt.Font("Ebrima", 1, 12)); // NOI18N
+        ComidaHerviborosjLabel17.setForeground(new java.awt.Color(0, 0, 0));
+        ComidaHerviborosjLabel17.setText("3");
+        jPanel1.add(ComidaHerviborosjLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 230, -1, -1));
+
+        ComidaHerviborosjLabel18.setFont(new java.awt.Font("Ebrima", 1, 12)); // NOI18N
+        ComidaHerviborosjLabel18.setForeground(new java.awt.Color(0, 0, 0));
+        ComidaHerviborosjLabel18.setText("2");
+        jPanel1.add(ComidaHerviborosjLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 230, -1, -1));
+
+        ComidaOmnivorosjLabel8.setFont(new java.awt.Font("Ebrima", 1, 12)); // NOI18N
+        ComidaOmnivorosjLabel8.setForeground(new java.awt.Color(0, 0, 0));
+        ComidaOmnivorosjLabel8.setText("3");
+        jPanel1.add(ComidaOmnivorosjLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 330, -1, 20));
+
+        ComidaOmnivorojLabel10.setFont(new java.awt.Font("Ebrima", 1, 12)); // NOI18N
+        ComidaOmnivorojLabel10.setForeground(new java.awt.Color(0, 0, 0));
+        ComidaOmnivorojLabel10.setText("5");
+        jPanel1.add(ComidaOmnivorojLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 330, -1, -1));
+
+        ComidaOmnivorojLabel11.setFont(new java.awt.Font("Ebrima", 1, 12)); // NOI18N
+        ComidaOmnivorojLabel11.setForeground(new java.awt.Color(0, 0, 0));
+        ComidaOmnivorojLabel11.setText("4");
+        jPanel1.add(ComidaOmnivorojLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 330, -1, -1));
+
+        CloruroPotasicojLabel13.setFont(new java.awt.Font("Ebrima", 1, 12)); // NOI18N
+        CloruroPotasicojLabel13.setForeground(new java.awt.Color(0, 0, 0));
+        CloruroPotasicojLabel13.setText("2");
+        jPanel1.add(CloruroPotasicojLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 460, -1, 20));
+
+        SulfatoFerrosojLabel12.setFont(new java.awt.Font("Ebrima", 1, 12)); // NOI18N
+        SulfatoFerrosojLabel12.setForeground(new java.awt.Color(0, 0, 0));
+        SulfatoFerrosojLabel12.setText("3");
+        jPanel1.add(SulfatoFerrosojLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 460, -1, -1));
+
+        UreajLabel11.setFont(new java.awt.Font("Ebrima", 1, 12)); // NOI18N
+        UreajLabel11.setForeground(new java.awt.Color(0, 0, 0));
+        UreajLabel11.setText("5");
+        jPanel1.add(UreajLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 460, -1, -1));
+
+        FondojLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/FondoMercado.jpg"))); // NOI18N
+        jPanel1.add(FondojLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 90, 510, -1));
+
+        PrecioBarco.setForeground(new java.awt.Color(0, 0, 0));
+        PrecioBarco.setText("300");
+        jPanel1.add(PrecioBarco, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 570, -1, -1));
 
         FondojLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/FondoMercado.jpg"))); // NOI18N
         jPanel1.add(FondojLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 540, 540, 80));
@@ -411,7 +571,14 @@ public class FrameComprar extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void AlimentoHerviborojButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AlimentoHerviborojButton8ActionPerformed
-
+        if(Jugador.jugador1.getMonedas()>=2){
+            Jugador.jugador1.setMonedas(Jugador.jugador1.getMonedas()-2);
+            JOptionPane.showMessageDialog(FrameComprar.this, "Adquiriste alimento hierba "+Jugador.jugador1.getNick() + " te quedan "+Jugador.jugador1.getMonedas()+" monedas");
+            AlmacenamientoUsuarioComidas.sumarHierba();
+        }
+        else{
+            JOptionPane.showMessageDialog(FrameComprar.this, "No tienes suficiente dinero "+Jugador.jugador1.getNick());
+        }
     }//GEN-LAST:event_AlimentoHerviborojButton8ActionPerformed
 
     private void RegresarMenuMercadojButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegresarMenuMercadojButton2ActionPerformed
@@ -429,7 +596,7 @@ public class FrameComprar extends javax.swing.JFrame {
         if(Jugador.jugador1.getMonedas()>=15){
             Jugador.jugador1.setMonedas(Jugador.jugador1.getMonedas()-15);
             JOptionPane.showMessageDialog(FrameComprar.this, "Adquiriste una semilla de naranjo "+Jugador.jugador1.getNick() + " te quedan "+Jugador.jugador1.getMonedas()+" monedas");
-            EstablecerReportes.sumarSemilla();
+            AlmacenamientoUsuarioPlantas.sumarNaranjo();
         }
         else{
             JOptionPane.showMessageDialog(FrameComprar.this, "No tienes suficiente dinero "+Jugador.jugador1.getNick());
@@ -440,7 +607,7 @@ public class FrameComprar extends javax.swing.JFrame {
         if(Jugador.jugador1.getMonedas()>=10){
             Jugador.jugador1.setMonedas(Jugador.jugador1.getMonedas()-10);
             JOptionPane.showMessageDialog(FrameComprar.this, "Adquiriste una semilla de maiz "+Jugador.jugador1.getNick() + " te quedan "+Jugador.jugador1.getMonedas()+" monedas");
-            EstablecerReportes.sumarSemilla();
+            AlmacenamientoUsuarioPlantas.sumarMaiz();
         }
         else{
             JOptionPane.showMessageDialog(FrameComprar.this, "No tienes suficiente dinero "+Jugador.jugador1.getNick());
@@ -451,7 +618,7 @@ public class FrameComprar extends javax.swing.JFrame {
         if(Jugador.jugador1.getMonedas()>=5){
             Jugador.jugador1.setMonedas(Jugador.jugador1.getMonedas()-5);
             JOptionPane.showMessageDialog(FrameComprar.this, "Adquiriste una semilla de arroz "+Jugador.jugador1.getNick() + " te quedan "+Jugador.jugador1.getMonedas()+" monedas");
-            EstablecerReportes.sumarSemilla();
+            AlmacenamientoUsuarioPlantas.sumarArroz();
         }
         else{
             JOptionPane.showMessageDialog(FrameComprar.this, "No tienes suficiente dinero "+Jugador.jugador1.getNick());
@@ -462,7 +629,7 @@ public class FrameComprar extends javax.swing.JFrame {
         if(Jugador.jugador1.getMonedas()>=4){
             Jugador.jugador1.setMonedas(Jugador.jugador1.getMonedas()-4);
             JOptionPane.showMessageDialog(FrameComprar.this, "Adquiriste una semilla de frijol "+Jugador.jugador1.getNick() + " te quedan "+Jugador.jugador1.getMonedas()+" monedas");
-            EstablecerReportes.sumarSemilla();
+            AlmacenamientoUsuarioPlantas.sumarFrjol();
         }
         else{
             JOptionPane.showMessageDialog(FrameComprar.this, "No tienes suficiente dinero "+Jugador.jugador1.getNick());
@@ -472,8 +639,8 @@ public class FrameComprar extends javax.swing.JFrame {
     private void CerdojButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CerdojButton4ActionPerformed
         if(Jugador.jugador1.getMonedas()>=50){
             Jugador.jugador1.setMonedas(Jugador.jugador1.getMonedas()-50);
-            JOptionPane.showMessageDialog(FrameComprar.this, "Adquiriste una cria de Cerdo "+Jugador.jugador1.getNick() + " te quedan "+Jugador.jugador1.getMonedas()+" monedas");
-            EstablecerReportes.sumarCrias();
+            JOptionPane.showMessageDialog(FrameComprar.this, "Adquiriste una cria de Cerdo "+Jugador.jugador1.getNick() + " te quedan "+Jugador.jugador1.getMonedas()+" monedas");            
+            AlmacenamientoUsuarioAnimales.sumarCerdos();
         }
         else{
             JOptionPane.showMessageDialog(FrameComprar.this, "No tienes suficiente dinero "+Jugador.jugador1.getNick());
@@ -484,7 +651,7 @@ public class FrameComprar extends javax.swing.JFrame {
         if(Jugador.jugador1.getMonedas()>=220){
             Jugador.jugador1.setMonedas(Jugador.jugador1.getMonedas()-220);
             JOptionPane.showMessageDialog(FrameComprar.this, "Adquiriste una cria de Vaca "+Jugador.jugador1.getNick() + " te quedan "+Jugador.jugador1.getMonedas()+" monedas");
-            EstablecerReportes.sumarCrias();
+            AlmacenamientoUsuarioAnimales.sumarVacas();
         }
         else{
             JOptionPane.showMessageDialog(FrameComprar.this, "No tienes suficiente dinero "+Jugador.jugador1.getNick());
@@ -495,7 +662,7 @@ public class FrameComprar extends javax.swing.JFrame {
         if(Jugador.jugador1.getMonedas()>=60){
             Jugador.jugador1.setMonedas(Jugador.jugador1.getMonedas()-60);
             JOptionPane.showMessageDialog(FrameComprar.this, "Adquiriste una cria de Llama "+Jugador.jugador1.getNick() + " te quedan "+Jugador.jugador1.getMonedas()+" monedas");
-            EstablecerReportes.sumarCrias();
+            AlmacenamientoUsuarioAnimales.sumarLlama();
         }
         else{
             JOptionPane.showMessageDialog(FrameComprar.this, "No tienes suficiente dinero "+Jugador.jugador1.getNick());
@@ -506,7 +673,7 @@ public class FrameComprar extends javax.swing.JFrame {
         if(Jugador.jugador1.getMonedas()>=70){
             Jugador.jugador1.setMonedas(Jugador.jugador1.getMonedas()-70);
             JOptionPane.showMessageDialog(FrameComprar.this, "Adquiriste una cria de Oveja "+Jugador.jugador1.getNick() + " te quedan "+Jugador.jugador1.getMonedas()+" monedas");
-            EstablecerReportes.sumarCrias();
+            AlmacenamientoUsuarioAnimales.sumarOveja();
         }
         else{
             JOptionPane.showMessageDialog(FrameComprar.this, "No tienes suficiente dinero "+Jugador.jugador1.getNick());
@@ -517,7 +684,7 @@ public class FrameComprar extends javax.swing.JFrame {
         if(Jugador.jugador1.getMonedas()>=45){
             Jugador.jugador1.setMonedas(Jugador.jugador1.getMonedas()-45);
             JOptionPane.showMessageDialog(FrameComprar.this, "Adquiriste una cria de Gallina "+Jugador.jugador1.getNick() + " te quedan "+Jugador.jugador1.getMonedas()+" monedas");
-            EstablecerReportes.sumarCrias();
+            AlmacenamientoUsuarioAnimales.sumarGallinas();
         }
         else{
             JOptionPane.showMessageDialog(FrameComprar.this, "No tienes suficiente dinero "+Jugador.jugador1.getNick());
@@ -528,7 +695,7 @@ public class FrameComprar extends javax.swing.JFrame {
         if(Jugador.jugador1.getMonedas()>=100){
             Jugador.jugador1.setMonedas(Jugador.jugador1.getMonedas()-100);
             JOptionPane.showMessageDialog(FrameComprar.this, "Adquiriste una cria de Pavo "+Jugador.jugador1.getNick() + " te quedan "+Jugador.jugador1.getMonedas()+" monedas");
-            EstablecerReportes.sumarCrias();
+            AlmacenamientoUsuarioAnimales.sumarPavos();
         }
         else{
             JOptionPane.showMessageDialog(FrameComprar.this, "No tienes suficiente dinero "+Jugador.jugador1.getNick());
@@ -539,7 +706,7 @@ public class FrameComprar extends javax.swing.JFrame {
         if(Jugador.jugador1.getMonedas()>=20){
             Jugador.jugador1.setMonedas(Jugador.jugador1.getMonedas()-20);
             JOptionPane.showMessageDialog(FrameComprar.this, "Adquiriste una semilla de manzano "+Jugador.jugador1.getNick() + " te quedan "+Jugador.jugador1.getMonedas()+" monedas");
-            EstablecerReportes.sumarSemilla();
+            AlmacenamientoUsuarioPlantas.sumarManzano();
         }
         else{
             JOptionPane.showMessageDialog(FrameComprar.this, "No tienes suficiente dinero "+Jugador.jugador1.getNick());
@@ -550,7 +717,7 @@ public class FrameComprar extends javax.swing.JFrame {
         if(Jugador.jugador1.getMonedas()>=10){
             Jugador.jugador1.setMonedas(Jugador.jugador1.getMonedas()-10);
             JOptionPane.showMessageDialog(FrameComprar.this, "Adquiriste una semilla de banano "+Jugador.jugador1.getNick() + " te quedan "+Jugador.jugador1.getMonedas()+" monedas");
-            EstablecerReportes.sumarSemilla();
+            AlmacenamientoUsuarioPlantas.sumarBanano();
         }
         else{
             JOptionPane.showMessageDialog(FrameComprar.this, "No tienes suficiente dinero "+Jugador.jugador1.getNick());
@@ -558,8 +725,104 @@ public class FrameComprar extends javax.swing.JFrame {
     }//GEN-LAST:event_BananojButton4ActionPerformed
 
     private void BarcojButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BarcojButton2ActionPerformed
-        // TODO add your handling code here:
+        if(Jugador.jugador1.getMonedas()>=300){
+            Jugador.jugador1.setMonedas(Jugador.jugador1.getMonedas()-300);
+            JOptionPane.showMessageDialog(FrameComprar.this, "Adquiriste un barco "+Jugador.jugador1.getNick() + " te quedan "+Jugador.jugador1.getMonedas()+" monedas");
+            Jugador.jugador1.setBarco(Jugador.jugador1.getBarco()+1);
+        }
+        else{
+            JOptionPane.showMessageDialog(FrameComprar.this, "No tienes suficiente dinero "+Jugador.jugador1.getNick());
+        }
     }//GEN-LAST:event_BarcojButton2ActionPerformed
+
+    private void AlimentoHerviborojButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AlimentoHerviborojButton6ActionPerformed
+        if(Jugador.jugador1.getMonedas()>=1){
+            Jugador.jugador1.setMonedas(Jugador.jugador1.getMonedas()-1);
+            JOptionPane.showMessageDialog(FrameComprar.this, "Adquiriste alimento hoja "+Jugador.jugador1.getNick() + " te quedan "+Jugador.jugador1.getMonedas()+" monedas");
+            AlmacenamientoUsuarioComidas.sumarHojas();
+        }
+        else{
+            JOptionPane.showMessageDialog(FrameComprar.this, "No tienes suficiente dinero "+Jugador.jugador1.getNick());
+        }
+    }//GEN-LAST:event_AlimentoHerviborojButton6ActionPerformed
+
+    private void AlimentoHerviborojButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AlimentoHerviborojButton7ActionPerformed
+        if(Jugador.jugador1.getMonedas()>=3){
+            Jugador.jugador1.setMonedas(Jugador.jugador1.getMonedas()-3);
+            JOptionPane.showMessageDialog(FrameComprar.this, "Adquiriste alimento hongo "+Jugador.jugador1.getNick() + " te quedan "+Jugador.jugador1.getMonedas()+" monedas");
+            AlmacenamientoUsuarioComidas.sumarHongos();
+        }
+        else{
+            JOptionPane.showMessageDialog(FrameComprar.this, "No tienes suficiente dinero "+Jugador.jugador1.getNick());
+        }
+    }//GEN-LAST:event_AlimentoHerviborojButton7ActionPerformed
+
+    private void AlimentoOmnivorojButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AlimentoOmnivorojButton1ActionPerformed
+        if(Jugador.jugador1.getMonedas()>=3){
+            Jugador.jugador1.setMonedas(Jugador.jugador1.getMonedas()-3);
+            JOptionPane.showMessageDialog(FrameComprar.this, "Adquiriste alimento bambu "+Jugador.jugador1.getNick() + " te quedan "+Jugador.jugador1.getMonedas()+" monedas");  
+            AlmacenamientoUsuarioComidas.sumarBambu();
+        }
+        else{
+            JOptionPane.showMessageDialog(FrameComprar.this, "No tienes suficiente dinero "+Jugador.jugador1.getNick());
+        }
+    }//GEN-LAST:event_AlimentoOmnivorojButton1ActionPerformed
+
+    private void AlimentoOmnivorojButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AlimentoOmnivorojButton3ActionPerformed
+        if(Jugador.jugador1.getMonedas()>=5){
+            Jugador.jugador1.setMonedas(Jugador.jugador1.getMonedas()-5);
+            JOptionPane.showMessageDialog(FrameComprar.this, "Adquiriste alimento carne "+Jugador.jugador1.getNick() + " te quedan "+Jugador.jugador1.getMonedas()+" monedas");
+            AlmacenamientoUsuarioComidas.sumarCarnes();
+        }
+        else{
+            JOptionPane.showMessageDialog(FrameComprar.this, "No tienes suficiente dinero "+Jugador.jugador1.getNick());
+        }
+    }//GEN-LAST:event_AlimentoOmnivorojButton3ActionPerformed
+
+    private void AlimentoOmnivorojButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AlimentoOmnivorojButtonActionPerformed
+        if(Jugador.jugador1.getMonedas()>=4){
+            Jugador.jugador1.setMonedas(Jugador.jugador1.getMonedas()-4);
+            JOptionPane.showMessageDialog(FrameComprar.this, "Adquiriste alimento concentrado "+Jugador.jugador1.getNick() + " te quedan "+Jugador.jugador1.getMonedas()+" monedas");
+            AlmacenamientoUsuarioComidas.sumarConcentrado();
+        }
+        else{
+            JOptionPane.showMessageDialog(FrameComprar.this, "No tienes suficiente dinero "+Jugador.jugador1.getNick());
+        }
+    }//GEN-LAST:event_AlimentoOmnivorojButtonActionPerformed
+
+    private void FertilizantejButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FertilizantejButton3ActionPerformed
+        if(Jugador.jugador1.getMonedas()>=2){
+            Jugador.jugador1.setMonedas(Jugador.jugador1.getMonedas()-2);
+            JOptionPane.showMessageDialog(FrameComprar.this, "Adquiriste fertilizante cloruro de potasio "+Jugador.jugador1.getNick() + " te quedan "+Jugador.jugador1.getMonedas()+" monedas");
+            EstablecerReportes.sumarFertlizanteComprado();
+           
+        }
+        else{
+            JOptionPane.showMessageDialog(FrameComprar.this, "No tienes suficiente dinero "+Jugador.jugador1.getNick());
+        }
+    }//GEN-LAST:event_FertilizantejButton3ActionPerformed
+
+    private void FertilizantejButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FertilizantejButton4ActionPerformed
+        if(Jugador.jugador1.getMonedas()>=3){
+            Jugador.jugador1.setMonedas(Jugador.jugador1.getMonedas()-3);
+            JOptionPane.showMessageDialog(FrameComprar.this, "Adquiriste fertilizante sulfato ferroso "+Jugador.jugador1.getNick() + " te quedan "+Jugador.jugador1.getMonedas()+" monedas");
+            EstablecerReportes.sumarFertlizanteComprado();
+        }
+        else{
+            JOptionPane.showMessageDialog(FrameComprar.this, "No tienes suficiente dinero "+Jugador.jugador1.getNick());
+        }
+    }//GEN-LAST:event_FertilizantejButton4ActionPerformed
+
+    private void FertilizantejButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FertilizantejButton5ActionPerformed
+        if(Jugador.jugador1.getMonedas()>=5){
+            Jugador.jugador1.setMonedas(Jugador.jugador1.getMonedas()-5);
+            JOptionPane.showMessageDialog(FrameComprar.this, "Adquiriste fertilizante urea "+Jugador.jugador1.getNick() + " te quedan "+Jugador.jugador1.getMonedas()+" monedas");
+            EstablecerReportes.sumarFertlizanteComprado();
+        }
+        else{
+            JOptionPane.showMessageDialog(FrameComprar.this, "No tienes suficiente dinero "+Jugador.jugador1.getNick());
+        }
+    }//GEN-LAST:event_FertilizantejButton5ActionPerformed
     
     class FondoInicio extends JPanel{
         private Image imagen;
@@ -584,21 +847,31 @@ public class FrameComprar extends javax.swing.JFrame {
     private javax.swing.JButton AlimentoOmnivorojButton3;
     public static javax.swing.JButton ArrozjButton1;
     public static javax.swing.JLabel ArrozjLabel1;
+    public static javax.swing.JLabel ArrozjLabel2;
     public static javax.swing.JButton BananojButton4;
     public static javax.swing.JLabel BananojLabel6;
+    public static javax.swing.JLabel BananojLabel7;
     public static javax.swing.JButton BarcojButton2;
     public static javax.swing.JButton CerdojButton4;
     public static javax.swing.JLabel CerdojLabel4;
+    public static javax.swing.JLabel CerdojLabel5;
     private javax.swing.JLabel CloruroPotasicojLabel12;
+    private javax.swing.JLabel CloruroPotasicojLabel13;
     private javax.swing.JLabel ComidaAnimalesjLabel4;
     private javax.swing.JLabel ComidaHerviborosjLabel13;
     private javax.swing.JLabel ComidaHerviborosjLabel14;
     private javax.swing.JLabel ComidaHerviborosjLabel15;
+    private javax.swing.JLabel ComidaHerviborosjLabel16;
+    private javax.swing.JLabel ComidaHerviborosjLabel17;
+    private javax.swing.JLabel ComidaHerviborosjLabel18;
     private javax.swing.JLabel ComidaHerviborosjLabel6;
+    private javax.swing.JLabel ComidaOmnivorojLabel10;
+    private javax.swing.JLabel ComidaOmnivorojLabel11;
     private javax.swing.JLabel ComidaOmnivorojLabel8;
     private javax.swing.JLabel ComidaOmnivorojLabel9;
     private javax.swing.JLabel ComidaOmnivorosjLabel4;
     private javax.swing.JLabel ComidaOmnivorosjLabel7;
+    private javax.swing.JLabel ComidaOmnivorosjLabel8;
     private javax.swing.JLabel ComprarAnimalesjLabel3;
     private javax.swing.JLabel ComprarAnimalesjLabel4;
     private javax.swing.JLabel ComprarBarcojLabel5;
@@ -612,26 +885,38 @@ public class FrameComprar extends javax.swing.JFrame {
     private javax.swing.JLabel FondojLabel3;
     public static javax.swing.JButton FrijoljButton2;
     public static javax.swing.JLabel FrijoljLabel2;
+    public static javax.swing.JLabel FrijoljLabel3;
     public static javax.swing.JButton GallinajButton4;
     public static javax.swing.JButton LlamajButton2;
     public static javax.swing.JLabel LlamajLabel2;
+    public static javax.swing.JLabel LlamajLabel3;
     private javax.swing.JLabel LogojLabel1;
     public static javax.swing.JButton MaizjButton2;
     private javax.swing.JLabel MaizjLabel4;
+    private javax.swing.JLabel MaizjLabel5;
     public static javax.swing.JButton ManzanojButton3;
     private javax.swing.JLabel ManzanojLabel5;
+    private javax.swing.JLabel ManzanojLabel6;
     public static javax.swing.JButton NaranjojButton3;
     public static javax.swing.JLabel NaranjojLabel3;
+    public static javax.swing.JLabel NaranjojLabel4;
     public static javax.swing.JButton OvejajButton3;
     public static javax.swing.JLabel OvejajLabel3;
+    public static javax.swing.JLabel OvejajLabel4;
     public static javax.swing.JButton PavojButton5;
     public static javax.swing.JLabel PavojLabel7;
+    public static javax.swing.JLabel PavojLabel8;
     private javax.swing.JLabel PollojLabel5;
+    private javax.swing.JLabel PollojLabel6;
+    private javax.swing.JLabel PrecioBarco;
     private javax.swing.JButton RegresarMenuMercadojButton2;
     private javax.swing.JLabel SulfatoFerrosojLabel11;
+    private javax.swing.JLabel SulfatoFerrosojLabel12;
     private javax.swing.JLabel UreajLabel10;
+    private javax.swing.JLabel UreajLabel11;
     public static javax.swing.JButton VacajButton3;
     private javax.swing.JLabel VacajLabel6;
+    private javax.swing.JLabel VacajLabel7;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

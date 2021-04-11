@@ -53,5 +53,12 @@ public class LlamadoInstancias {
             }
         });
     }
+    public static void sembrarSeleccion(){
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new FrameSeleccionSiembra().setVisible(true);
+            }
+        });
+    }
     
 }
