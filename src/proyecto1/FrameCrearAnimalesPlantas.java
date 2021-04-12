@@ -15,6 +15,7 @@ import manejadorDatos.AlmacenamientoUsuarioAnimales;
 import manejadorDatos.AlmacenamientoUsuarioComidas;
 import manejadorDatos.AlmacenamientoUsuarioFertilizante;
 import manejadorDatos.AlmacenamientoUsuarioPlantas;
+import manejadorDatos.ReinicioSiembra;
 import static proyecto1.CrearAnimalesPlantas.*;
 
 /**
@@ -32,6 +33,7 @@ public class FrameCrearAnimalesPlantas extends javax.swing.JFrame {
         this.setContentPane(fondoInicio);
         initComponents();
         Crear();
+        ReinicioSiembra.crearValoresCambioImagenSiembra();
         this.setLocationRelativeTo(null);
     }
     

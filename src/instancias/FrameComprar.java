@@ -7,7 +7,6 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import jugador.*;
 import manejadorDatos.*;
-import static manejadorDatos.AlmacenamientoUsuarioAnimales.almacenamientoUsuarioAnimales;
 import manejadorDatos.EstablecerReportes;
 /**
  *

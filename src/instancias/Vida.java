@@ -11,10 +11,10 @@ import jugador.*;
  *
  * @author Mariano
  */
-public class Vida extends Thread{
+public class Vida extends Thread implements Runnable{
+    
     @Override
     public void run() {
-        Jugador.jugador1.setVida(100);
         try {
             Vida.sleep(30000);
         } catch (InterruptedException ex) {
@@ -27,7 +27,7 @@ public class Vida extends Thread{
             VidajProgressBar1.setValue(Jugador.jugador1.getVida());
             VidajLabel3.setText(""+Jugador.jugador1.getVida());
             try{
-                Vida.sleep(500);
+                Vida.sleep(3000);
             }catch(InterruptedException e){
                 System.out.println("Error en el hilo vida "+e);
                 

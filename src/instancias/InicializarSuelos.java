@@ -1,33 +1,37 @@
 
 package instancias;
 
+
 import static instancias.FrameGranja.*;
+import static instancias.FrameSeleccionSiembra.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import jugador.Jugador;
-import manejadorDatos.AlmacenamientoUsuarioPlantas;
 import suelos.CreacionSueloInicial;
 import static suelos.CreacionSueloInicial.sueloElegir;
 import suelos.SueloAgua;
 import suelos.SueloDesierto;
 import suelos.SueloGrama;
 import static manejadorDatos.AlmacenamientoUsuarioPlantas.almacenamientoUsuarioPlantas;
+import static manejadorDatos.EstablecerReportes.establecerReportes;
+import static manejadorDatos.ReinicioSiembra.reinicioSiembra;
+import static proyecto1.CrearAnimalesPlantas.plantas;
 /**
  *
  * @author Mariano
  */
 public class InicializarSuelos {
-    int condicionM=5;
-    int condicionN=5;
-    int filas=5;
-    int columnas=5;
+    int condicionM=9;
+    int condicionN=9;
+    int filas=9;
+    int columnas=9;
     JButton[][] suelo;
     public static InicializarSuelos inicializarSuelos;
     public void inicializarSuelos(){
-        int x=100;
-        int y=300;
+        int x=0;
+        int y=100;
         suelo = new JButton[filas][columnas];
         for (int i = 0; i < filas; i++) {
             for (int j = 0; j < columnas; j++) {
@@ -36,7 +40,7 @@ public class InicializarSuelos {
                 FrameGranja.jPanel1.add(suelo[i][j]);
                 CreacionSueloInicial.crearCreacionSueloInicial();
                 CreacionSueloInicial.sueloCreador.crearSuelos();
-                CreacionSueloInicial.sueloCreador.llamadoCrearSueloInicial();
+                CreacionSueloInicial.sueloCreador.llamadoCrearSueloInicial();   
                 if(CreacionSueloInicial.sueloInicial[3].getPorcentaje()==0.35){
                     sueloElegir[i][j] = new SueloAgua();
                     suelo[i][j].setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/Agua.PNG")));
@@ -50,9 +54,15 @@ public class InicializarSuelos {
                     sueloElegir[i][j] = new SueloGrama();
                 }   
                 x+=50;
+                suelo[i][j].setVisible(false);
+                if(2<=i&&i<=6){
+                    if(2<=j&&j<=6){
+                        suelo[i][j].setVisible(true);
+                    }
+                }
             }
             y+=70;
-            x=100;
+            x=0;
         }
     }
     public void inicializarAcciones(){
@@ -62,8 +72,9 @@ public class InicializarSuelos {
                 int l=n;
                 suelo[m][n].addActionListener(new ActionListener() {
                     @Override
-                    public void actionPerformed(ActionEvent e) {
-                        if (SiembrajToggleButton3.isSelected()) {
+                    public void actionPerformed(ActionEvent e) { 
+                        if (SiembrarjToggleButton3.isSelected()) {
+                            
                             if(sueloElegir[k][l].getPorcentaje()==0.35){
                                 JOptionPane.showMessageDialog(null,"No puedes sembrar en agua");
                             }
@@ -74,13 +85,74 @@ public class InicializarSuelos {
                                 if (PescarjToggleButton4.isSelected()){
                                     JOptionPane.showMessageDialog(null, "Quita la opcion pesca para poder sembrar");
                                 }
+                                if(ParcelasjToggleButton5.isSelected()){
+                                    JOptionPane.showMessageDialog(null, "Quita la opcion parcelas para poder sembrar");
+                                }
                                 else{
-                                    if(almacenamientoUsuarioPlantas.getTotalSemillas()>0){
-                                        AlmacenamientoUsuarioPlantas.restarTotal();
-                                        LlamadoInstancias.sembrarSeleccion(); 
-                                        suelo[k][l].setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/AccionSembrar.PNG")));
+                                    if(almacenamientoUsuarioPlantas.getControladorSembrarMaiz()>=5){
+                                        suelo[k][l].setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/MaizSembrado.PNG")));
+                                        almacenamientoUsuarioPlantas.setControladorSembrarMaiz(0);
+                                        establecerReportes.setCeldasSembradas(establecerReportes.getCeldasSembradas()+1);
+                                        JOptionPane.showMessageDialog(null, "Sembraste maiz");
+                                    }
+                                    if(almacenamientoUsuarioPlantas.getControladorSembrarFrijol()>=8){
+                                        suelo[k][l].setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/FrijolSembrado.PNG")));
+                                        almacenamientoUsuarioPlantas.setControladorSembrarFrijol(0);
+                                        establecerReportes.setCeldasSembradas(establecerReportes.getCeldasSembradas()+1);
+                                        JOptionPane.showMessageDialog(null, "Sembraste frijol");
+                                    }
+                                    if(almacenamientoUsuarioPlantas.getControladorSembrarArroz()>=8){
+                                        suelo[k][l].setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/ArrozSembrado.PNG")));
+                                        almacenamientoUsuarioPlantas.setControladorSembrarArroz(0);
+                                        establecerReportes.setCeldasSembradas(establecerReportes.getCeldasSembradas()+1);
+                                        JOptionPane.showMessageDialog(null, "Sembraste arroz");
+                                    }
+                                    if(almacenamientoUsuarioPlantas.getControladorSembrarManzano()>=3){
+                                        suelo[k][l].setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/ManzanoSembrado.PNG")));
+                                        almacenamientoUsuarioPlantas.setControladorSembrarManzano(0);
+                                        establecerReportes.setCeldasSembradas(establecerReportes.getCeldasSembradas()+1);
+                                        JOptionPane.showMessageDialog(null, "Sembraste manzano");
                                         
-                                        OrojLabel2.setText(""+Jugador.jugador1.getMonedas());
+                                    }
+                                    if(almacenamientoUsuarioPlantas.getControladorSembrarNaranjo()>=3){
+                                        suelo[k][l].setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/NaranjoSembrado.PNG")));
+                                        almacenamientoUsuarioPlantas.setControladorSembrarNaranjo(0);
+                                        establecerReportes.setCeldasSembradas(establecerReportes.getCeldasSembradas()+1);
+                                        JOptionPane.showMessageDialog(null, "Sembraste naranjo");
+                                    }
+                                    if(almacenamientoUsuarioPlantas.getControladorSembrarBanano()>=5){
+                                        suelo[k][l].setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/BananoSembrado.PNG")));
+                                        almacenamientoUsuarioPlantas.setControladorSembrarBanano(0);
+                                        establecerReportes.setCeldasSembradas(establecerReportes.getCeldasSembradas()+1);
+                                        JOptionPane.showMessageDialog(null, "Sembraste banano");
+                                    }
+                                    else{
+                                        JOptionPane.showMessageDialog(null, "Primero necesitas la cantidad de semillas para sembrar y seleccionar que planta sembrar");
+                                    }
+                                    
+                                }
+                            }
+                        }
+                        if(ParcelasjToggleButton5.isSelected()){
+                            if(sueloElegir[k][l].getPorcentaje()==0.35){
+                                JOptionPane.showMessageDialog(null,"No puedes poner parcela en agua");
+                            }
+                            else if(sueloElegir[k][l].getPorcentaje()==0.25){
+                                JOptionPane.showMessageDialog(null, "No podemos hacer nada en el desierto");
+                            }
+                            else{
+                                if (PescarjToggleButton4.isSelected()){
+                                    JOptionPane.showMessageDialog(null, "Quita la opcion pesca para poder poner parcelas");
+                                }
+                                if(SiembrarjToggleButton3.isSelected()){
+                                    JOptionPane.showMessageDialog(null, "Quita la opcion sembrar para poder poner parcelas");
+                                }
+                                else{
+                                    if(Jugador.jugador1.getMonedas()>=3){
+                                        Jugador.jugador1.setMonedas(Jugador.jugador1.getMonedas()-3);
+                                        suelo[k][l].setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/SiembraParcela.PNG")));
+                                        
+                                        OrojLabel2.setText(""+Jugador.jugador1.getMonedas());   
                                         
                                     }
                                     else{
@@ -91,8 +163,11 @@ public class InicializarSuelos {
                         }
                         if (PescarjToggleButton4.isSelected()) {
                             if(sueloElegir[k][l].getPorcentaje()==0.35){
-                                if (SiembrajToggleButton3.isSelected()){
+                                if (SiembrarjToggleButton3.isSelected()){
                                     JOptionPane.showMessageDialog(null, "Quita la opcion sembrar para poder pescar");
+                                }
+                                if(ParcelasjToggleButton5.isSelected()){
+                                    JOptionPane.showMessageDialog(null, "Quita la opcion parcelas para poder sembrar");
                                 }
                                 else{
                                     if(Jugador.jugador1.getBarco()>0){
@@ -119,7 +194,67 @@ public class InicializarSuelos {
         }
         
     }
-    
+
+    public void generadorCompraTerreno(){
+        //primeros candidatos
+        if(Jugador.jugador1.getSuelo()==3)suelo[1][1].setVisible(true);
+        if(Jugador.jugador1.getSuelo()==5)suelo[1][2].setVisible(true);
+        if(Jugador.jugador1.getSuelo()==1)suelo[1][3].setVisible(true);
+        if(Jugador.jugador1.getSuelo()==7)suelo[1][4].setVisible(true);
+        if(Jugador.jugador1.getSuelo()==2)suelo[1][5].setVisible(true);
+        if(Jugador.jugador1.getSuelo()==4)suelo[1][6].setVisible(true);
+        if(Jugador.jugador1.getSuelo()==6)suelo[1][7].setVisible(true);
+        if(Jugador.jugador1.getSuelo()==9)suelo[2][7].setVisible(true);
+        if(Jugador.jugador1.getSuelo()==10)suelo[3][7].setVisible(true);
+        if(Jugador.jugador1.getSuelo()==16)suelo[4][7].setVisible(true);
+        if(Jugador.jugador1.getSuelo()==12)suelo[5][7].setVisible(true);
+        if(Jugador.jugador1.getSuelo()==8)suelo[6][7].setVisible(true);
+        if(Jugador.jugador1.getSuelo()==24)suelo[7][7].setVisible(true);
+        if(Jugador.jugador1.getSuelo()==11)suelo[2][1].setVisible(true);
+        if(Jugador.jugador1.getSuelo()==18)suelo[3][1].setVisible(true);
+        if(Jugador.jugador1.getSuelo()==14)suelo[4][1].setVisible(true);
+        if(Jugador.jugador1.getSuelo()==15)suelo[5][1].setVisible(true);
+        if(Jugador.jugador1.getSuelo()==23)suelo[6][1].setVisible(true);
+        if(Jugador.jugador1.getSuelo()==22)suelo[7][1].setVisible(true);
+        if(Jugador.jugador1.getSuelo()==20)suelo[7][2].setVisible(true);
+        if(Jugador.jugador1.getSuelo()==17)suelo[7][3].setVisible(true);
+        if(Jugador.jugador1.getSuelo()==21)suelo[7][4].setVisible(true);
+        if(Jugador.jugador1.getSuelo()==19)suelo[7][5].setVisible(true);
+        if(Jugador.jugador1.getSuelo()==13)suelo[7][6].setVisible(true);
+        //segundos valores
+        if(Jugador.jugador1.getSuelo()==25)suelo[0][0].setVisible(true);
+        if(Jugador.jugador1.getSuelo()==32)suelo[0][1].setVisible(true);
+        if(Jugador.jugador1.getSuelo()==53)suelo[0][2].setVisible(true);
+        if(Jugador.jugador1.getSuelo()==35)suelo[0][3].setVisible(true);
+        if(Jugador.jugador1.getSuelo()==44)suelo[0][4].setVisible(true);
+        if(Jugador.jugador1.getSuelo()==28)suelo[0][5].setVisible(true);
+        if(Jugador.jugador1.getSuelo()==52)suelo[0][6].setVisible(true);
+        if(Jugador.jugador1.getSuelo()==34)suelo[0][7].setVisible(true);
+        if(Jugador.jugador1.getSuelo()==54)suelo[0][8].setVisible(true);
+        if(Jugador.jugador1.getSuelo()==26)suelo[1][0].setVisible(true);
+        if(Jugador.jugador1.getSuelo()==43)suelo[2][0].setVisible(true);
+        if(Jugador.jugador1.getSuelo()==36)suelo[3][0].setVisible(true);
+        if(Jugador.jugador1.getSuelo()==27)suelo[4][0].setVisible(true);
+        if(Jugador.jugador1.getSuelo()==45)suelo[5][0].setVisible(true);
+        if(Jugador.jugador1.getSuelo()==33)suelo[6][0].setVisible(true);
+        if(Jugador.jugador1.getSuelo()==42)suelo[7][0].setVisible(true);
+        if(Jugador.jugador1.getSuelo()==51)suelo[8][0].setVisible(true);
+        if(Jugador.jugador1.getSuelo()==29)suelo[1][8].setVisible(true);
+        if(Jugador.jugador1.getSuelo()==37)suelo[2][8].setVisible(true);
+        if(Jugador.jugador1.getSuelo()==46)suelo[3][8].setVisible(true);
+        if(Jugador.jugador1.getSuelo()==55)suelo[4][8].setVisible(true);
+        if(Jugador.jugador1.getSuelo()==50)suelo[5][8].setVisible(true);
+        if(Jugador.jugador1.getSuelo()==41)suelo[6][8].setVisible(true);
+        if(Jugador.jugador1.getSuelo()==30)suelo[7][8].setVisible(true);
+        if(Jugador.jugador1.getSuelo()==38)suelo[8][8].setVisible(true);
+        if(Jugador.jugador1.getSuelo()==47)suelo[8][1].setVisible(true);
+        if(Jugador.jugador1.getSuelo()==49)suelo[8][2].setVisible(true);
+        if(Jugador.jugador1.getSuelo()==31)suelo[8][3].setVisible(true);
+        if(Jugador.jugador1.getSuelo()==39)suelo[8][4].setVisible(true);
+        if(Jugador.jugador1.getSuelo()==56)suelo[8][5].setVisible(true);
+        if(Jugador.jugador1.getSuelo()==40)suelo[8][6].setVisible(true);
+        if(Jugador.jugador1.getSuelo()==48)suelo[8][7].setVisible(true);
+    }
     public static void llamarInicializarSuelos(){
         inicializarSuelos = new InicializarSuelos();
     }

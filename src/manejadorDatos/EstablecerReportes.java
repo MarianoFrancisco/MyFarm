@@ -137,4 +137,19 @@ public class EstablecerReportes {
     public static void sumarComidaOmnivoroComprada(){
         establecerReportes.setComidaOmnivorosComprada(establecerReportes.getComidaOmnivorosComprada()+1);
     }
+    public static void sumarComidasConsumidas(){
+        establecerReportes.setAlimentoConsumido(establecerReportes.getAlimentoConsumido()+1);
+    }
+    public static void sumarOroGenerado(){
+        establecerReportes.setOroGenerado(establecerReportes.getOroGenerado()+1);
+    }
+    public static void sumarUnidadesDestazadas(){
+        establecerReportes.setUnidadesDestazadas(establecerReportes.getUnidadesDestazadas()+1);
+    }
+    public static void sumarCeldasSembradas(){
+        establecerReportes.setCeldasSembradas(establecerReportes.getCeldasSembradas()+1);
+    }
+    public static void sumarAlimentoGenerado(){
+        establecerReportes.setAlimentoGenerado(establecerReportes.getAlimentoGenerado()+1);
+    }
 }
