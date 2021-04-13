@@ -31,6 +31,9 @@ public class HiloMuerteFrijol extends Thread{
                 System.out.println("Error en espera de hiloMuerteFrijol "+e);
             }        
         }
+        if(establecerInstruccionesHilos.getHiloFrijol()==2){
+                establecerInstruccionesHilos.setHiloFrijol(0);
+        }
         if(establecerInstruccionesHilos.getHiloFrijol()==0){
             JOptionPane.showMessageDialog(null,"Se hecho a perder la cosecha lo sentimos, la proxima tienes que estar mas atent@ uwu");
         }

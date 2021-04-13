@@ -1,6 +1,8 @@
 package suelos;
+import hilosAnimales.*;
 import hilosPlantas.*;
 import static instancias.InicializarSuelos.*;
+import static manejadorDatos.AlmacenamientoUsuarioAnimales.almacenamientoUsuarioAnimales;
 import static manejadorDatos.AlmacenamientoUsuarioPlantas.almacenamientoUsuarioPlantas;
 /**
  *
@@ -11,7 +13,6 @@ public class SueloGrama extends Suelos{
     public SueloGrama() {
         super(0.4);
     }
-   
     public static void Siembra() throws InterruptedException{
         if(almacenamientoUsuarioPlantas.getControladorSembrarMaiz()>=5){
             hiloMaizCosecha = new HiloMaizCosecha();
@@ -57,7 +58,13 @@ public class SueloGrama extends Suelos{
         }
     }
     public static void ParcelaCrianza(){
-        
+        if(almacenamientoUsuarioAnimales.getControladorPonerCerdo()>=1){
+            hiloCerdo = new HiloCerdo();
+            hiloCerdo.start();
+            hiloMuerteCerdo = new HiloMuerteCerdo();    
+            hiloMuerteCerdo.start();
+            almacenamientoUsuarioAnimales.setControladorPonerCerdo(0);
+        }
     }
     
 }

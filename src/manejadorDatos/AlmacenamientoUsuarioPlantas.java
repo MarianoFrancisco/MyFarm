@@ -3,6 +3,7 @@ package manejadorDatos;
 import static instancias.FrameSeleccionSiembra.*;
 import static instancias.FrameVender.*;
 import static manejadorDatos.AlmacenamientoUsuarioAlimentos.almacenamientoUsuarioAlimentos;
+import static manejadorDatos.AlmacenamientoUsuarioAnimales.almacenamientoUsuarioAnimales;
 import static manejadorDatos.AlmacenamientoUsuarioProductos.almacenamientoUsuarioProductos;
 import static proyecto1.CrearAnimalesPlantas.*;
 /**
@@ -269,6 +270,10 @@ public class AlmacenamientoUsuarioPlantas {
             VManzanoSembrarjButton3.setVisible(false);
             VManzanoSembrarjLabel5.setVisible(false);
         }
-        
+        if(almacenamientoUsuarioAnimales.getUsuarioPeces()==0){
+            pescarjButton5.setVisible(false);
+            PescadojLabel7.setVisible(false);
+        }
     }
+
 }

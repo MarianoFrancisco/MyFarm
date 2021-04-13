@@ -138,7 +138,7 @@ public class FrameMercado extends javax.swing.JFrame {
     }//GEN-LAST:event_ComprarjButton2ActionPerformed
 
     private void VenderjButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VenderjButton3ActionPerformed
-        if(almacenamientoUsuarioPlantas.getTotalSemillas()>0){       
+        if(Jugador.jugador1.getEntradaVentas()>0){       
             LlamadoInstancias.vender();
             this.dispose();
         }                                    

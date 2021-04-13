@@ -1,6 +1,7 @@
 
 package instancias;
 
+import hilosAnimales.*;
 import hilosPlantas.*;
 import static instancias.FrameGranja.*;
 import java.awt.event.ActionEvent;
@@ -10,7 +11,9 @@ import java.util.logging.Logger;
 
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
+import jugador.HiloPescar;
 import jugador.Jugador;
+import static manejadorDatos.AlmacenamientoUsuarioAnimales.almacenamientoUsuarioAnimales;
 import suelos.CreacionSueloInicial;
 import static suelos.CreacionSueloInicial.sueloElegir;
 import suelos.SueloAgua;
@@ -30,7 +33,7 @@ public class InicializarSuelos {
     int columnas=9;
     JButton[][] suelo;
     public static InicializarSuelos inicializarSuelos;
-    //
+    //Iniciamos hilos uwu
     public static HiloMuerteMaiz hiloMuerteMaiz;
     public static HiloMaizCosecha hiloMaizCosecha;
     public static HiloMuerteArroz hiloMuerteArroz;
@@ -43,6 +46,20 @@ public class InicializarSuelos {
     public static HiloNaranjoCosecha hiloNaranjoCosecha;
     public static HiloMuerteBanano hiloMuerteBanano;
     public static HiloBananoCosecha hiloBananoCosecha;
+    public static HiloPescar hiloPescar;
+    public static HiloCerdo hiloCerdo;
+    public static HiloGallina hiloGallina;
+    public static HiloLlama hiloLlama;
+    public static HiloVaca hiloVaca;
+    public static HiloPavo hiloPavo;
+    public static HiloOveja hiloOveja;
+    public static HiloMuerteCerdo hiloMuerteCerdo;
+    public static HiloMuerteGallina hiloMuerteGallina;
+    public static HiloMuerteLlama hiloMuerteLlama;
+    public static HiloMuerteOveja hiloMuerteOveja;
+    public static HiloMuerteVaca hiloMuerteVaca;
+    public static HiloMuertePavo hiloMuertePavo;
+    
     public void inicializarSuelos(){
         int x=0;
         int y=100;
@@ -113,6 +130,7 @@ public class InicializarSuelos {
                                             Logger.getLogger(InicializarSuelos.class.getName()).log(Level.SEVERE, null, ex);
                                         }
                                         
+                                        
                                     }
                                     if(almacenamientoUsuarioPlantas.getControladorSembrarFrijol()>=8){
                                         suelo[k][l].setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/FrijolSembrado.PNG")));  
@@ -136,9 +154,6 @@ public class InicializarSuelos {
                                         } catch (InterruptedException ex) {
                                             Logger.getLogger(InicializarSuelos.class.getName()).log(Level.SEVERE, null, ex);
                                         }
-                                        
-                                        
-                                        
                                     }
                                     if(almacenamientoUsuarioPlantas.getControladorSembrarManzano()>=3){
                                         suelo[k][l].setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/ManzanoSembrado.PNG")));
@@ -182,6 +197,17 @@ public class InicializarSuelos {
                                 }
                             }
                         }
+                        if(LimpiarTerrenoCasillajToggleButton3.isSelected()){
+                            if(sueloElegir[k][l].getPorcentaje()==0.35){
+                                suelo[k][l].setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/Agua.PNG")));
+                            }
+                            else if(sueloElegir[k][l].getPorcentaje()==0.25){
+                                JOptionPane.showMessageDialog(null, "No podemos hacer nada en el desierto");
+                            }
+                            else{
+                                suelo[k][l].setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/Grama.PNG")));
+                            }
+                        }
                         if(ColocarAnimalesjToggleButton1.isSelected()){
                             if(sueloElegir[k][l].getPorcentaje()==0.35){
                                 JOptionPane.showMessageDialog(null,"No puedes poner animales en agua");
@@ -190,9 +216,23 @@ public class InicializarSuelos {
                                 JOptionPane.showMessageDialog(null, "No podemos hacer nada en el desierto");
                             }
                             else{
-                                JOptionPane.showMessageDialog(null, "Viene en DLC XD");
+                                if (PescarjToggleButton4.isSelected()){
+                                    JOptionPane.showMessageDialog(null, "Quita la opcion pesca para poder colocar animal");
+                                }
+                                if(ParcelasjToggleButton5.isSelected()){
+                                    JOptionPane.showMessageDialog(null, "Quita la opcion parcelas para poder colocar");
+                                }
+                                else{
+                                    if(almacenamientoUsuarioAnimales.getControladorPonerCerdo()>=1){
+                                        suelo[k][l].setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/Cerdo.PNG")));
+                                        JOptionPane.showMessageDialog(null, "Colocaste cerdo :3");
+                                        SueloGrama.ParcelaCrianza();
+                                        
+                                    }
                             }
                             }
+                            
+                        }
                         if(ParcelasjToggleButton5.isSelected()){
                             if(sueloElegir[k][l].getPorcentaje()==0.35){
                                 JOptionPane.showMessageDialog(null,"No puedes poner parcela en agua");
@@ -233,6 +273,7 @@ public class InicializarSuelos {
                                     if(Jugador.jugador1.getBarco()>0){
                                         Jugador.jugador1.setBarco(Jugador.jugador1.getBarco()-1);
                                         suelo[k][l].setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/AccionPescar.PNG")));
+                                        SueloAgua.Pesca();
                                         OrojLabel2.setText(""+Jugador.jugador1.getMonedas());
                                     }
                                     else{

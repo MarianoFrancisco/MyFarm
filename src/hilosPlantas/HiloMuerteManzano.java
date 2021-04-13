@@ -31,6 +31,9 @@ public class HiloMuerteManzano extends Thread{
                 System.out.println("Error en espera de hiloMuerteManzano "+e);
             }        
         }
+        if(establecerInstruccionesHilos.getHiloManzano()==2){
+                establecerInstruccionesHilos.setHiloManzano(0);
+        }
         if(establecerInstruccionesHilos.getHiloManzano()==0){
             JOptionPane.showMessageDialog(null,"Se hecho a perder la cosecha lo sentimos, la proxima tienes que estar mas atent@ uwu");
         }

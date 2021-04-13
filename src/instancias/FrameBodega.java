@@ -11,6 +11,9 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import jugador.Jugador;
+import static manejadorDatos.AlmacenamientoUsuarioAlimentos.almacenamientoUsuarioAlimentos;
+import static manejadorDatos.AlmacenamientoUsuarioAnimales.almacenamientoUsuarioAnimales;
+import static manejadorDatos.AlmacenamientoUsuarioProductos.almacenamientoUsuarioProductos;
 
 /**
  *
@@ -43,9 +46,16 @@ public class FrameBodega extends javax.swing.JFrame{
         FinalizarJuegojButton1 = new javax.swing.JButton();
         LogojLabel1 = new javax.swing.JLabel();
         AlimentosjLabel2 = new javax.swing.JLabel();
-        FondojLabel1 = new javax.swing.JLabel();
         ProductosjLabel3 = new javax.swing.JLabel();
+        DatoAlimentosjLabel2 = new javax.swing.JLabel();
+        DatoAlimentosjLabel3 = new javax.swing.JLabel();
+        DatoAlimentosjLabel4 = new javax.swing.JLabel();
         FondojLabel2 = new javax.swing.JLabel();
+        DatoAlimentosjLabel5 = new javax.swing.JLabel();
+        DatoAlimentosjLabel6 = new javax.swing.JLabel();
+        DatoAlimentosjLabel7 = new javax.swing.JLabel();
+        DatoAlimentosjLabel11 = new javax.swing.JLabel();
+        FondojLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Bodega");
@@ -83,16 +93,44 @@ public class FrameBodega extends javax.swing.JFrame{
         AlimentosjLabel2.setText("Alimentos");
         jPanel1.add(AlimentosjLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 40, -1, -1));
 
-        FondojLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/FondoBodega.jpg"))); // NOI18N
-        jPanel1.add(FondojLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, -1, -1));
-
         ProductosjLabel3.setFont(new java.awt.Font("Engravers MT", 1, 18)); // NOI18N
         ProductosjLabel3.setForeground(new java.awt.Color(0, 0, 0));
         ProductosjLabel3.setText("Productos");
         jPanel1.add(ProductosjLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 40, -1, -1));
 
+        DatoAlimentosjLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        DatoAlimentosjLabel2.setText("Libras de maiz : "+almacenamientoUsuarioProductos.getUsuarioMaiz());
+        jPanel1.add(DatoAlimentosjLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 90, -1, -1));
+
+        DatoAlimentosjLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        DatoAlimentosjLabel3.setText("Libras de frijol : "+almacenamientoUsuarioProductos.getUsuarioArroz());
+        jPanel1.add(DatoAlimentosjLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 140, -1, -1));
+
+        DatoAlimentosjLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        DatoAlimentosjLabel4.setText("Libras de arroz : "+almacenamientoUsuarioProductos.getUsuarioFrijol());
+        jPanel1.add(DatoAlimentosjLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 190, -1, -1));
+
         FondojLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/FondoBodega.jpg"))); // NOI18N
         jPanel1.add(FondojLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 30, -1, -1));
+
+        DatoAlimentosjLabel5.setForeground(new java.awt.Color(0, 0, 0));
+        DatoAlimentosjLabel5.setText("Frutas de Manzano : "+almacenamientoUsuarioAlimentos.getUsuarioManzano());
+        jPanel1.add(DatoAlimentosjLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 90, -1, -1));
+
+        DatoAlimentosjLabel6.setForeground(new java.awt.Color(0, 0, 0));
+        DatoAlimentosjLabel6.setText("Frutas de Naranjo : "+almacenamientoUsuarioAlimentos.getUsuarioNaranjo());
+        jPanel1.add(DatoAlimentosjLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, -1, -1));
+
+        DatoAlimentosjLabel7.setForeground(new java.awt.Color(0, 0, 0));
+        DatoAlimentosjLabel7.setText("Frutas de Banano : "+almacenamientoUsuarioAlimentos.getUsuarioBanano());
+        jPanel1.add(DatoAlimentosjLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 170, -1, -1));
+
+        DatoAlimentosjLabel11.setForeground(new java.awt.Color(0, 0, 0));
+        DatoAlimentosjLabel11.setText("Pescados : "+almacenamientoUsuarioAnimales.getUsuarioPeces());
+        jPanel1.add(DatoAlimentosjLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 210, -1, -1));
+
+        FondojLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/FondoBodega.jpg"))); // NOI18N
+        jPanel1.add(FondojLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -117,6 +155,9 @@ public class FrameBodega extends javax.swing.JFrame{
     private void FinalizarJuegojButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FinalizarJuegojButton1ActionPerformed
         JOptionPane.showMessageDialog(FrameBodega.this, "Fin del juego, vuelve pronto "+Jugador.jugador1.getNick());
         System.exit(0);
+        
+                
+                        
     }//GEN-LAST:event_FinalizarJuegojButton1ActionPerformed
     class FondoInicio extends JPanel{
         private Image imagen;
@@ -130,6 +171,13 @@ public class FrameBodega extends javax.swing.JFrame{
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel AlimentosjLabel2;
+    public static javax.swing.JLabel DatoAlimentosjLabel11;
+    public static javax.swing.JLabel DatoAlimentosjLabel2;
+    public static javax.swing.JLabel DatoAlimentosjLabel3;
+    public static javax.swing.JLabel DatoAlimentosjLabel4;
+    public static javax.swing.JLabel DatoAlimentosjLabel5;
+    public static javax.swing.JLabel DatoAlimentosjLabel6;
+    public static javax.swing.JLabel DatoAlimentosjLabel7;
     private javax.swing.JButton FinalizarJuegojButton1;
     private javax.swing.JLabel FondojLabel1;
     private javax.swing.JLabel FondojLabel2;

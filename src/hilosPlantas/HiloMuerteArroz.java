@@ -31,6 +31,9 @@ public class HiloMuerteArroz extends Thread{
                 System.out.println("Error en espera de hiloMuerteArroz "+e);
             }        
         }
+        if(establecerInstruccionesHilos.getHiloArroz()==2){
+                establecerInstruccionesHilos.setHiloArroz(0);
+        }
         if(establecerInstruccionesHilos.getHiloArroz()==0){
             JOptionPane.showMessageDialog(null,"Se hecho a perder la cosecha lo sentimos, la proxima tienes que estar mas atent@ uwu");
         }

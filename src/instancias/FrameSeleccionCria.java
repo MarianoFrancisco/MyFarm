@@ -5,6 +5,7 @@
  */
 package instancias;
 
+import static instancias.FrameGranja.FrameGranja;
 import java.awt.Graphics;
 import java.awt.Image;
 import javax.swing.ImageIcon;
@@ -13,6 +14,10 @@ import javax.swing.JPanel;
 import jugador.*;
 import manejadorDatos.AlmacenamientoUsuarioAnimales;
 import static manejadorDatos.AlmacenamientoUsuarioAnimales.almacenamientoUsuarioAnimales;
+import manejadorDatos.AlmacenamientoUsuarioPlantas;
+import static manejadorDatos.AlmacenamientoUsuarioPlantas.almacenamientoUsuarioPlantas;
+import static proyecto1.CrearAnimalesPlantas.animales;
+import static proyecto1.CrearAnimalesPlantas.plantas;
 
 /**
  *
@@ -225,68 +230,86 @@ public class FrameSeleccionCria extends javax.swing.JFrame {
     }//GEN-LAST:event_FinalizarJuegojButton2ActionPerformed
 
     private void CerdoPonerjButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CerdoPonerjButton4ActionPerformed
-        if(Jugador.jugador1.getMonedas()>=50){
-            Jugador.jugador1.setMonedas(Jugador.jugador1.getMonedas()-50);
-            JOptionPane.showMessageDialog(null, "Adquiriste una cria de Cerdo "+Jugador.jugador1.getNick() + " te quedan "+Jugador.jugador1.getMonedas()+" monedas");
+        if(almacenamientoUsuarioAnimales.getCriaCerdo()>=1){
+            JOptionPane.showMessageDialog(null, "Seleccionaste cerdo siu "+Jugador.jugador1.getNick()+" ve a la opcion poner animal y coloca tu cria");
+            AlmacenamientoUsuarioAnimales.restarCerdo();
+            almacenamientoUsuarioAnimales.setControladorPonerCerdo(1);
+            FrameGranja.setVisible(true);           
+            this.dispose();
             
         }
         else{
-            JOptionPane.showMessageDialog(null, "No tienes suficiente dinero "+Jugador.jugador1.getNick());
+            JOptionPane.showMessageDialog(null, "No tienes crias de Oveja :c "+Jugador.jugador1.getNick());
         }
     }//GEN-LAST:event_CerdoPonerjButton4ActionPerformed
 
     private void PavoPonerjButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PavoPonerjButton5ActionPerformed
-        if(Jugador.jugador1.getMonedas()>=100){
-            Jugador.jugador1.setMonedas(Jugador.jugador1.getMonedas()-100);
-            JOptionPane.showMessageDialog(null, "Adquiriste una cria de Pavo "+Jugador.jugador1.getNick() + " te quedan "+Jugador.jugador1.getMonedas()+" monedas");
+        if(almacenamientoUsuarioAnimales.getCriaPavo()>=1){
+            JOptionPane.showMessageDialog(null, "Seleccionaste pavo siu "+Jugador.jugador1.getNick()+" ve a la opcion poner animal y coloca tu cria");
+            AlmacenamientoUsuarioAnimales.restarPavo();
+            almacenamientoUsuarioAnimales.setControladorPonerPavo(1);
+            FrameGranja.setVisible(true);           
+            this.dispose();
             
         }
         else{
-            JOptionPane.showMessageDialog(null, "No tienes suficiente dinero "+Jugador.jugador1.getNick());
+            JOptionPane.showMessageDialog(null, "No tienes crias de pavo :c "+Jugador.jugador1.getNick());
         }
     }//GEN-LAST:event_PavoPonerjButton5ActionPerformed
 
     private void GallinaPonerjButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GallinaPonerjButton4ActionPerformed
-        if(Jugador.jugador1.getMonedas()>=45){
-            Jugador.jugador1.setMonedas(Jugador.jugador1.getMonedas()-45);
-            JOptionPane.showMessageDialog(null, "Adquiriste una cria de Gallina "+Jugador.jugador1.getNick() + " te quedan "+Jugador.jugador1.getMonedas()+" monedas");
+        if(almacenamientoUsuarioAnimales.getCriaGallina()>=1){
+            JOptionPane.showMessageDialog(null, "Seleccionaste gallina siu "+Jugador.jugador1.getNick()+" ve a la opcion poner animal y coloca tu cria");
+            AlmacenamientoUsuarioAnimales.restarGallinas();
+            almacenamientoUsuarioAnimales.setControladorPonerGallina(1);
+            FrameGranja.setVisible(true);           
+            this.dispose();
             
         }
         else{
-            JOptionPane.showMessageDialog(null, "No tienes suficiente dinero "+Jugador.jugador1.getNick());
+            JOptionPane.showMessageDialog(null, "No tienes crias de gallina :c "+Jugador.jugador1.getNick());
         }
     }//GEN-LAST:event_GallinaPonerjButton4ActionPerformed
 
     private void VacaPonerjButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VacaPonerjButton3ActionPerformed
-        if(Jugador.jugador1.getMonedas()>=220){
-            Jugador.jugador1.setMonedas(Jugador.jugador1.getMonedas()-220);
-            JOptionPane.showMessageDialog(null, "Adquiriste una cria de Vaca "+Jugador.jugador1.getNick() + " te quedan "+Jugador.jugador1.getMonedas()+" monedas");
+        if(almacenamientoUsuarioAnimales.getCriaVaca()>=1){
+            JOptionPane.showMessageDialog(null, "Seleccionaste vaca siu "+Jugador.jugador1.getNick()+" ve a la opcion poner animal y coloca tu cria");
+            AlmacenamientoUsuarioAnimales.restarVacas();
+            almacenamientoUsuarioAnimales.setControladorPonerVaca(1);
+            FrameGranja.setVisible(true);           
+            this.dispose();
             
         }
         else{
-            JOptionPane.showMessageDialog(null, "No tienes suficiente dinero "+Jugador.jugador1.getNick());
+            JOptionPane.showMessageDialog(null, "No tienes crias de vaca :c "+Jugador.jugador1.getNick());
         }
     }//GEN-LAST:event_VacaPonerjButton3ActionPerformed
 
     private void LlamaPonerjButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LlamaPonerjButton2ActionPerformed
-        if(Jugador.jugador1.getMonedas()>=60){
-            Jugador.jugador1.setMonedas(Jugador.jugador1.getMonedas()-60);
-            JOptionPane.showMessageDialog(null, "Adquiriste una cria de Llama "+Jugador.jugador1.getNick() + " te quedan "+Jugador.jugador1.getMonedas()+" monedas");
+        if(almacenamientoUsuarioAnimales.getCriaLlama()>=1){
+            JOptionPane.showMessageDialog(null, "Seleccionaste llama siu "+Jugador.jugador1.getNick()+" ve a la opcion poner animal y coloca tu cria");
+            AlmacenamientoUsuarioAnimales.restarLlama();
+            almacenamientoUsuarioAnimales.setControladorPonerLlama(1);
+            FrameGranja.setVisible(true);           
+            this.dispose();
             
         }
         else{
-            JOptionPane.showMessageDialog(null, "No tienes suficiente dinero "+Jugador.jugador1.getNick());
+            JOptionPane.showMessageDialog(null, "No tienes crias de llama :c "+Jugador.jugador1.getNick());
         }
     }//GEN-LAST:event_LlamaPonerjButton2ActionPerformed
 
     private void OvejaPonerjButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OvejaPonerjButton3ActionPerformed
-        if(Jugador.jugador1.getMonedas()>=70){
-            Jugador.jugador1.setMonedas(Jugador.jugador1.getMonedas()-70);
-            JOptionPane.showMessageDialog(null, "Adquiriste una cria de Oveja "+Jugador.jugador1.getNick() + " te quedan "+Jugador.jugador1.getMonedas()+" monedas");
+        if(almacenamientoUsuarioAnimales.getCriaOveja()>=1){
+            JOptionPane.showMessageDialog(null, "Seleccionaste Oveja siu "+Jugador.jugador1.getNick()+" ve a la opcion poner animal y coloca tu cria");
+            AlmacenamientoUsuarioAnimales.restarOveja();
+            almacenamientoUsuarioAnimales.setControladorPonerOveja(1);
+            FrameGranja.setVisible(true);           
+            this.dispose();
             
         }
         else{
-            JOptionPane.showMessageDialog(null, "No tienes suficiente dinero "+Jugador.jugador1.getNick());
+            JOptionPane.showMessageDialog(null, "No tienes crias de Oveja :c "+Jugador.jugador1.getNick());
         }
     }//GEN-LAST:event_OvejaPonerjButton3ActionPerformed
 

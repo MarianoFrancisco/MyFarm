@@ -19,6 +19,7 @@ import static manejadorDatos.AlmacenamientoUsuarioProductos.almacenamientoUsuari
 import static manejadorDatos.EstablecerInstruccionesHilos.establecerInstruccionesHilos;
 import manejadorDatos.EstablecerReportes;
 import static manejadorDatos.EstablecerReportes.establecerReportes;
+import static proyecto1.CrearAnimalesPlantas.animales;
 import static proyecto1.CrearAnimalesPlantas.plantas;
 import proyecto1.LlamarTiempo;
 
@@ -124,6 +125,7 @@ public class FrameGranja extends javax.swing.JFrame{
         SeleccionarPlantajLabel7 = new javax.swing.JLabel();
         CosecharjButton2 = new javax.swing.JButton();
         AlimentarjButton3 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -471,6 +473,14 @@ public class FrameGranja extends javax.swing.JFrame{
         });
         GranjajPanel1.add(AlimentarjButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 410, 60, 40));
 
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/Destace.PNG"))); // NOI18N
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        GranjajPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 210, 50, 50));
+
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/FondoMenu.jpg"))); // NOI18N
         jLabel6.setText("jLabel4");
         GranjajPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 300, 650));
@@ -612,11 +622,16 @@ public class FrameGranja extends javax.swing.JFrame{
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void LimpiarTerrenoCasillajToggleButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LimpiarTerrenoCasillajToggleButton3ActionPerformed
-        // TODO add your handling code here:
+        if(LimpiarTerrenoCasillajToggleButton3.isSelected()==true){
+            LimpiarTerrenoCasillajToggleButton3.setIcon(new javax.swing.ImageIcon(FrameGranja.this.getClass().getResource("/decoracion/LimpiarSuelo.PNG")));
+        }
+        else{
+            LimpiarTerrenoCasillajToggleButton3.setIcon(new javax.swing.ImageIcon(FrameGranja.this.getClass().getResource("/decoracion/LimpiarUnaParcela.PNG")));
+        } 
     }//GEN-LAST:event_LimpiarTerrenoCasillajToggleButton3ActionPerformed
 
     private void LimpiarTodoLimpiarTodojButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LimpiarTodoLimpiarTodojButton2ActionPerformed
-        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(FrameGranja.this, "Lo sentimos "+Jugador.jugador1.getNick()+" unicamente hay disponible una persona para limpiar, tendras que hacer individualmente, en reparacion");
     }//GEN-LAST:event_LimpiarTodoLimpiarTodojButton2ActionPerformed
 
     private void ComprarTerrenojButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComprarTerrenojButton2ActionPerformed
@@ -631,7 +646,12 @@ public class FrameGranja extends javax.swing.JFrame{
     }//GEN-LAST:event_ComprarTerrenojButton2ActionPerformed
 
     private void ColocarAnimalesjToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ColocarAnimalesjToggleButton1ActionPerformed
-        // TODO add your handling code here:
+        if(ColocarAnimalesjToggleButton1.isSelected()==true){
+            ColocarAnimalesjToggleButton1.setIcon(new javax.swing.ImageIcon(FrameGranja.this.getClass().getResource("/decoracion/CambiarImagenPonerAnimal.PNG")));
+        }
+        else{
+            ColocarAnimalesjToggleButton1.setIcon(new javax.swing.ImageIcon(FrameGranja.this.getClass().getResource("/decoracion/ColocarAnimal.PNG")));
+        } 
     }//GEN-LAST:event_ColocarAnimalesjToggleButton1ActionPerformed
 
     private void SeleccionarPlantajButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SeleccionarPlantajButton2ActionPerformed
@@ -663,39 +683,54 @@ public class FrameGranja extends javax.swing.JFrame{
             JOptionPane.showMessageDialog(null,"Lograste cosechar a tiempo, conseguiste "+plantas[0].getProductoCosecha()+" lb de maiz");
             establecerInstruccionesHilos.setHiloMaiz(1);
             almacenamientoUsuarioProductos.setUsuarioMaiz(almacenamientoUsuarioProductos.getUsuarioMaiz()+plantas[0].getProductoCosecha());
+            Jugador.jugador1.setEntradaVentas(Jugador.jugador1.getEntradaVentas()+plantas[0].getProductoCosecha());
         }
         if(establecerInstruccionesHilos.getHiloFrijol()==2){
             JOptionPane.showMessageDialog(null,"Lograste cosechar a tiempo, conseguiste "+plantas[1].getProductoCosecha()+" lb de frijol");
             establecerInstruccionesHilos.setHiloFrijol(1);
             almacenamientoUsuarioProductos.setUsuarioFrijol(almacenamientoUsuarioProductos.getUsuarioFrijol()+plantas[1].getProductoCosecha());
+            Jugador.jugador1.setEntradaVentas(Jugador.jugador1.getEntradaVentas()+plantas[1].getProductoCosecha());
         }
         if(establecerInstruccionesHilos.getHiloArroz()==2){
             JOptionPane.showMessageDialog(null,"Lograste cosechar a tiempo, conseguiste "+plantas[2].getProductoCosecha()+" lb de arroz");
             establecerInstruccionesHilos.setHiloArroz(1);
             almacenamientoUsuarioProductos.setUsuarioArroz(almacenamientoUsuarioProductos.getUsuarioArroz()+plantas[2].getProductoCosecha());
+            Jugador.jugador1.setEntradaVentas(Jugador.jugador1.getEntradaVentas()+plantas[2].getProductoCosecha());
         }
         if(establecerInstruccionesHilos.getHiloManzano()==2){
             JOptionPane.showMessageDialog(null,"Lograste cosechar Manzano a tiempo, conseguiste "+plantas[3].getProductoCosecha()+" frutas de mazano");
             establecerInstruccionesHilos.setHiloManzano(1);
             almacenamientoUsuarioAlimentos.setUsuarioManzano(almacenamientoUsuarioAlimentos.getUsuarioManzano()+plantas[3].getProductoCosecha());
             establecerReportes.setAlimentoGenerado(establecerReportes.getAlimentoGenerado()+plantas[3].getProductoCosecha());
+            Jugador.jugador1.setEntradaVentas(Jugador.jugador1.getEntradaVentas()+plantas[3].getProductoCosecha());
         }
         if(establecerInstruccionesHilos.getHiloNaranjo()==2){
             JOptionPane.showMessageDialog(null,"Lograste cosechar a tiempo, conseguiste "+plantas[4].getProductoCosecha()+" frutas de naranjo");
             establecerInstruccionesHilos.setHiloNaranjo(1);
             almacenamientoUsuarioAlimentos.setUsuarioNaranjo(almacenamientoUsuarioAlimentos.getUsuarioNaranjo()+plantas[4].getProductoCosecha());
             establecerReportes.setAlimentoGenerado(establecerReportes.getAlimentoGenerado()+plantas[4].getProductoCosecha());
+            Jugador.jugador1.setEntradaVentas(Jugador.jugador1.getEntradaVentas()+plantas[4].getProductoCosecha());
         }
         if(establecerInstruccionesHilos.getHiloBanano()==2){
             JOptionPane.showMessageDialog(null,"Lograste cosechar a tiempo, conseguiste "+plantas[5].getProductoCosecha()+" frutas de banano");
             establecerInstruccionesHilos.setHiloBanano(1);
             almacenamientoUsuarioAlimentos.setUsuarioBanano(almacenamientoUsuarioAlimentos.getUsuarioBanano()+plantas[5].getProductoCosecha());
             establecerReportes.setAlimentoGenerado(establecerReportes.getAlimentoGenerado()+plantas[5].getProductoCosecha());
+            Jugador.jugador1.setEntradaVentas(Jugador.jugador1.getEntradaVentas()+plantas[5].getProductoCosecha());
         }
         else{
             JOptionPane.showMessageDialog(null,"Primero necesitas tener lista una cosecha :P ");
         }
     }//GEN-LAST:event_CosecharjButton2ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        if(establecerInstruccionesHilos.getHiloCerdo()==2){
+            JOptionPane.showMessageDialog(null,"Lograste destazar a tiempo, conseguiste "+animales[1].getLibrasCarneGenerada()+" lb de carne de cerdo");
+            establecerInstruccionesHilos.setHiloCerdo(1);
+            almacenamientoUsuarioAlimentos.setUsuarioCerdo(almacenamientoUsuarioAlimentos.getUsuarioCerdo()+animales[1].getLibrasCarneGenerada());
+            Jugador.jugador1.setEntradaVentas(Jugador.jugador1.getEntradaVentas()+animales[1].getLibrasCarneGenerada());
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel AccionesjLabel3;
@@ -753,6 +788,7 @@ public class FrameGranja extends javax.swing.JFrame{
     private javax.swing.JLabel VidajLabel8;
     public static javax.swing.JProgressBar VidajProgressBar1;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;

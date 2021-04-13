@@ -18,9 +18,9 @@ public class HiloMaizCosecha extends Thread{
                 HiloMaizCosecha.sleep(1000);
             } catch (InterruptedException e) {
                 System.out.println("Error en espera de hiloCosechaMaiz "+e);
-            }          
+            }
         }
-        establecerInstruccionesHilos.setHiloMaiz(2);
+        establecerInstruccionesHilos.setHiloMaiz(0);
         JOptionPane.showMessageDialog(null,"La cosecha de maiz está hecha apurate, tienes 10 segundos para cosechar o pierdes tu cosecha");
         
     }

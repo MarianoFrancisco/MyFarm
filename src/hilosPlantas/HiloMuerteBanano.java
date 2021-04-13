@@ -31,6 +31,9 @@ public class HiloMuerteBanano extends Thread{
                 System.out.println("Error en espera de hiloMuerteBanano "+e);
             }        
         }
+        if(establecerInstruccionesHilos.getHiloBanano()==2){
+                establecerInstruccionesHilos.setHiloBanano(0);
+        }
         if(establecerInstruccionesHilos.getHiloBanano()==0){
             JOptionPane.showMessageDialog(null,"Se hecho a perder la cosecha lo sentimos, la proxima tienes que estar mas atent@ uwu");
         }

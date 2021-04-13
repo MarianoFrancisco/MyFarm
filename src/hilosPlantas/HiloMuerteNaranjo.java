@@ -31,6 +31,9 @@ public class HiloMuerteNaranjo extends Thread{
                 System.out.println("Error en espera de hiloMuerteNaranjo "+e);
             }        
         }
+        if(establecerInstruccionesHilos.getHiloNaranjo()==2){
+                establecerInstruccionesHilos.setHiloNaranjo(0);
+        }
         if(establecerInstruccionesHilos.getHiloNaranjo()==0){
             JOptionPane.showMessageDialog(null,"Se hecho a perder la cosecha lo sentimos, la proxima tienes que estar mas atent@ uwu");
         }

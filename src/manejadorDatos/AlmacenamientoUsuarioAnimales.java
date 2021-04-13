@@ -20,8 +20,11 @@ public class AlmacenamientoUsuarioAnimales {
     private int controladorPonerVaca;
     private int controladorPonerLlama;
     private int controladorPonerOveja;
+    private int usuarioPeces;
+    private int precioPeces;
+    private int pecesDisponibles;
     public static AlmacenamientoUsuarioAnimales almacenamientoUsuarioAnimales;
-    public AlmacenamientoUsuarioAnimales(int totalCrias,int criaCerdo,int criaPavo,int criaGallina,int criaVaca,int criaLlama,int criaOveja, int controladorPonerCerdo,int controladorPonerPavo,int controladorPonerGallina,int controladorPonerVaca,int controladorPonerLlama,int controladorPonerOveja){
+    public AlmacenamientoUsuarioAnimales(int totalCrias,int criaCerdo,int criaPavo,int criaGallina,int criaVaca,int criaLlama,int criaOveja, int controladorPonerCerdo,int controladorPonerPavo,int controladorPonerGallina,int controladorPonerVaca,int controladorPonerLlama,int controladorPonerOveja,int usuarioPeces,int precioPeces,int pecesDisponibles){
         this.totalCrias=totalCrias;
         this.criaCerdo=criaCerdo;
         this.criaPavo=criaPavo;
@@ -35,6 +38,9 @@ public class AlmacenamientoUsuarioAnimales {
         this.controladorPonerVaca=controladorPonerVaca;
         this.controladorPonerLlama=controladorPonerLlama;
         this.controladorPonerOveja=controladorPonerOveja;
+        this.usuarioPeces=usuarioPeces;
+        this.precioPeces=precioPeces;
+        this.pecesDisponibles=pecesDisponibles;
     }
 
     public int getTotalCrias() {
@@ -140,9 +146,32 @@ public class AlmacenamientoUsuarioAnimales {
     public void setControladorPonerOveja(int controladorPonerOveja) {
         this.controladorPonerOveja = controladorPonerOveja;
     }
+    public int getUsuarioPeces() {
+        return this.usuarioPeces;
+    }
+
+    public void setUsuarioPeces(int usuarioPeces) {
+        this.usuarioPeces = usuarioPeces;
+    }
+
+    public int getPrecioPeces() {
+        return this.precioPeces;
+    }
+
+    public void setPrecioPeces(int precioPeces) {
+        this.precioPeces = precioPeces;
+    }
+
+    public int getPecesDisponibles() {
+        return pecesDisponibles;
+    }
+
+    public void setPecesDisponibles(int pecesDisponibles) {
+        this.pecesDisponibles = pecesDisponibles;
+    }
     
     public static void crearUsuarioAnimales(){
-        almacenamientoUsuarioAnimales = new AlmacenamientoUsuarioAnimales(0,0,0,0,0,0,0,0,0,0,0,0,0);
+        almacenamientoUsuarioAnimales = new AlmacenamientoUsuarioAnimales(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3);
     }
     public static void sumarCerdos(){
         almacenamientoUsuarioAnimales.setCriaCerdo(almacenamientoUsuarioAnimales.getCriaCerdo()+1);

@@ -29,7 +29,9 @@ public class HiloMuerteMaiz extends Thread{
                 System.out.println("Error en espera de hiloMuerteMaiz "+e);
             }        
         }
-        
+        if(establecerInstruccionesHilos.getHiloMaiz()==2){
+                establecerInstruccionesHilos.setHiloMaiz(0);
+        }
         if(establecerInstruccionesHilos.getHiloMaiz()==0){
             JOptionPane.showMessageDialog(null,"Se hecho a perder la cosecha lo sentimos, la proxima tienes que estar mas atent@ uwu");
         }
