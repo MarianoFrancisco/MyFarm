@@ -11,6 +11,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import jugador.Jugador;
+import static manejadorDatos.AlmacenamientoUsuarioPlantas.almacenamientoUsuarioPlantas;
 
 /**
  *
@@ -137,8 +138,15 @@ public class FrameMercado extends javax.swing.JFrame {
     }//GEN-LAST:event_ComprarjButton2ActionPerformed
 
     private void VenderjButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VenderjButton3ActionPerformed
-        LlamadoInstancias.vender();
-        this.dispose();
+        if(almacenamientoUsuarioPlantas.getTotalSemillas()>0){       
+            LlamadoInstancias.vender();
+            this.dispose();
+        }                                    
+        else{
+            JOptionPane.showMessageDialog(null, "Necesitas primero generar alimentos o productos para vender");
+        }
+        
+        
         
     }//GEN-LAST:event_VenderjButton3ActionPerformed
 

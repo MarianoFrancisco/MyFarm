@@ -1,6 +1,9 @@
 package manejadorDatos;
 
 import static instancias.FrameSeleccionSiembra.*;
+import static instancias.FrameVender.*;
+import static manejadorDatos.AlmacenamientoUsuarioAlimentos.almacenamientoUsuarioAlimentos;
+import static manejadorDatos.AlmacenamientoUsuarioProductos.almacenamientoUsuarioProductos;
 import static proyecto1.CrearAnimalesPlantas.*;
 /**
  *
@@ -236,6 +239,35 @@ public class AlmacenamientoUsuarioPlantas {
             ManzanoSembrarjLabel5.setVisible(false);
             ManzanoSembrarjLabel6.setVisible(false);
             ManzanoSembrarjLabel7.setVisible(false);
+        }
+        
+    }
+    public static void visibilidadVender(){
+        if(almacenamientoUsuarioProductos.getUsuarioFrijol()==0){
+            VFrijoljSembrarButton2.setVisible(false);
+            VFrijolSembrarjLabel3.setVisible(false);
+        }
+        if(almacenamientoUsuarioProductos.getUsuarioArroz()==0){
+            VArrozSembrarjButton1.setVisible(false);
+            VArrozSembrarjLabel1.setVisible(false);
+        }  
+        if(almacenamientoUsuarioAlimentos.getUsuarioNaranjo()==0){
+            VNaranjoSembrarjButton3.setVisible(false);
+            VNaranjoSembrarjLabel3.setVisible(false);
+        }
+        if(almacenamientoUsuarioAlimentos.getUsuarioBanano()==0){
+            VBananoSembrarjButton4.setVisible(false);
+            VBananoSembrarjLabel6.setVisible(false);
+
+        }
+        if(almacenamientoUsuarioProductos.getUsuarioMaiz()==0){
+            VMaizSembrarjButton2.setVisible(false);
+            VMaizSembrarjLabel2.setVisible(false);
+
+        }
+        if(almacenamientoUsuarioAlimentos.getUsuarioManzano()==0){
+            VManzanoSembrarjButton3.setVisible(false);
+            VManzanoSembrarjLabel5.setVisible(false);
         }
         
     }
