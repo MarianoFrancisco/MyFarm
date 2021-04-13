@@ -60,5 +60,12 @@ public class LlamadoInstancias {
             }
         });
     }
+    public static void criaSeleccion(){
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new FrameSeleccionCria().setVisible(true);
+            }
+        });
+    }
     
 }

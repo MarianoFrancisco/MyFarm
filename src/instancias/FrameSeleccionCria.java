@@ -5,19 +5,37 @@
  */
 package instancias;
 
+import java.awt.Graphics;
+import java.awt.Image;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import jugador.*;
+import manejadorDatos.AlmacenamientoUsuarioAnimales;
+import static manejadorDatos.AlmacenamientoUsuarioAnimales.almacenamientoUsuarioAnimales;
+
 /**
  *
  * @author Mariano
  */
+
 public class FrameSeleccionCria extends javax.swing.JFrame {
 
     /**
      * Creates new form FrameSeleccionCria
      */
+    FondoInicio fondoInicioGranja = new FondoInicio();
     public FrameSeleccionCria() {
+        this.setContentPane(fondoInicioGranja);
         initComponents();
+        AlmacenamientoUsuarioAnimales.visibilidadSeleccionAnimales();
+        ;
+        ;
+        ;
+        ;
+        ;
+        ;
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -33,8 +51,30 @@ public class FrameSeleccionCria extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         FinalizarJuegojButton2 = new javax.swing.JButton();
         LogojLabel1 = new javax.swing.JLabel();
+        CerdoPonerjButton4 = new javax.swing.JButton();
+        PavoPonerjButton5 = new javax.swing.JButton();
+        GallinaPonerjButton4 = new javax.swing.JButton();
+        VacaPonerjButton3 = new javax.swing.JButton();
+        LlamaPonerjButton2 = new javax.swing.JButton();
+        OvejaPonerjButton3 = new javax.swing.JButton();
+        OvejaPonerjLabel4 = new javax.swing.JLabel();
+        LlamaPonerjLabel3 = new javax.swing.JLabel();
+        VacaPonerjLabel7 = new javax.swing.JLabel();
+        PolloPonerjLabel6 = new javax.swing.JLabel();
+        PavoPonerjLabel8 = new javax.swing.JLabel();
+        CerdoPonerjLabel5 = new javax.swing.JLabel();
+        OvejaTextojLabel4 = new javax.swing.JLabel();
+        VacaTextojLabel6 = new javax.swing.JLabel();
+        LlamaTextojLabel2 = new javax.swing.JLabel();
+        CerdoTextojLabel7 = new javax.swing.JLabel();
+        GallinaTextojLabel3 = new javax.swing.JLabel();
+        PavoTextojLabel4 = new javax.swing.JLabel();
+        FondojLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel1.setOpaque(false);
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton1.setBackground(new java.awt.Color(0, 204, 204));
         jButton1.setFont(new java.awt.Font("Engravers MT", 1, 12)); // NOI18N
@@ -45,6 +85,7 @@ public class FrameSeleccionCria extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(8, 600, -1, -1));
 
         FinalizarJuegojButton2.setBackground(new java.awt.Color(255, 0, 0));
         FinalizarJuegojButton2.setFont(new java.awt.Font("Engravers MT", 1, 12)); // NOI18N
@@ -55,31 +96,109 @@ public class FrameSeleccionCria extends javax.swing.JFrame {
                 FinalizarJuegojButton2ActionPerformed(evt);
             }
         });
+        jPanel1.add(FinalizarJuegojButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1018, 600, -1, -1));
 
         LogojLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/Logo.PNG"))); // NOI18N
+        jPanel1.add(LogojLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1218, 600, -1, -1));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(8, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(789, 789, 789)
-                .addComponent(FinalizarJuegojButton2)
-                .addGap(8, 8, 8)
-                .addComponent(LogojLabel1)
-                .addContainerGap())
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 600, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1)
-                    .addComponent(FinalizarJuegojButton2)
-                    .addComponent(LogojLabel1)))
-        );
+        CerdoPonerjButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/Cerdo.PNG"))); // NOI18N
+        CerdoPonerjButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CerdoPonerjButton4ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(CerdoPonerjButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 350, 80, 70));
+
+        PavoPonerjButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/Pavo.PNG"))); // NOI18N
+        PavoPonerjButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PavoPonerjButton5ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(PavoPonerjButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 350, 70, 70));
+
+        GallinaPonerjButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/Gallina.PNG"))); // NOI18N
+        GallinaPonerjButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GallinaPonerjButton4ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(GallinaPonerjButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 350, 70, 70));
+
+        VacaPonerjButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/Vaca.PNG"))); // NOI18N
+        VacaPonerjButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                VacaPonerjButton3ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(VacaPonerjButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 160, 70, 70));
+
+        LlamaPonerjButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/Llama.PNG"))); // NOI18N
+        LlamaPonerjButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LlamaPonerjButton2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(LlamaPonerjButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 160, 70, 74));
+
+        OvejaPonerjButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/Oveja.PNG"))); // NOI18N
+        OvejaPonerjButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OvejaPonerjButton3ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(OvejaPonerjButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 160, 70, 74));
+
+        OvejaPonerjLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        OvejaPonerjLabel4.setText("Oveja");
+        jPanel1.add(OvejaPonerjLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 130, -1, -1));
+
+        LlamaPonerjLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        LlamaPonerjLabel3.setText("Llama");
+        jPanel1.add(LlamaPonerjLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 130, -1, -1));
+
+        VacaPonerjLabel7.setForeground(new java.awt.Color(0, 0, 0));
+        VacaPonerjLabel7.setText("Vaca");
+        jPanel1.add(VacaPonerjLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 130, -1, 20));
+
+        PolloPonerjLabel6.setForeground(new java.awt.Color(0, 0, 0));
+        PolloPonerjLabel6.setText("Gallina");
+        jPanel1.add(PolloPonerjLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 320, -1, -1));
+
+        PavoPonerjLabel8.setForeground(new java.awt.Color(0, 0, 0));
+        PavoPonerjLabel8.setText("Pavo");
+        jPanel1.add(PavoPonerjLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 320, -1, -1));
+
+        CerdoPonerjLabel5.setForeground(new java.awt.Color(0, 0, 0));
+        CerdoPonerjLabel5.setText("Cerdo");
+        jPanel1.add(CerdoPonerjLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 320, -1, -1));
+
+        OvejaTextojLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        OvejaTextojLabel4.setText("Ovejas actuales: "+almacenamientoUsuarioAnimales.getCriaOveja());
+        jPanel1.add(OvejaTextojLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 260, -1, -1));
+
+        VacaTextojLabel6.setForeground(new java.awt.Color(0, 0, 0));
+        VacaTextojLabel6.setText("Vacas actuales: "+almacenamientoUsuarioAnimales.getCriaVaca());
+        jPanel1.add(VacaTextojLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 260, -1, -1));
+
+        LlamaTextojLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        LlamaTextojLabel2.setText("Semillas actuales: "+almacenamientoUsuarioAnimales.getCriaLlama());
+        jPanel1.add(LlamaTextojLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 260, -1, -1));
+
+        CerdoTextojLabel7.setForeground(new java.awt.Color(0, 0, 0));
+        CerdoTextojLabel7.setText("Cerdos actuales: "+almacenamientoUsuarioAnimales.getCriaCerdo());
+        jPanel1.add(CerdoTextojLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 450, -1, -1));
+
+        GallinaTextojLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        GallinaTextojLabel3.setText("Gallinas actuales: "+almacenamientoUsuarioAnimales.getCriaGallina());
+        jPanel1.add(GallinaTextojLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 450, -1, -1));
+
+        PavoTextojLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        PavoTextojLabel4.setText("Pavos actuales: "+almacenamientoUsuarioAnimales.getCriaPavo());
+        jPanel1.add(PavoTextojLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 450, -1, -1));
+
+        FondojLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/FondoMercado.jpg"))); // NOI18N
+        jPanel1.add(FondojLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 100, 540, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -105,44 +224,107 @@ public class FrameSeleccionCria extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_FinalizarJuegojButton2ActionPerformed
 
+    private void CerdoPonerjButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CerdoPonerjButton4ActionPerformed
+        if(Jugador.jugador1.getMonedas()>=50){
+            Jugador.jugador1.setMonedas(Jugador.jugador1.getMonedas()-50);
+            JOptionPane.showMessageDialog(null, "Adquiriste una cria de Cerdo "+Jugador.jugador1.getNick() + " te quedan "+Jugador.jugador1.getMonedas()+" monedas");
+            
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "No tienes suficiente dinero "+Jugador.jugador1.getNick());
+        }
+    }//GEN-LAST:event_CerdoPonerjButton4ActionPerformed
+
+    private void PavoPonerjButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PavoPonerjButton5ActionPerformed
+        if(Jugador.jugador1.getMonedas()>=100){
+            Jugador.jugador1.setMonedas(Jugador.jugador1.getMonedas()-100);
+            JOptionPane.showMessageDialog(null, "Adquiriste una cria de Pavo "+Jugador.jugador1.getNick() + " te quedan "+Jugador.jugador1.getMonedas()+" monedas");
+            
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "No tienes suficiente dinero "+Jugador.jugador1.getNick());
+        }
+    }//GEN-LAST:event_PavoPonerjButton5ActionPerformed
+
+    private void GallinaPonerjButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GallinaPonerjButton4ActionPerformed
+        if(Jugador.jugador1.getMonedas()>=45){
+            Jugador.jugador1.setMonedas(Jugador.jugador1.getMonedas()-45);
+            JOptionPane.showMessageDialog(null, "Adquiriste una cria de Gallina "+Jugador.jugador1.getNick() + " te quedan "+Jugador.jugador1.getMonedas()+" monedas");
+            
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "No tienes suficiente dinero "+Jugador.jugador1.getNick());
+        }
+    }//GEN-LAST:event_GallinaPonerjButton4ActionPerformed
+
+    private void VacaPonerjButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VacaPonerjButton3ActionPerformed
+        if(Jugador.jugador1.getMonedas()>=220){
+            Jugador.jugador1.setMonedas(Jugador.jugador1.getMonedas()-220);
+            JOptionPane.showMessageDialog(null, "Adquiriste una cria de Vaca "+Jugador.jugador1.getNick() + " te quedan "+Jugador.jugador1.getMonedas()+" monedas");
+            
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "No tienes suficiente dinero "+Jugador.jugador1.getNick());
+        }
+    }//GEN-LAST:event_VacaPonerjButton3ActionPerformed
+
+    private void LlamaPonerjButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LlamaPonerjButton2ActionPerformed
+        if(Jugador.jugador1.getMonedas()>=60){
+            Jugador.jugador1.setMonedas(Jugador.jugador1.getMonedas()-60);
+            JOptionPane.showMessageDialog(null, "Adquiriste una cria de Llama "+Jugador.jugador1.getNick() + " te quedan "+Jugador.jugador1.getMonedas()+" monedas");
+            
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "No tienes suficiente dinero "+Jugador.jugador1.getNick());
+        }
+    }//GEN-LAST:event_LlamaPonerjButton2ActionPerformed
+
+    private void OvejaPonerjButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OvejaPonerjButton3ActionPerformed
+        if(Jugador.jugador1.getMonedas()>=70){
+            Jugador.jugador1.setMonedas(Jugador.jugador1.getMonedas()-70);
+            JOptionPane.showMessageDialog(null, "Adquiriste una cria de Oveja "+Jugador.jugador1.getNick() + " te quedan "+Jugador.jugador1.getMonedas()+" monedas");
+            
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "No tienes suficiente dinero "+Jugador.jugador1.getNick());
+        }
+    }//GEN-LAST:event_OvejaPonerjButton3ActionPerformed
+
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FrameSeleccionCria.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FrameSeleccionCria.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FrameSeleccionCria.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FrameSeleccionCria.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+    class FondoInicio extends JPanel{
+        private Image imagen;
+        @Override
+        public void paint(Graphics g){ 
+            imagen = new ImageIcon(getClass().getResource("/decoracion/FondoGranja.jpg")).getImage();
+            g.drawImage(imagen, 0, 0, getWidth(), getHeight(), this);
+            setOpaque(false);
+            super.paint(g);
         }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new FrameSeleccionCria().setVisible(true);
-            }
-        });
     }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public static javax.swing.JButton CerdoPonerjButton4;
+    public static javax.swing.JLabel CerdoPonerjLabel5;
+    public static javax.swing.JLabel CerdoTextojLabel7;
     private javax.swing.JButton FinalizarJuegojButton2;
+    private javax.swing.JLabel FondojLabel3;
+    public static javax.swing.JButton GallinaPonerjButton4;
+    public static javax.swing.JLabel GallinaTextojLabel3;
+    public static javax.swing.JButton LlamaPonerjButton2;
+    public static javax.swing.JLabel LlamaPonerjLabel3;
+    public static javax.swing.JLabel LlamaTextojLabel2;
     private javax.swing.JLabel LogojLabel1;
+    public static javax.swing.JButton OvejaPonerjButton3;
+    public static javax.swing.JLabel OvejaPonerjLabel4;
+    public static javax.swing.JLabel OvejaTextojLabel4;
+    public static javax.swing.JButton PavoPonerjButton5;
+    public static javax.swing.JLabel PavoPonerjLabel8;
+    public static javax.swing.JLabel PavoTextojLabel4;
+    public static javax.swing.JLabel PolloPonerjLabel6;
+    public static javax.swing.JButton VacaPonerjButton3;
+    public static javax.swing.JLabel VacaPonerjLabel7;
+    public static javax.swing.JLabel VacaTextojLabel6;
     private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables

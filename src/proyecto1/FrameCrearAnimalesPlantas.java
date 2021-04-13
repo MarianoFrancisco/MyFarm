@@ -11,10 +11,13 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import manejadorDatos.AlmacenamientoUsuarioAlimentos;
 import manejadorDatos.AlmacenamientoUsuarioAnimales;
 import manejadorDatos.AlmacenamientoUsuarioComidas;
 import manejadorDatos.AlmacenamientoUsuarioFertilizante;
 import manejadorDatos.AlmacenamientoUsuarioPlantas;
+import manejadorDatos.AlmacenamientoUsuarioProductos;
+import manejadorDatos.EstablecerInstruccionesHilos;
 import manejadorDatos.ReinicioSiembra;
 import static proyecto1.CrearAnimalesPlantas.*;
 
@@ -240,7 +243,10 @@ public class FrameCrearAnimalesPlantas extends javax.swing.JFrame {
         this.setVisible(false);
         FrameGranja.iniciarGranja();
         FrameGranja.visible();
-        
+        EstablecerInstruccionesHilos.crearEstablecerInstrucHilos();
+        AlmacenamientoUsuarioProductos.crearAlmacenamientoUsProductos();
+        AlmacenamientoUsuarioAnimales.crearUsuarioAnimales();
+        AlmacenamientoUsuarioAlimentos.crearAlmacenamientoUsAnimales();
                 
     }//GEN-LAST:event_IniciarJuegojButton1ActionPerformed
 

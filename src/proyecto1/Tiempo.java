@@ -17,6 +17,8 @@ public class Tiempo extends Thread{
     int segundos=0;
     @Override
     public void run() {
+        int infinito=0;
+        while(infinito==0){
             for (minutos = 0;  minutos< 60; minutos++) {
                 for (segundos = 0; segundos < 60; segundos++) {
                     LlamarTiempo.llamarTiempo.setLlamarMinutos(minutos);
@@ -29,6 +31,9 @@ public class Tiempo extends Thread{
                     }
                 }
             }
+            LlamarTiempo.llamarTiempo.setLlamarHoras(LlamarTiempo.llamarTiempo.getLlamarHoras()+1);
+        }
+            
     }
     
 }

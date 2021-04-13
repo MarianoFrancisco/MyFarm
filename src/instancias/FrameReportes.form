@@ -157,7 +157,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="80" y="80" width="-1" height="-1"/>
+              <AbsoluteConstraints x="80" y="120" width="-1" height="-1"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -170,12 +170,12 @@
               <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-              <Connection code="&quot;Duracion de la partida: minutos: &quot;+LlamarTiempo.llamarTiempo.getLlamarMinutos()+&quot;, segundos: &quot;+ LlamarTiempo.llamarTiempo.getLlamarSegundos()" type="code"/>
+              <Connection code="&quot;Duracion de la partida: horas:  &quot;+LlamarTiempo.llamarTiempo.getLlamarHoras()+&quot;, minutos: &quot;+LlamarTiempo.llamarTiempo.getLlamarMinutos()+&quot;, segundos: &quot;+ LlamarTiempo.llamarTiempo.getLlamarSegundos()" type="code"/>
             </Property>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="80" y="130" width="-1" height="-1"/>
+              <AbsoluteConstraints x="60" y="70" width="-1" height="-1"/>
             </Constraint>
           </Constraints>
         </Component>

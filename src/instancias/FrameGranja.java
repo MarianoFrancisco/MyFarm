@@ -12,9 +12,14 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import jugador.Jugador;
+import static manejadorDatos.AlmacenamientoUsuarioAlimentos.almacenamientoUsuarioAlimentos;
+import static manejadorDatos.AlmacenamientoUsuarioAnimales.almacenamientoUsuarioAnimales;
 import static manejadorDatos.AlmacenamientoUsuarioPlantas.almacenamientoUsuarioPlantas;
+import static manejadorDatos.AlmacenamientoUsuarioProductos.almacenamientoUsuarioProductos;
+import static manejadorDatos.EstablecerInstruccionesHilos.establecerInstruccionesHilos;
 import manejadorDatos.EstablecerReportes;
-import static manejadorDatos.ReinicioSiembra.reinicioSiembra;
+import static manejadorDatos.EstablecerReportes.establecerReportes;
+import static proyecto1.CrearAnimalesPlantas.plantas;
 import proyecto1.LlamarTiempo;
 
 /**
@@ -93,7 +98,6 @@ public class FrameGranja extends javax.swing.JFrame{
         ParcelaMateriaPrima2jLabel4 = new javax.swing.JLabel();
         ParcelaAlimentojLabel5 = new javax.swing.JLabel();
         ParcelaAlimento2jLabel6 = new javax.swing.JLabel();
-        ComerAnimalesjToggleButton1 = new javax.swing.JToggleButton();
         jPanel1 = new javax.swing.JPanel();
         LlamadoNickjLabel1 = new javax.swing.JLabel();
         OrojLabel2 = new javax.swing.JLabel();
@@ -107,7 +111,6 @@ public class FrameGranja extends javax.swing.JFrame{
         LimpiarTodojButton2 = new javax.swing.JButton();
         ComprarTerrenojButton2 = new javax.swing.JButton();
         ComprarTerrenojLabel5 = new javax.swing.JLabel();
-        CosecharjToggleButton4 = new javax.swing.JToggleButton();
         CosecharjLabel3 = new javax.swing.JLabel();
         SiembrarjToggleButton3 = new javax.swing.JToggleButton();
         SembrarjLabel2 = new javax.swing.JLabel();
@@ -119,6 +122,8 @@ public class FrameGranja extends javax.swing.JFrame{
         PonerAnimaljLabel7 = new javax.swing.JLabel();
         SeleccionarAnimaljLabel8 = new javax.swing.JLabel();
         SeleccionarPlantajLabel7 = new javax.swing.JLabel();
+        CosecharjButton2 = new javax.swing.JButton();
+        AlimentarjButton3 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -274,7 +279,7 @@ public class FrameGranja extends javax.swing.JFrame{
 
         DarComerAnimalesjLabel2.setForeground(new java.awt.Color(0, 0, 0));
         DarComerAnimalesjLabel2.setText("Alimentar animales");
-        GranjajPanel1.add(DarComerAnimalesjLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 390, -1, -1));
+        GranjajPanel1.add(DarComerAnimalesjLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 390, -1, -1));
 
         PorParcelajLabel2.setForeground(new java.awt.Color(0, 0, 0));
         PorParcelajLabel2.setText("Parcela");
@@ -307,14 +312,6 @@ public class FrameGranja extends javax.swing.JFrame{
         ParcelaAlimento2jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         ParcelaAlimento2jLabel6.setText("de alimento");
         GranjajPanel1.add(ParcelaAlimento2jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 120, -1, -1));
-
-        ComerAnimalesjToggleButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/ComerAnimales.PNG"))); // NOI18N
-        ComerAnimalesjToggleButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ComerAnimalesjToggleButton1ActionPerformed(evt);
-            }
-        });
-        GranjajPanel1.add(ComerAnimalesjToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 410, 70, 50));
 
         jPanel1.setOpaque(false);
 
@@ -397,14 +394,6 @@ public class FrameGranja extends javax.swing.JFrame{
         ComprarTerrenojLabel5.setText("Comprar terreno");
         GranjajPanel1.add(ComprarTerrenojLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 570, -1, -1));
 
-        CosecharjToggleButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/Cosechar.PNG"))); // NOI18N
-        CosecharjToggleButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CosecharjToggleButton4ActionPerformed(evt);
-            }
-        });
-        GranjajPanel1.add(CosecharjToggleButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, 50, 50));
-
         CosecharjLabel3.setForeground(new java.awt.Color(0, 0, 0));
         CosecharjLabel3.setText("Cosechar");
         GranjajPanel1.add(CosecharjLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 390, -1, -1));
@@ -422,6 +411,11 @@ public class FrameGranja extends javax.swing.JFrame{
         GranjajPanel1.add(SembrarjLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 570, 50, -1));
 
         SeleccionarAnimalesjButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/SeleccionarAnimal.PNG"))); // NOI18N
+        SeleccionarAnimalesjButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SeleccionarAnimalesjButton2ActionPerformed(evt);
+            }
+        });
         GranjajPanel1.add(SeleccionarAnimalesjButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 490, 50, 60));
 
         MenujLabel4.setFont(new java.awt.Font("Engravers MT", 1, 12)); // NOI18N
@@ -460,6 +454,22 @@ public class FrameGranja extends javax.swing.JFrame{
         SeleccionarPlantajLabel7.setForeground(new java.awt.Color(0, 0, 0));
         SeleccionarPlantajLabel7.setText("Seleccionar Planta");
         GranjajPanel1.add(SeleccionarPlantajLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 470, -1, -1));
+
+        CosecharjButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/Cosechar.PNG"))); // NOI18N
+        CosecharjButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CosecharjButton2ActionPerformed(evt);
+            }
+        });
+        GranjajPanel1.add(CosecharjButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, 50, 50));
+
+        AlimentarjButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/ComerAnimales.PNG"))); // NOI18N
+        AlimentarjButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AlimentarjButton3ActionPerformed(evt);
+            }
+        });
+        GranjajPanel1.add(AlimentarjButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 410, 60, 40));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/FondoMenu.jpg"))); // NOI18N
         jLabel6.setText("jLabel4");
@@ -587,6 +597,7 @@ public class FrameGranja extends javax.swing.JFrame{
 
     private void ComerjButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComerjButton2ActionPerformed
         Jugador.jugador1.setVida(101);
+        Jugador.jugador1.setMonedas(Jugador.jugador1.getMonedas()-100);
         EstablecerReportes.sumarComidasConsumidas();
     }//GEN-LAST:event_ComerjButton2ActionPerformed
 
@@ -594,16 +605,6 @@ public class FrameGranja extends javax.swing.JFrame{
         this.setVisible(false);
         LlamadoInstancias.bodega();    
     }//GEN-LAST:event_BodegajButton2ActionPerformed
-
-    private void ComerAnimalesjToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComerAnimalesjToggleButton1ActionPerformed
-        if(ComerAnimalesjToggleButton1.isSelected()){
-            ComerAnimalesjToggleButton1.setIcon(new javax.swing.ImageIcon(FrameGranja.this.getClass().getResource("/decoracion/DarComer.PNG")));
-            
-        }
-        else{
-            ComerAnimalesjToggleButton1.setIcon(new javax.swing.ImageIcon(FrameGranja.this.getClass().getResource("/decoracion/ComerAnimales.PNG")));
-        }
-    }//GEN-LAST:event_ComerAnimalesjToggleButton1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         JOptionPane.showMessageDialog(FrameGranja.this, "Fin del juego, vuelve pronto "+Jugador.jugador1.getNick());
@@ -617,16 +618,6 @@ public class FrameGranja extends javax.swing.JFrame{
     private void LimpiarTodoLimpiarTodojButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LimpiarTodoLimpiarTodojButton2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_LimpiarTodoLimpiarTodojButton2ActionPerformed
-
-    private void CosecharjToggleButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CosecharjToggleButton4ActionPerformed
-        if(CosecharjToggleButton4.isSelected()==true){
-            CosecharjToggleButton4.setIcon(new javax.swing.ImageIcon(FrameGranja.this.getClass().getResource("/decoracion/AccionCosechar.PNG")));
-            
-        }
-        else{
-            CosecharjToggleButton4.setIcon(new javax.swing.ImageIcon(FrameGranja.this.getClass().getResource("/decoracion/Cosechar.PNG")));
-        } 
-    }//GEN-LAST:event_CosecharjToggleButton4ActionPerformed
 
     private void ComprarTerrenojButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComprarTerrenojButton2ActionPerformed
         if(Jugador.jugador1.getMonedas()>=200){
@@ -653,19 +644,72 @@ public class FrameGranja extends javax.swing.JFrame{
         }
     }//GEN-LAST:event_SeleccionarPlantajButton2ActionPerformed
 
+    private void SeleccionarAnimalesjButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SeleccionarAnimalesjButton2ActionPerformed
+        if(almacenamientoUsuarioAnimales.getTotalCrias()>0){
+            FrameGranja.setVisible(false);   
+            LlamadoInstancias.criaSeleccion();                                  
+        }                                    
+        else{
+            JOptionPane.showMessageDialog(null, "Necesitas primero comprar una cria");
+        }
+    }//GEN-LAST:event_SeleccionarAnimalesjButton2ActionPerformed
+
+    private void AlimentarjButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AlimentarjButton3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AlimentarjButton3ActionPerformed
+
+    private void CosecharjButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CosecharjButton2ActionPerformed
+        if(establecerInstruccionesHilos.getHiloMaiz()==2){
+            JOptionPane.showMessageDialog(null,"Lograste cosechar a tiempo, conseguiste "+plantas[0].getProductoCosecha()+" lb de maiz");
+            establecerInstruccionesHilos.setHiloMaiz(1);
+            almacenamientoUsuarioProductos.setUsuarioMaiz(almacenamientoUsuarioProductos.getUsuarioMaiz()+plantas[0].getProductoCosecha());
+        }
+        if(establecerInstruccionesHilos.getHiloFrijol()==2){
+            JOptionPane.showMessageDialog(null,"Lograste cosechar a tiempo, conseguiste "+plantas[1].getProductoCosecha()+" lb de frijol");
+            establecerInstruccionesHilos.setHiloFrijol(1);
+            almacenamientoUsuarioProductos.setUsuarioFrijol(almacenamientoUsuarioProductos.getUsuarioFrijol()+plantas[1].getProductoCosecha());
+        }
+        if(establecerInstruccionesHilos.getHiloArroz()==2){
+            JOptionPane.showMessageDialog(null,"Lograste cosechar a tiempo, conseguiste "+plantas[2].getProductoCosecha()+" lb de arroz");
+            establecerInstruccionesHilos.setHiloArroz(1);
+            almacenamientoUsuarioProductos.setUsuarioArroz(almacenamientoUsuarioProductos.getUsuarioArroz()+plantas[2].getProductoCosecha());
+        }
+        if(establecerInstruccionesHilos.getHiloManzano()==2){
+            JOptionPane.showMessageDialog(null,"Lograste cosechar Manzano a tiempo, conseguiste "+plantas[3].getProductoCosecha()+" frutas de mazano");
+            establecerInstruccionesHilos.setHiloManzano(1);
+            almacenamientoUsuarioAlimentos.setUsuarioManzano(almacenamientoUsuarioAlimentos.getUsuarioManzano()+plantas[3].getProductoCosecha());
+            establecerReportes.setAlimentoGenerado(establecerReportes.getAlimentoGenerado()+plantas[3].getProductoCosecha());
+        }
+        if(establecerInstruccionesHilos.getHiloNaranjo()==2){
+            JOptionPane.showMessageDialog(null,"Lograste cosechar a tiempo, conseguiste "+plantas[4].getProductoCosecha()+" frutas de naranjo");
+            establecerInstruccionesHilos.setHiloNaranjo(1);
+            almacenamientoUsuarioAlimentos.setUsuarioNaranjo(almacenamientoUsuarioAlimentos.getUsuarioNaranjo()+plantas[4].getProductoCosecha());
+            establecerReportes.setAlimentoGenerado(establecerReportes.getAlimentoGenerado()+plantas[4].getProductoCosecha());
+        }
+        if(establecerInstruccionesHilos.getHiloBanano()==2){
+            JOptionPane.showMessageDialog(null,"Lograste cosechar a tiempo, conseguiste "+plantas[5].getProductoCosecha()+" frutas de banano");
+            establecerInstruccionesHilos.setHiloBanano(1);
+            almacenamientoUsuarioAlimentos.setUsuarioBanano(almacenamientoUsuarioAlimentos.getUsuarioBanano()+plantas[5].getProductoCosecha());
+            establecerReportes.setAlimentoGenerado(establecerReportes.getAlimentoGenerado()+plantas[5].getProductoCosecha());
+        }
+        else{
+            JOptionPane.showMessageDialog(null,"Primero necesitas tener lista una cosecha :P ");
+        }
+    }//GEN-LAST:event_CosecharjButton2ActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel AccionesjLabel3;
+    private javax.swing.JButton AlimentarjButton3;
     private javax.swing.JLabel AnimalParcelajLabel4;
     public static javax.swing.JButton BodegajButton2;
     private javax.swing.JLabel BodegajLabel2;
-    private javax.swing.JToggleButton ColocarAnimalesjToggleButton1;
-    public static javax.swing.JToggleButton ComerAnimalesjToggleButton1;
+    public static javax.swing.JToggleButton ColocarAnimalesjToggleButton1;
     public static javax.swing.JButton ComerjButton2;
     private javax.swing.JLabel ComerjLabel3;
     private javax.swing.JButton ComprarTerrenojButton2;
     private javax.swing.JLabel ComprarTerrenojLabel5;
+    private javax.swing.JButton CosecharjButton2;
     private javax.swing.JLabel CosecharjLabel3;
-    public static javax.swing.JToggleButton CosecharjToggleButton4;
     private javax.swing.JLabel CrearParcelajLabel4;
     private javax.swing.JLabel DarComerAnimalesjLabel2;
     public static javax.swing.JPanel GranjajPanel1;

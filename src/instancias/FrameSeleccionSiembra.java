@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package instancias;
-import static instancias.FrameGranja.SiembrarjToggleButton3;
 import java.awt.Graphics;
 import java.awt.Image;
 import javax.swing.ImageIcon;
@@ -14,8 +13,6 @@ import javax.swing.JPanel;
 import manejadorDatos.AlmacenamientoUsuarioPlantas;
 import static manejadorDatos.AlmacenamientoUsuarioPlantas.almacenamientoUsuarioPlantas;
 import static instancias.FrameGranja.*;
-import static instancias.InicializarSuelos.inicializarSuelos;
-import static manejadorDatos.ReinicioSiembra.reinicioSiembra;
 import static proyecto1.CrearAnimalesPlantas.*;
 
 /**

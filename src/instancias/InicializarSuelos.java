@@ -1,11 +1,13 @@
 
 package instancias;
 
-
+import hilosPlantas.*;
 import static instancias.FrameGranja.*;
-import static instancias.FrameSeleccionSiembra.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import jugador.Jugador;
@@ -16,8 +18,7 @@ import suelos.SueloDesierto;
 import suelos.SueloGrama;
 import static manejadorDatos.AlmacenamientoUsuarioPlantas.almacenamientoUsuarioPlantas;
 import static manejadorDatos.EstablecerReportes.establecerReportes;
-import static manejadorDatos.ReinicioSiembra.reinicioSiembra;
-import static proyecto1.CrearAnimalesPlantas.plantas;
+
 /**
  *
  * @author Mariano
@@ -29,6 +30,19 @@ public class InicializarSuelos {
     int columnas=9;
     JButton[][] suelo;
     public static InicializarSuelos inicializarSuelos;
+    //
+    public static HiloMuerteMaiz hiloMuerteMaiz;
+    public static HiloMaizCosecha hiloMaizCosecha;
+    public static HiloMuerteArroz hiloMuerteArroz;
+    public static HiloArrozCosecha hiloArrozCosecha;
+    public static HiloMuerteFrijol hiloMuerteFrijol;
+    public static HiloFrijolCosecha hiloFrijolCosecha;
+    public static HiloMuerteManzano hiloMuerteManzano;
+    public static HiloManzanoCosecha hiloManzanoCosecha;
+    public static HiloMuerteNaranjo hiloMuerteNaranjo;
+    public static HiloNaranjoCosecha hiloNaranjoCosecha;
+    public static HiloMuerteBanano hiloMuerteBanano;
+    public static HiloBananoCosecha hiloBananoCosecha;
     public void inicializarSuelos(){
         int x=0;
         int y=100;
@@ -74,7 +88,7 @@ public class InicializarSuelos {
                     @Override
                     public void actionPerformed(ActionEvent e) { 
                         if (SiembrarjToggleButton3.isSelected()) {
-                            
+                             
                             if(sueloElegir[k][l].getPorcentaje()==0.35){
                                 JOptionPane.showMessageDialog(null,"No puedes sembrar en agua");
                             }
@@ -91,40 +105,75 @@ public class InicializarSuelos {
                                 else{
                                     if(almacenamientoUsuarioPlantas.getControladorSembrarMaiz()>=5){
                                         suelo[k][l].setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/MaizSembrado.PNG")));
-                                        almacenamientoUsuarioPlantas.setControladorSembrarMaiz(0);
                                         establecerReportes.setCeldasSembradas(establecerReportes.getCeldasSembradas()+1);
                                         JOptionPane.showMessageDialog(null, "Sembraste maiz");
+                                        try {
+                                            SueloGrama.Siembra();
+                                        } catch (InterruptedException ex) {
+                                            Logger.getLogger(InicializarSuelos.class.getName()).log(Level.SEVERE, null, ex);
+                                        }
+                                        
                                     }
                                     if(almacenamientoUsuarioPlantas.getControladorSembrarFrijol()>=8){
-                                        suelo[k][l].setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/FrijolSembrado.PNG")));
-                                        almacenamientoUsuarioPlantas.setControladorSembrarFrijol(0);
+                                        suelo[k][l].setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/FrijolSembrado.PNG")));  
                                         establecerReportes.setCeldasSembradas(establecerReportes.getCeldasSembradas()+1);
                                         JOptionPane.showMessageDialog(null, "Sembraste frijol");
+                                        try {
+                                            SueloGrama.Siembra();
+                                        } catch (InterruptedException ex) {
+                                            Logger.getLogger(InicializarSuelos.class.getName()).log(Level.SEVERE, null, ex);
+                                        }
+                                        
+                                        
+                                        
                                     }
                                     if(almacenamientoUsuarioPlantas.getControladorSembrarArroz()>=8){
                                         suelo[k][l].setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/ArrozSembrado.PNG")));
-                                        almacenamientoUsuarioPlantas.setControladorSembrarArroz(0);
                                         establecerReportes.setCeldasSembradas(establecerReportes.getCeldasSembradas()+1);
                                         JOptionPane.showMessageDialog(null, "Sembraste arroz");
+                                        try {
+                                            SueloGrama.Siembra();
+                                        } catch (InterruptedException ex) {
+                                            Logger.getLogger(InicializarSuelos.class.getName()).log(Level.SEVERE, null, ex);
+                                        }
+                                        
+                                        
+                                        
                                     }
                                     if(almacenamientoUsuarioPlantas.getControladorSembrarManzano()>=3){
                                         suelo[k][l].setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/ManzanoSembrado.PNG")));
-                                        almacenamientoUsuarioPlantas.setControladorSembrarManzano(0);
                                         establecerReportes.setCeldasSembradas(establecerReportes.getCeldasSembradas()+1);
                                         JOptionPane.showMessageDialog(null, "Sembraste manzano");
+                                        try {
+                                            SueloGrama.Siembra();
+                                        } catch (InterruptedException ex) {
+                                            Logger.getLogger(InicializarSuelos.class.getName()).log(Level.SEVERE, null, ex);
+                                        }
+                                        
+                                        
+                                        
                                         
                                     }
                                     if(almacenamientoUsuarioPlantas.getControladorSembrarNaranjo()>=3){
                                         suelo[k][l].setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/NaranjoSembrado.PNG")));
-                                        almacenamientoUsuarioPlantas.setControladorSembrarNaranjo(0);
                                         establecerReportes.setCeldasSembradas(establecerReportes.getCeldasSembradas()+1);
                                         JOptionPane.showMessageDialog(null, "Sembraste naranjo");
+                                        try {
+                                            SueloGrama.Siembra();
+                                        } catch (InterruptedException ex) {
+                                            Logger.getLogger(InicializarSuelos.class.getName()).log(Level.SEVERE, null, ex);
+                                        }         
+                                        
                                     }
                                     if(almacenamientoUsuarioPlantas.getControladorSembrarBanano()>=5){
                                         suelo[k][l].setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/BananoSembrado.PNG")));
-                                        almacenamientoUsuarioPlantas.setControladorSembrarBanano(0);
                                         establecerReportes.setCeldasSembradas(establecerReportes.getCeldasSembradas()+1);
                                         JOptionPane.showMessageDialog(null, "Sembraste banano");
+                                        try {
+                                            SueloGrama.Siembra();
+                                        } catch (InterruptedException ex) {
+                                            Logger.getLogger(InicializarSuelos.class.getName()).log(Level.SEVERE, null, ex);
+                                        }       
                                     }
                                     else{
                                         JOptionPane.showMessageDialog(null, "Primero necesitas la cantidad de semillas para sembrar y seleccionar que planta sembrar");
@@ -133,6 +182,17 @@ public class InicializarSuelos {
                                 }
                             }
                         }
+                        if(ColocarAnimalesjToggleButton1.isSelected()){
+                            if(sueloElegir[k][l].getPorcentaje()==0.35){
+                                JOptionPane.showMessageDialog(null,"No puedes poner animales en agua");
+                            }
+                            else if(sueloElegir[k][l].getPorcentaje()==0.25){
+                                JOptionPane.showMessageDialog(null, "No podemos hacer nada en el desierto");
+                            }
+                            else{
+                                JOptionPane.showMessageDialog(null, "Viene en DLC XD");
+                            }
+                            }
                         if(ParcelasjToggleButton5.isSelected()){
                             if(sueloElegir[k][l].getPorcentaje()==0.35){
                                 JOptionPane.showMessageDialog(null,"No puedes poner parcela en agua");

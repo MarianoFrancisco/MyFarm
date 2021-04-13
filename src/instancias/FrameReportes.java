@@ -105,12 +105,12 @@ public class FrameReportes extends javax.swing.JFrame {
         NombreGranjerojLabel2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         NombreGranjerojLabel2.setForeground(new java.awt.Color(0, 0, 0));
         NombreGranjerojLabel2.setText("Nombre del granjero: "+Jugador.jugador1.getNombre());
-        jPanel1.add(NombreGranjerojLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, -1, -1));
+        jPanel1.add(NombreGranjerojLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 120, -1, -1));
 
         DuracionPartidajLabel2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         DuracionPartidajLabel2.setForeground(new java.awt.Color(0, 0, 0));
-        DuracionPartidajLabel2.setText("Duracion de la partida: minutos: "+LlamarTiempo.llamarTiempo.getLlamarMinutos()+", segundos: "+ LlamarTiempo.llamarTiempo.getLlamarSegundos());
-        jPanel1.add(DuracionPartidajLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 130, -1, -1));
+        DuracionPartidajLabel2.setText("Duracion de la partida: horas:  "+LlamarTiempo.llamarTiempo.getLlamarHoras()+", minutos: "+LlamarTiempo.llamarTiempo.getLlamarMinutos()+", segundos: "+ LlamarTiempo.llamarTiempo.getLlamarSegundos());
+        jPanel1.add(DuracionPartidajLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 70, -1, -1));
 
         OroGeneradojLabel3.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         OroGeneradojLabel3.setForeground(new java.awt.Color(0, 0, 0));
