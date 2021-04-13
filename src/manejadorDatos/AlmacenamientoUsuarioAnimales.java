@@ -171,7 +171,7 @@ public class AlmacenamientoUsuarioAnimales {
     }
     
     public static void crearUsuarioAnimales(){
-        almacenamientoUsuarioAnimales = new AlmacenamientoUsuarioAnimales(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3);
+        almacenamientoUsuarioAnimales = new AlmacenamientoUsuarioAnimales(0,0,0,0,0,0,0,0,0,0,0,0,0,0,150,3);
     }
     public static void sumarCerdos(){
         almacenamientoUsuarioAnimales.setCriaCerdo(almacenamientoUsuarioAnimales.getCriaCerdo()+1);

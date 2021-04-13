@@ -4,7 +4,6 @@ import javax.swing.JOptionPane;
 import static manejadorDatos.AlmacenamientoUsuarioPlantas.almacenamientoUsuarioPlantas;
 import static manejadorDatos.EstablecerInstruccionesHilos.establecerInstruccionesHilos;
 
-
 /**
  *
  * @author Mariano
@@ -20,7 +19,7 @@ public class HiloMaizCosecha extends Thread{
                 System.out.println("Error en espera de hiloCosechaMaiz "+e);
             }
         }
-        establecerInstruccionesHilos.setHiloMaiz(0);
+        establecerInstruccionesHilos.setHiloMaiz(2);
         JOptionPane.showMessageDialog(null,"La cosecha de maiz está hecha apurate, tienes 10 segundos para cosechar o pierdes tu cosecha");
         
     }

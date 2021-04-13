@@ -85,6 +85,6 @@ public class Jugador {
     }
     
     public static void creadorJugador(){
-        jugador1 = new Jugador("","",1000,100,0,0,0,0);
+        jugador1 = new Jugador("","",2000,100,0,0,0,0);
     }
 }

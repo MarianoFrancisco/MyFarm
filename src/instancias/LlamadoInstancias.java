@@ -67,5 +67,11 @@ public class LlamadoInstancias {
             }
         });
     }
-    
+    public static void comerSiu(){
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new FrameComer().setVisible(true);
+            }
+        });
+    }
 }

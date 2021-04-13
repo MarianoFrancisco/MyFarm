@@ -16,14 +16,16 @@ public class AlmacenamientoUsuarioComidas {
     private int bambu;
     private int carnes;
     private int concentrado;
+    private int totalComidaAnimal;
     public static AlmacenamientoUsuarioComidas almacenamientoUsuarioComidas;
-    public AlmacenamientoUsuarioComidas(int hojas,int hongos,int hierba,int bambu,int carnes,int concentrado){
+    public AlmacenamientoUsuarioComidas(int hojas,int hongos,int hierba,int bambu,int carnes,int concentrado,int totalComidaAnimal){
         this.hojas=hojas;
         this.hongos=hongos;
         this.hierba=hierba;
         this.bambu=bambu;
         this.carnes=carnes;
         this.concentrado=concentrado;
+        this.totalComidaAnimal=totalComidaAnimal;
     }
 
     public int getHojas() {
@@ -74,8 +76,20 @@ public class AlmacenamientoUsuarioComidas {
         this.concentrado = concentrado;
         
     }
+
+    public int getTotalComidaAnimal() {
+        return this.totalComidaAnimal;
+    }
+
+    public void setTotalComidaAnimal(int totalComidaAnimal) {
+        this.totalComidaAnimal = totalComidaAnimal;
+    }
+    
     public static void crearUsuarioComidas(){
-        almacenamientoUsuarioComidas = new AlmacenamientoUsuarioComidas(0,0,0,0,0,0);
+        almacenamientoUsuarioComidas = new AlmacenamientoUsuarioComidas(0,0,0,0,0,0,0);
+    }
+    public static void sumarTotal(){
+        almacenamientoUsuarioComidas.setTotalComidaAnimal(almacenamientoUsuarioComidas.getTotalComidaAnimal()+1);
     }
     public static void sumarHojas(){
         almacenamientoUsuarioComidas.setHojas(almacenamientoUsuarioComidas.getHojas()+1);

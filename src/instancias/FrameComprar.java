@@ -574,6 +574,7 @@ public class FrameComprar extends javax.swing.JFrame {
             Jugador.jugador1.setMonedas(Jugador.jugador1.getMonedas()-2);
             JOptionPane.showMessageDialog(FrameComprar.this, "Adquiriste alimento hierba "+Jugador.jugador1.getNick() + " te quedan "+Jugador.jugador1.getMonedas()+" monedas");
             AlmacenamientoUsuarioComidas.sumarHierba();
+            AlmacenamientoUsuarioComidas.sumarTotal();
         }
         else{
             JOptionPane.showMessageDialog(FrameComprar.this, "No tienes suficiente dinero "+Jugador.jugador1.getNick());
@@ -739,6 +740,7 @@ public class FrameComprar extends javax.swing.JFrame {
             Jugador.jugador1.setMonedas(Jugador.jugador1.getMonedas()-1);
             JOptionPane.showMessageDialog(FrameComprar.this, "Adquiriste alimento hoja "+Jugador.jugador1.getNick() + " te quedan "+Jugador.jugador1.getMonedas()+" monedas");
             AlmacenamientoUsuarioComidas.sumarHojas();
+            AlmacenamientoUsuarioComidas.sumarTotal();
         }
         else{
             JOptionPane.showMessageDialog(FrameComprar.this, "No tienes suficiente dinero "+Jugador.jugador1.getNick());
@@ -750,6 +752,7 @@ public class FrameComprar extends javax.swing.JFrame {
             Jugador.jugador1.setMonedas(Jugador.jugador1.getMonedas()-3);
             JOptionPane.showMessageDialog(FrameComprar.this, "Adquiriste alimento hongo "+Jugador.jugador1.getNick() + " te quedan "+Jugador.jugador1.getMonedas()+" monedas");
             AlmacenamientoUsuarioComidas.sumarHongos();
+            AlmacenamientoUsuarioComidas.sumarTotal();
         }
         else{
             JOptionPane.showMessageDialog(FrameComprar.this, "No tienes suficiente dinero "+Jugador.jugador1.getNick());
@@ -761,6 +764,7 @@ public class FrameComprar extends javax.swing.JFrame {
             Jugador.jugador1.setMonedas(Jugador.jugador1.getMonedas()-3);
             JOptionPane.showMessageDialog(FrameComprar.this, "Adquiriste alimento bambu "+Jugador.jugador1.getNick() + " te quedan "+Jugador.jugador1.getMonedas()+" monedas");  
             AlmacenamientoUsuarioComidas.sumarBambu();
+            AlmacenamientoUsuarioComidas.sumarTotal();
         }
         else{
             JOptionPane.showMessageDialog(FrameComprar.this, "No tienes suficiente dinero "+Jugador.jugador1.getNick());
@@ -772,6 +776,7 @@ public class FrameComprar extends javax.swing.JFrame {
             Jugador.jugador1.setMonedas(Jugador.jugador1.getMonedas()-5);
             JOptionPane.showMessageDialog(FrameComprar.this, "Adquiriste alimento carne "+Jugador.jugador1.getNick() + " te quedan "+Jugador.jugador1.getMonedas()+" monedas");
             AlmacenamientoUsuarioComidas.sumarCarnes();
+            AlmacenamientoUsuarioComidas.sumarTotal();
         }
         else{
             JOptionPane.showMessageDialog(FrameComprar.this, "No tienes suficiente dinero "+Jugador.jugador1.getNick());
@@ -783,6 +788,7 @@ public class FrameComprar extends javax.swing.JFrame {
             Jugador.jugador1.setMonedas(Jugador.jugador1.getMonedas()-4);
             JOptionPane.showMessageDialog(FrameComprar.this, "Adquiriste alimento concentrado "+Jugador.jugador1.getNick() + " te quedan "+Jugador.jugador1.getMonedas()+" monedas");
             AlmacenamientoUsuarioComidas.sumarConcentrado();
+            AlmacenamientoUsuarioComidas.sumarTotal();
         }
         else{
             JOptionPane.showMessageDialog(FrameComprar.this, "No tienes suficiente dinero "+Jugador.jugador1.getNick());

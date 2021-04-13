@@ -1,5 +1,6 @@
 package manejadorDatos;
 
+import static instancias.FrameComer.*;
 import static instancias.FrameSeleccionSiembra.*;
 import static instancias.FrameVender.*;
 import static manejadorDatos.AlmacenamientoUsuarioAlimentos.almacenamientoUsuarioAlimentos;
@@ -303,9 +304,52 @@ public class AlmacenamientoUsuarioPlantas {
             VManzanoSembrarjButton4.setVisible(false);
             VManzanoSembrarjLabel6.setVisible(false);
         }
+    }
+    public static void visibilidadComer(){
+        if(almacenamientoUsuarioAlimentos.getUsuarioBanano()==0){
+            ZBananoSembrarjButton4.setVisible(false);
+            ZBananoSembrarjLabel6.setVisible(false);
+
+        }
+        if(almacenamientoUsuarioAlimentos.getUsuarioNaranjo()==0){
+            ZNaranjoSembrarjButton3.setVisible(false);
+            ZNaranjoSembrarjLabel3.setVisible(false);
+        }
+        if(almacenamientoUsuarioAlimentos.getUsuarioManzano()==0){
+            ZManzanoSembrarjButton3.setVisible(false);
+            ZManzanoSembrarjLabel5.setVisible(false);
+        }
+        if(almacenamientoUsuarioAnimales.getUsuarioPeces()==0){
+            ZpescarjButton5.setVisible(false);
+            ZPescadojLabel7.setVisible(false);
+        }
+        //------------------------------------------------------
+        if(almacenamientoUsuarioAlimentos.getUsuarioLlama()==0){
+            ZFrijoljSembrarButton3.setVisible(false);
+            ZFrijolSembrarjLabel4.setVisible(false);
+        }
+        
+        if(almacenamientoUsuarioAlimentos.getUsuarioVaca()==0){
+            ZArrozSembrarjButton2.setVisible(false);
+            ZArrozSembrarjLabel2.setVisible(false);
+        }  
         if(almacenamientoUsuarioAlimentos.getUsuarioCerdo()==0){
-            
+            ZNaranjoSembrarjButton4.setVisible(false);
+            ZNaranjoSembrarjLabel4.setVisible(false);
+        }
+        if(almacenamientoUsuarioAlimentos.getUsuarioGallina()==0){
+            ZBananoSembrarjButton5.setVisible(false);
+            ZBananoSembrarjLabel7.setVisible(false);
+
+        }
+        if(almacenamientoUsuarioAlimentos.getUsuarioOveja()==0){
+            ZMaizSembrarjButton3.setVisible(false);
+            ZMaizSembrarjLabel3.setVisible(false);
+
+        }
+        if(almacenamientoUsuarioAlimentos.getUsuarioPavo()==0){
+            ZManzanoSembrarjButton4.setVisible(false);
+            ZManzanoSembrarjLabel6.setVisible(false);
         }
     }
-
 }
