@@ -65,6 +65,41 @@ public class SueloGrama extends Suelos{
             hiloMuerteCerdo.start();
             almacenamientoUsuarioAnimales.setControladorPonerCerdo(0);
         }
+        if(almacenamientoUsuarioAnimales.getControladorPonerPavo()>=1){
+            hiloPavo = new HiloPavo();
+            hiloPavo.start();
+            hiloMuertePavo = new HiloMuertePavo();    
+            hiloMuertePavo.start();
+            almacenamientoUsuarioAnimales.setControladorPonerPavo(0);
+        }
+        if(almacenamientoUsuarioAnimales.getControladorPonerGallina()>=1){
+            hiloGallina = new HiloGallina();
+            hiloGallina.start();
+            hiloMuerteGallina = new HiloMuerteGallina();    
+            hiloMuerteGallina.start();
+            almacenamientoUsuarioAnimales.setControladorPonerGallina(0);
+        }
+        if(almacenamientoUsuarioAnimales.getControladorPonerVaca()>=1){
+            hiloVaca = new HiloVaca();
+            hiloVaca.start();
+            hiloMuerteVaca = new HiloMuerteVaca();    
+            hiloMuerteVaca.start();
+            almacenamientoUsuarioAnimales.setControladorPonerVaca(0);
+        }
+        if(almacenamientoUsuarioAnimales.getControladorPonerOveja()>=1){
+            hiloOveja = new HiloOveja();
+            hiloOveja.start();
+            hiloMuerteOveja = new HiloMuerteOveja();    
+            hiloMuerteOveja.start();
+            almacenamientoUsuarioAnimales.setControladorPonerOveja(0);
+        }
+        if(almacenamientoUsuarioAnimales.getControladorPonerLlama()>=1){
+            hiloLlama = new HiloLlama();
+            hiloLlama.start();
+            hiloMuerteLlama = new HiloMuerteLlama();    
+            hiloMuerteLlama.start();
+            almacenamientoUsuarioAnimales.setControladorPonerLlama(0);
+        }
     }
     
 }

@@ -229,6 +229,39 @@ public class InicializarSuelos {
                                         SueloGrama.ParcelaCrianza();
                                         
                                     }
+                                    if(almacenamientoUsuarioAnimales.getControladorPonerPavo()>=1){
+                                        suelo[k][l].setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/Pavo.PNG")));
+                                        JOptionPane.showMessageDialog(null, "Colocaste pavo :3");
+                                        SueloGrama.ParcelaCrianza();
+                                        
+                                    }
+                                    if(almacenamientoUsuarioAnimales.getControladorPonerGallina()>=1){
+                                        suelo[k][l].setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/Gallina.PNG")));
+                                        JOptionPane.showMessageDialog(null, "Colocaste gallina :3");
+                                        SueloGrama.ParcelaCrianza();
+                                        
+                                    }
+                                    if(almacenamientoUsuarioAnimales.getControladorPonerVaca()>=1){
+                                        suelo[k][l].setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/Vaca.PNG")));
+                                        JOptionPane.showMessageDialog(null, "Colocaste vaca :3");
+                                        SueloGrama.ParcelaCrianza();
+                                        
+                                    }
+                                    if(almacenamientoUsuarioAnimales.getControladorPonerOveja()>=1){
+                                        suelo[k][l].setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/Oveja.PNG")));
+                                        JOptionPane.showMessageDialog(null, "Colocaste cerdo :3");
+                                        SueloGrama.ParcelaCrianza();
+                                        
+                                    }
+                                    if(almacenamientoUsuarioAnimales.getControladorPonerLlama()>=1){
+                                        suelo[k][l].setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/Llama.PNG")));
+                                        JOptionPane.showMessageDialog(null, "Colocaste cerdo :3");
+                                        SueloGrama.ParcelaCrianza();
+                                        
+                                    }
+                                    else{
+                                        JOptionPane.showMessageDialog(null, "Primero necesitas una cria seleccionada");
+                                    }
                             }
                             }
                             

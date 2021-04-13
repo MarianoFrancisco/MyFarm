@@ -730,6 +730,36 @@ public class FrameGranja extends javax.swing.JFrame{
             almacenamientoUsuarioAlimentos.setUsuarioCerdo(almacenamientoUsuarioAlimentos.getUsuarioCerdo()+animales[1].getLibrasCarneGenerada());
             Jugador.jugador1.setEntradaVentas(Jugador.jugador1.getEntradaVentas()+animales[1].getLibrasCarneGenerada());
         }
+        if(establecerInstruccionesHilos.getHiloGallina()==2){
+            JOptionPane.showMessageDialog(null,"Lograste destazar a tiempo, conseguiste "+animales[0].getLibrasCarneGenerada()+" lb de carne de Gallina");
+            establecerInstruccionesHilos.setHiloGallina(1);
+            almacenamientoUsuarioAlimentos.setUsuarioGallina(almacenamientoUsuarioAlimentos.getUsuarioGallina()+animales[0].getLibrasCarneGenerada());
+            Jugador.jugador1.setEntradaVentas(Jugador.jugador1.getEntradaVentas()+animales[0].getLibrasCarneGenerada());
+        }
+        if(establecerInstruccionesHilos.getHiloPavo()==2){
+            JOptionPane.showMessageDialog(null,"Lograste destazar a tiempo, conseguiste "+animales[2].getLibrasCarneGenerada()+" lb de carne de Pavo");
+            establecerInstruccionesHilos.setHiloPavo(1);
+            almacenamientoUsuarioAlimentos.setUsuarioPavo(almacenamientoUsuarioAlimentos.getUsuarioPavo()+animales[2].getLibrasCarneGenerada());
+            Jugador.jugador1.setEntradaVentas(Jugador.jugador1.getEntradaVentas()+animales[2].getLibrasCarneGenerada());
+        }
+        if(establecerInstruccionesHilos.getHiloVaca()==2){
+            JOptionPane.showMessageDialog(null,"Lograste destazar a tiempo, conseguiste "+animales[3].getLibrasCarneGenerada()+" lb de carne de Vaca");
+            establecerInstruccionesHilos.setHiloVaca(1);
+            almacenamientoUsuarioAlimentos.setUsuarioVaca(almacenamientoUsuarioAlimentos.getUsuarioVaca()+animales[3].getLibrasCarneGenerada());
+            Jugador.jugador1.setEntradaVentas(Jugador.jugador1.getEntradaVentas()+animales[3].getLibrasCarneGenerada());
+        }
+        if(establecerInstruccionesHilos.getHiloOveja()==2){
+            JOptionPane.showMessageDialog(null,"Lograste destazar a tiempo, conseguiste "+animales[4].getLibrasCarneGenerada()+" lb de carne de Oveja");
+            establecerInstruccionesHilos.setHiloOveja(1);
+            almacenamientoUsuarioAlimentos.setUsuarioOveja(almacenamientoUsuarioAlimentos.getUsuarioOveja()+animales[4].getLibrasCarneGenerada());
+            Jugador.jugador1.setEntradaVentas(Jugador.jugador1.getEntradaVentas()+animales[4].getLibrasCarneGenerada());
+        }
+        if(establecerInstruccionesHilos.getHiloLlama()==2){
+            JOptionPane.showMessageDialog(null,"Lograste destazar a tiempo, conseguiste "+animales[5].getLibrasCarneGenerada()+" lb de carne de Llama");
+            establecerInstruccionesHilos.setHiloLlama(1);
+            almacenamientoUsuarioAlimentos.setUsuarioLlama(almacenamientoUsuarioAlimentos.getUsuarioLlama()+animales[5].getLibrasCarneGenerada());
+            Jugador.jugador1.setEntradaVentas(Jugador.jugador1.getEntradaVentas()+animales[5].getLibrasCarneGenerada());
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

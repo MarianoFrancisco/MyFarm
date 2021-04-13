@@ -248,6 +248,7 @@ public class AlmacenamientoUsuarioPlantas {
             VFrijoljSembrarButton2.setVisible(false);
             VFrijolSembrarjLabel3.setVisible(false);
         }
+        
         if(almacenamientoUsuarioProductos.getUsuarioArroz()==0){
             VArrozSembrarjButton1.setVisible(false);
             VArrozSembrarjLabel1.setVisible(false);
@@ -273,6 +274,37 @@ public class AlmacenamientoUsuarioPlantas {
         if(almacenamientoUsuarioAnimales.getUsuarioPeces()==0){
             pescarjButton5.setVisible(false);
             PescadojLabel7.setVisible(false);
+        }
+        //------------------------------------------------------
+        if(almacenamientoUsuarioAlimentos.getUsuarioLlama()==0){
+            VFrijoljSembrarButton3.setVisible(false);
+            VFrijolSembrarjLabel4.setVisible(false);
+        }
+        
+        if(almacenamientoUsuarioAlimentos.getUsuarioVaca()==0){
+            VArrozSembrarjButton2.setVisible(false);
+            VArrozSembrarjLabel2.setVisible(false);
+        }  
+        if(almacenamientoUsuarioAlimentos.getUsuarioCerdo()==0){
+            VNaranjoSembrarjButton4.setVisible(false);
+            VNaranjoSembrarjLabel4.setVisible(false);
+        }
+        if(almacenamientoUsuarioAlimentos.getUsuarioGallina()==0){
+            VBananoSembrarjButton5.setVisible(false);
+            VBananoSembrarjLabel7.setVisible(false);
+
+        }
+        if(almacenamientoUsuarioAlimentos.getUsuarioOveja()==0){
+            VMaizSembrarjButton3.setVisible(false);
+            VMaizSembrarjLabel3.setVisible(false);
+
+        }
+        if(almacenamientoUsuarioAlimentos.getUsuarioPavo()==0){
+            VManzanoSembrarjButton4.setVisible(false);
+            VManzanoSembrarjLabel6.setVisible(false);
+        }
+        if(almacenamientoUsuarioAlimentos.getUsuarioCerdo()==0){
+            
         }
     }
 

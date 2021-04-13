@@ -11,6 +11,7 @@ import static manejadorDatos.AlmacenamientoUsuarioAnimales.almacenamientoUsuario
 import manejadorDatos.AlmacenamientoUsuarioPlantas;
 import static manejadorDatos.AlmacenamientoUsuarioProductos.almacenamientoUsuarioProductos;
 import static manejadorDatos.EstablecerReportes.establecerReportes;
+import static proyecto1.CrearAnimalesPlantas.animales;
 import static proyecto1.CrearAnimalesPlantas.plantas;
 
 /**
@@ -57,10 +58,22 @@ public class FrameVender extends javax.swing.JFrame {
         VBananoSembrarjLabel6 = new javax.swing.JLabel();
         VNaranjoSembrarjButton3 = new javax.swing.JButton();
         VNaranjoSembrarjLabel3 = new javax.swing.JLabel();
-        FondojLabel3 = new javax.swing.JLabel();
         pescarjButton5 = new javax.swing.JButton();
         PescadojLabel7 = new javax.swing.JLabel();
+        VNaranjoSembrarjButton4 = new javax.swing.JButton();
+        VNaranjoSembrarjLabel4 = new javax.swing.JLabel();
+        VManzanoSembrarjButton4 = new javax.swing.JButton();
+        VManzanoSembrarjLabel6 = new javax.swing.JLabel();
+        VBananoSembrarjButton5 = new javax.swing.JButton();
+        VBananoSembrarjLabel7 = new javax.swing.JLabel();
+        VArrozSembrarjButton2 = new javax.swing.JButton();
+        VArrozSembrarjLabel2 = new javax.swing.JLabel();
+        VFrijoljSembrarButton3 = new javax.swing.JButton();
+        VFrijolSembrarjLabel4 = new javax.swing.JLabel();
+        VMaizSembrarjButton3 = new javax.swing.JButton();
+        VMaizSembrarjLabel3 = new javax.swing.JLabel();
         FondojLabel4 = new javax.swing.JLabel();
+        FondojLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -108,11 +121,11 @@ public class FrameVender extends javax.swing.JFrame {
                 VFrijoljSembrarButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(VFrijoljSembrarButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 170, 50, 60));
+        jPanel1.add(VFrijoljSembrarButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 170, 50, 60));
 
         VFrijolSembrarjLabel3.setForeground(new java.awt.Color(0, 0, 0));
         VFrijolSembrarjLabel3.setText("Libras Frijol");
-        jPanel1.add(VFrijolSembrarjLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 140, -1, -1));
+        jPanel1.add(VFrijolSembrarjLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 140, -1, -1));
 
         VArrozSembrarjButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/Arroz.PNG"))); // NOI18N
         VArrozSembrarjButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -120,11 +133,11 @@ public class FrameVender extends javax.swing.JFrame {
                 VArrozSembrarjButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(VArrozSembrarjButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 170, 70, 60));
+        jPanel1.add(VArrozSembrarjButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 170, 70, 60));
 
         VArrozSembrarjLabel1.setForeground(new java.awt.Color(0, 0, 0));
         VArrozSembrarjLabel1.setText("Libras Arroz");
-        jPanel1.add(VArrozSembrarjLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 140, -1, -1));
+        jPanel1.add(VArrozSembrarjLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 140, -1, -1));
 
         VManzanoSembrarjButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/Manzano.PNG"))); // NOI18N
         VManzanoSembrarjButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -140,7 +153,7 @@ public class FrameVender extends javax.swing.JFrame {
 
         VMaizSembrarjLabel2.setForeground(new java.awt.Color(0, 0, 0));
         VMaizSembrarjLabel2.setText("Libras Maiz");
-        jPanel1.add(VMaizSembrarjLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 140, -1, -1));
+        jPanel1.add(VMaizSembrarjLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 140, -1, -1));
 
         VMaizSembrarjButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/Maiz.PNG"))); // NOI18N
         VMaizSembrarjButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -148,7 +161,7 @@ public class FrameVender extends javax.swing.JFrame {
                 VMaizSembrarjButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(VMaizSembrarjButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 170, 70, 60));
+        jPanel1.add(VMaizSembrarjButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 170, 70, 60));
 
         VBananoSembrarjButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/Banano.PNG"))); // NOI18N
         VBananoSembrarjButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -156,11 +169,11 @@ public class FrameVender extends javax.swing.JFrame {
                 VBananoSembrarjButton4ActionPerformed(evt);
             }
         });
-        jPanel1.add(VBananoSembrarjButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 170, 70, 60));
+        jPanel1.add(VBananoSembrarjButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 170, 70, 60));
 
         VBananoSembrarjLabel6.setForeground(new java.awt.Color(0, 0, 0));
         VBananoSembrarjLabel6.setText("Frutas Banano");
-        jPanel1.add(VBananoSembrarjLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 140, -1, -1));
+        jPanel1.add(VBananoSembrarjLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 140, -1, -1));
 
         VNaranjoSembrarjButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/Naranjo.PNG"))); // NOI18N
         VNaranjoSembrarjButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -174,9 +187,6 @@ public class FrameVender extends javax.swing.JFrame {
         VNaranjoSembrarjLabel3.setText("Frutas Naranjo");
         jPanel1.add(VNaranjoSembrarjLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, -1, -1));
 
-        FondojLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/FondoMercado.jpg"))); // NOI18N
-        jPanel1.add(FondojLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 90, 540, -1));
-
         pescarjButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/Pescado.PNG"))); // NOI18N
         pescarjButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -189,8 +199,83 @@ public class FrameVender extends javax.swing.JFrame {
         PescadojLabel7.setText("Pescados");
         jPanel1.add(PescadojLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 140, -1, -1));
 
+        VNaranjoSembrarjButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/Cerdo.PNG"))); // NOI18N
+        VNaranjoSembrarjButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                VNaranjoSembrarjButton4ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(VNaranjoSembrarjButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 300, 70, 60));
+
+        VNaranjoSembrarjLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        VNaranjoSembrarjLabel4.setText("Carne Cerdo");
+        jPanel1.add(VNaranjoSembrarjLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 270, -1, -1));
+
+        VManzanoSembrarjButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/Pavo.PNG"))); // NOI18N
+        VManzanoSembrarjButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                VManzanoSembrarjButton4ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(VManzanoSembrarjButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 300, 70, 60));
+
+        VManzanoSembrarjLabel6.setForeground(new java.awt.Color(0, 0, 0));
+        VManzanoSembrarjLabel6.setText("Carne Pavo");
+        jPanel1.add(VManzanoSembrarjLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 270, -1, -1));
+
+        VBananoSembrarjButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/Gallina.PNG"))); // NOI18N
+        VBananoSembrarjButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                VBananoSembrarjButton5ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(VBananoSembrarjButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 300, 70, 60));
+
+        VBananoSembrarjLabel7.setForeground(new java.awt.Color(0, 0, 0));
+        VBananoSembrarjLabel7.setText("Carne Gallina");
+        jPanel1.add(VBananoSembrarjLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 270, -1, -1));
+
+        VArrozSembrarjButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/Vaca.PNG"))); // NOI18N
+        VArrozSembrarjButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                VArrozSembrarjButton2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(VArrozSembrarjButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 420, 70, 60));
+
+        VArrozSembrarjLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        VArrozSembrarjLabel2.setText("Carne Vaca");
+        jPanel1.add(VArrozSembrarjLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 390, -1, -1));
+
+        VFrijoljSembrarButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/Llama.PNG"))); // NOI18N
+        VFrijoljSembrarButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                VFrijoljSembrarButton3ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(VFrijoljSembrarButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 420, 60, 60));
+
+        VFrijolSembrarjLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        VFrijolSembrarjLabel4.setText("Carne Llama");
+        jPanel1.add(VFrijolSembrarjLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 390, -1, -1));
+
+        VMaizSembrarjButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/Oveja.PNG"))); // NOI18N
+        VMaizSembrarjButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                VMaizSembrarjButton3ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(VMaizSembrarjButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 420, 70, 60));
+
+        VMaizSembrarjLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        VMaizSembrarjLabel3.setText("Carne Oveja ");
+        jPanel1.add(VMaizSembrarjLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 390, -1, -1));
+
         FondojLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/FondoMercado.jpg"))); // NOI18N
         jPanel1.add(FondojLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 90, 540, -1));
+
+        FondojLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/FondoMercado.jpg"))); // NOI18N
+        jPanel1.add(FondojLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 90, 540, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -274,6 +359,54 @@ public class FrameVender extends javax.swing.JFrame {
         almacenamientoUsuarioAnimales.setUsuarioPeces(0);
     }//GEN-LAST:event_pescarjButton5ActionPerformed
 
+    private void VNaranjoSembrarjButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VNaranjoSembrarjButton4ActionPerformed
+        Jugador.jugador1.setMonedas(Jugador.jugador1.getMonedas()+(almacenamientoUsuarioAlimentos.getUsuarioCerdo()*animales[1].getPrecioVentaCarne()));
+        JOptionPane.showMessageDialog(null, "Al vender carne de cerdo conseguiste "+almacenamientoUsuarioAlimentos.getUsuarioCerdo()*animales[1].getPrecioVentaCarne()+" de dinero "+Jugador.jugador1.getNick());
+        establecerReportes.setOroGenerado(establecerReportes.getOroGenerado()+(almacenamientoUsuarioAlimentos.getUsuarioCerdo()*animales[1].getPrecioVentaCarne()));
+        Jugador.jugador1.setEntradaVentas(Jugador.jugador1.getEntradaVentas()-almacenamientoUsuarioAlimentos.getUsuarioCerdo());
+        almacenamientoUsuarioAlimentos.setUsuarioCerdo(0);
+    }//GEN-LAST:event_VNaranjoSembrarjButton4ActionPerformed
+
+    private void VManzanoSembrarjButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VManzanoSembrarjButton4ActionPerformed
+        Jugador.jugador1.setMonedas(Jugador.jugador1.getMonedas()+(almacenamientoUsuarioAlimentos.getUsuarioPavo()*animales[2].getPrecioVentaCarne()));
+        JOptionPane.showMessageDialog(null, "Al vender carne de Pavo conseguiste "+almacenamientoUsuarioAlimentos.getUsuarioPavo()*animales[2].getPrecioVentaCarne()+" de dinero "+Jugador.jugador1.getNick());
+        establecerReportes.setOroGenerado(establecerReportes.getOroGenerado()+(almacenamientoUsuarioAlimentos.getUsuarioPavo()*animales[2].getPrecioVentaCarne()));
+        Jugador.jugador1.setEntradaVentas(Jugador.jugador1.getEntradaVentas()-almacenamientoUsuarioAlimentos.getUsuarioPavo());
+        almacenamientoUsuarioAlimentos.setUsuarioPavo(0);
+    }//GEN-LAST:event_VManzanoSembrarjButton4ActionPerformed
+
+    private void VBananoSembrarjButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VBananoSembrarjButton5ActionPerformed
+        Jugador.jugador1.setMonedas(Jugador.jugador1.getMonedas()+(almacenamientoUsuarioAlimentos.getUsuarioGallina()*animales[0].getPrecioVentaCarne()));
+        JOptionPane.showMessageDialog(null, "Al vender carne de Gallina conseguiste "+almacenamientoUsuarioAlimentos.getUsuarioGallina()*animales[0].getPrecioVentaCarne()+" de dinero "+Jugador.jugador1.getNick());
+        establecerReportes.setOroGenerado(establecerReportes.getOroGenerado()+(almacenamientoUsuarioAlimentos.getUsuarioGallina()*animales[0].getPrecioVentaCarne()));
+        Jugador.jugador1.setEntradaVentas(Jugador.jugador1.getEntradaVentas()-almacenamientoUsuarioAlimentos.getUsuarioGallina());
+        almacenamientoUsuarioAlimentos.setUsuarioGallina(0);
+    }//GEN-LAST:event_VBananoSembrarjButton5ActionPerformed
+
+    private void VArrozSembrarjButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VArrozSembrarjButton2ActionPerformed
+        Jugador.jugador1.setMonedas(Jugador.jugador1.getMonedas()+(almacenamientoUsuarioAlimentos.getUsuarioVaca()*animales[3].getPrecioVentaCarne()));
+        JOptionPane.showMessageDialog(null, "Al vender carne de Vaca conseguiste "+almacenamientoUsuarioAlimentos.getUsuarioVaca()*animales[3].getPrecioVentaCarne()+" de dinero "+Jugador.jugador1.getNick());
+        establecerReportes.setOroGenerado(establecerReportes.getOroGenerado()+(almacenamientoUsuarioAlimentos.getUsuarioVaca()*animales[3].getPrecioVentaCarne()));
+        Jugador.jugador1.setEntradaVentas(Jugador.jugador1.getEntradaVentas()-almacenamientoUsuarioAlimentos.getUsuarioVaca());
+        almacenamientoUsuarioAlimentos.setUsuarioVaca(0);
+    }//GEN-LAST:event_VArrozSembrarjButton2ActionPerformed
+
+    private void VFrijoljSembrarButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VFrijoljSembrarButton3ActionPerformed
+        Jugador.jugador1.setMonedas(Jugador.jugador1.getMonedas()+(almacenamientoUsuarioAlimentos.getUsuarioLlama()*animales[5].getPrecioVentaCarne()));
+        JOptionPane.showMessageDialog(null, "Al vender carne de Llama conseguiste "+almacenamientoUsuarioAlimentos.getUsuarioLlama()*animales[5].getPrecioVentaCarne()+" de dinero "+Jugador.jugador1.getNick());
+        establecerReportes.setOroGenerado(establecerReportes.getOroGenerado()+(almacenamientoUsuarioAlimentos.getUsuarioLlama()*animales[5].getPrecioVentaCarne()));
+        Jugador.jugador1.setEntradaVentas(Jugador.jugador1.getEntradaVentas()-almacenamientoUsuarioAlimentos.getUsuarioLlama());
+        almacenamientoUsuarioAlimentos.setUsuarioLlama(0);
+    }//GEN-LAST:event_VFrijoljSembrarButton3ActionPerformed
+
+    private void VMaizSembrarjButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VMaizSembrarjButton3ActionPerformed
+        Jugador.jugador1.setMonedas(Jugador.jugador1.getMonedas()+(almacenamientoUsuarioAlimentos.getUsuarioOveja()*animales[4].getPrecioVentaCarne()));
+        JOptionPane.showMessageDialog(null, "Al vender carne de Oveja conseguiste "+almacenamientoUsuarioAlimentos.getUsuarioOveja()*animales[4].getPrecioVentaCarne()+" de dinero "+Jugador.jugador1.getNick());
+        establecerReportes.setOroGenerado(establecerReportes.getOroGenerado()+(almacenamientoUsuarioAlimentos.getUsuarioOveja()*animales[4].getPrecioVentaCarne()));
+        Jugador.jugador1.setEntradaVentas(Jugador.jugador1.getEntradaVentas()-almacenamientoUsuarioAlimentos.getUsuarioOveja());
+        almacenamientoUsuarioAlimentos.setUsuarioOveja(0);
+    }//GEN-LAST:event_VMaizSembrarjButton3ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -297,17 +430,29 @@ public class FrameVender extends javax.swing.JFrame {
     public static javax.swing.JLabel PescadojLabel7;
     private javax.swing.JButton RegresarMenuMercadojButton2;
     public static javax.swing.JButton VArrozSembrarjButton1;
+    public static javax.swing.JButton VArrozSembrarjButton2;
     public static javax.swing.JLabel VArrozSembrarjLabel1;
+    public static javax.swing.JLabel VArrozSembrarjLabel2;
     public static javax.swing.JButton VBananoSembrarjButton4;
+    public static javax.swing.JButton VBananoSembrarjButton5;
     public static javax.swing.JLabel VBananoSembrarjLabel6;
+    public static javax.swing.JLabel VBananoSembrarjLabel7;
     public static javax.swing.JLabel VFrijolSembrarjLabel3;
+    public static javax.swing.JLabel VFrijolSembrarjLabel4;
     public static javax.swing.JButton VFrijoljSembrarButton2;
+    public static javax.swing.JButton VFrijoljSembrarButton3;
     public static javax.swing.JButton VMaizSembrarjButton2;
+    public static javax.swing.JButton VMaizSembrarjButton3;
     public static javax.swing.JLabel VMaizSembrarjLabel2;
+    public static javax.swing.JLabel VMaizSembrarjLabel3;
     public static javax.swing.JButton VManzanoSembrarjButton3;
+    public static javax.swing.JButton VManzanoSembrarjButton4;
     public static javax.swing.JLabel VManzanoSembrarjLabel5;
+    public static javax.swing.JLabel VManzanoSembrarjLabel6;
     public static javax.swing.JButton VNaranjoSembrarjButton3;
+    public static javax.swing.JButton VNaranjoSembrarjButton4;
     public static javax.swing.JLabel VNaranjoSembrarjLabel3;
+    public static javax.swing.JLabel VNaranjoSembrarjLabel4;
     private javax.swing.JPanel jPanel1;
     public static javax.swing.JButton pescarjButton5;
     // End of variables declaration//GEN-END:variables
